@@ -1,0 +1,9 @@
+#SBATCH -N1 -t5
+#
+# Test hdf5  (C and Fortran).
+#
+cd ${SLURM_SUBMIT_DIR:-}
+
+./h5ex_d_rdwr
+./h5ex_t_float
+file h5ex_d_rdwr.h5 h5ex_t_float_F03.h5

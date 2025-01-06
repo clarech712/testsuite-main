@@ -1,0 +1,20 @@
+
+********************
+Version: 2.13.94_gcc_9.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fontconfig' with SLURM options '--constraint=rhel8'.
+Started job 9057801 on Submitted batch job 9057801.
+Waiting for job to complete..done.
+PASS fontconfig - d1cmp014 
+Cleaning up working directory.done.
+
+********************
+Version: 2.13.94
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fontconfig' with SLURM options '--constraint=rhel8'.
+Started job 9057804 on Submitted batch job 9057804.
+Waiting for job to complete..done.
+PASS fontconfig - d1cmp014 
+Cleaning up working directory.done.

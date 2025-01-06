@@ -1,0 +1,12 @@
+#begin_module_parse#
+TESTPILOT_COMPILER='gcc'
+TESTPILOT_MPI='openmpi'
+TESTPILOT_PYTHON='python'
+TESTPILOT_MPI4PY='py-mpi4py'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1
+module load ${TESTPILOT_MPI} > /dev/null 2>&1
+module load ${TESTPILOT_PYTHON} > /dev/null 2>&1
+module load ${TESTPILOT_MPI4PY} > /dev/null 2>&1

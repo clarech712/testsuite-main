@@ -1,0 +1,7 @@
+DIRAC 3050 -10 10 1
+
+#First column - variable name
+#Second column - expected value
+#Third column - % low tolerance
+#Fourth column - % high tolerance
+#Fifth column - scaling factor (weighted importance)

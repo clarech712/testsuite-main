@@ -1,0 +1,10 @@
+
+********************
+Version: 5.0.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'orca' with SLURM options '--constraint=rhel8'.
+Started job 9859444 on Submitted batch job 9859444.
+Waiting for job to complete...done.
+PASS orca - d1cmp011 
+Cleaning up working directory.done.

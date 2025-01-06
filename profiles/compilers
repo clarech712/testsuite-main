@@ -1,0 +1,6 @@
+#
+# Compiler Tests
+#
+C gcc 9 10
+C intel 9 10
+C oneapi 9 10

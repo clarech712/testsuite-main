@@ -1,0 +1,13 @@
+(mclheader
+mcltype matrix
+dimensions 4x4
+)
+
+(mclmatrix
+begin
+
+0    2:2.000 3:2.000 $
+1    2:2.000 3:2.000 $
+2    0:2.000 1:2.000 $
+3    0:2.000 1:2.000 $
+)

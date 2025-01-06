@@ -1,0 +1,7 @@
+#
+# Benchmark Tests
+#
+S db12 4 5
+S iozone 4 5
+S R_25 4 5
+S stream 4 5

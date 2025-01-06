@@ -1,0 +1,10 @@
+
+********************
+Version: 1.43
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'libgpg-error' with SLURM options '--constraint=rhel7'.
+Started job 9601343 on Submitted batch job 9601343.
+Waiting for job to complete....done.
+PASS libgpg-error - p1cmp043 
+Cleaning up working directory.done.

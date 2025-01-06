@@ -1,0 +1,20 @@
+
+********************
+Version: 7.47.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'curl' with SLURM options '--constraint=rhel8'.
+Started job 9057500 on Submitted batch job 9057500.
+Waiting for job to complete..done.
+PASS curl - d1cmp014 
+Cleaning up working directory.done.
+
+********************
+Version: 7.80.0_gcc_9.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'curl' with SLURM options '--constraint=rhel8'.
+Started job 9057501 on Submitted batch job 9057501.
+Waiting for job to complete..done.
+PASS curl - d1cmp014 
+Cleaning up working directory.done.

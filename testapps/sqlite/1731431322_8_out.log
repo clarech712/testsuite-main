@@ -1,0 +1,10 @@
+
+********************
+Version: 3.37.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'sqlite' with SLURM options '--constraint=rhel8'.
+Started job 9095326 on Submitted batch job 9095326.
+Waiting for job to complete..done.
+PASS sqlite - d1cmp001 
+Cleaning up working directory.done.

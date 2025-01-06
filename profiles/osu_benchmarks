@@ -1,0 +1,10 @@
+#
+# OSU Benchmark Tests
+#
+S osu_allreduce 4 5
+S osu_alltoall 4 5
+S osu_bcast 4 5
+S osu_bibw 4 5
+S osu_bw 4 5
+S osu_latency 4 5
+S osu_scatter 4 5

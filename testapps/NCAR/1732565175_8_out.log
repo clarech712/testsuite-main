@@ -1,0 +1,10 @@
+
+********************
+Version: 5.2.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'NCAR' with SLURM options '--constraint=rhel8'.
+Started job 9856757 on Submitted batch job 9856757.
+Waiting for job to complete...done.
+PASS NCAR - d1cmp005 
+Cleaning up working directory.done.

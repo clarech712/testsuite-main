@@ -1,0 +1,50 @@
+	Iozone: Performance Test of File I/O
+	        Version $Revision: 3.465 $
+		Compiled for 64 bit mode.
+		Build: linux 
+
+	Run began: ${*}
+
+	Record Size 2048 kB
+	File size set to 131072 kB
+	Purge Mode On
+	Command line used: ./iozone -i 0 -i 1 -r 2048 -s 131072 -p -t -f /scratch/${*}
+	Output is in kBytes/sec
+	Time Resolution = 0.000001 seconds.
+	Processor cache size set to 1024 kBytes.
+	Processor cache line size set to 32 bytes.
+	File stride size set to 17 * record size.
+	Throughput test with 8 processes
+	Each process writes a 131072 kByte file in 2048 kByte records
+
+	Children see throughput for  8 initial writers 	= ${*} kB/sec
+	Parent sees throughput for  8 initial writers 	= ${*} kB/sec
+	Min throughput per process 			= ${*} kB/sec 
+	Max throughput per process 			= ${*} kB/sec
+	Avg throughput per process 			= ${write_avg} kB/sec
+	Min xfer 					= ${*} kB
+
+	Children see throughput for  8 rewriters 	= ${*} kB/sec
+	Parent sees throughput for  8 rewriters 	= ${*} kB/sec
+	Min throughput per process 			= ${*} kB/sec 
+	Max throughput per process 			= ${*} kB/sec
+	Avg throughput per process 			= ${rewrite_avg} kB/sec
+	Min xfer 					= ${*} kB
+
+	Children see throughput for  8 readers 		= ${*} kB/sec
+	Parent sees throughput for  8 readers 		= ${*} kB/sec
+	Min throughput per process 			= ${*} kB/sec 
+	Max throughput per process 			= ${*} kB/sec
+	Avg throughput per process 			= ${read_avg} kB/sec
+	Min xfer 					= ${*} kB
+
+	Children see throughput for 8 re-readers 	= ${*} kB/sec
+	Parent sees throughput for 8 re-readers 	= ${*} kB/sec
+	Min throughput per process 			= ${*} kB/sec 
+	Max throughput per process 			= ${*} kB/sec
+	Avg throughput per process 			= ${reread_avg} kB/sec
+	Min xfer 					= ${*} kB
+
+
+
+iozone test complete.

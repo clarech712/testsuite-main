@@ -1,0 +1,6 @@
+TIME 900 -50 120 1
+#First column - variable name
+#Second column - expected value
+#Third column - % low tolerance
+#Fourth column - % high tolerance
+#Fifth column - scaling factor (weighted importance)

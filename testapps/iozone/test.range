@@ -1,0 +1,10 @@
+write_avg 1000000 -20 100 1
+rewrite_avg 1430000 -20 100 1
+read_avg 3400000 -20 100 1
+reread_avg 3000000 -20 100 1
+
+#First column - variable name
+#Second column - expected value
+#Third column - % low tolerance
+#Fourth column - % high tolerance
+#Fifth column - scaling factor (weighted importance)

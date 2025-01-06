@@ -1,0 +1,10 @@
+
+********************
+Version: 3.2.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'rsync' with SLURM options '--constraint=rhel8'.
+Started job 9192464 on Submitted batch job 9192464.
+Waiting for job to complete...done.
+PASS rsync - d1cmp017 
+Cleaning up working directory.done.

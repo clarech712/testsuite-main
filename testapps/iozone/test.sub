@@ -1,0 +1,4 @@
+#!/bin/bash
+#SBATCH -N1 -t5 --exclusive
+
+./iozone -i 0 -i 1 -r 2048 -s 131072 -p -t -f $RCAC_SCRATCH

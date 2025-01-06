@@ -1,0 +1,7 @@
+mpirun: ${*}
+pw.x:   ${*}
+${*} Parallel version ${*}
+${*} Number of MPI processes:${*}
+${*} Threads/MPI process:${*}
+${*} Final energy ${*} = ${*} -43.10976799${*}
+

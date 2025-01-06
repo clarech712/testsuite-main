@@ -1,0 +1,168 @@
+
+********************
+Version: 20150122
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'parallel' with SLURM options '--constraint=rhel7'.
+Started job 10377382 on Submitted batch job 10377382.
+Waiting for job to complete..done.
+FAIL parallel - p1cmp029 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,14 @@
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 20200822
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'parallel' with SLURM options '--constraint=rhel7'.
+Started job 10377383 on Submitted batch job 10377383.
+Waiting for job to complete..done.
+FAIL parallel - p1cmp029 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,14 @@
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 20220522
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'parallel' with SLURM options '--constraint=rhel7'.
+Started job 10377386 on Submitted batch job 10377386.
+Waiting for job to complete..done.
+FAIL parallel - p1cmp029 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,14 @@
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 20240822
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'parallel' with SLURM options '--constraint=rhel7'.
+Started job 10377389 on Submitted batch job 10377389.
+Waiting for job to complete..done.
+FAIL parallel - p1cmp029 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,14 @@
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
++ perl: warning: Setting locale failed.
++ perl: warning: Please check that your locale settings:
++ 	LANGUAGE = (unset),
++ 	LC_ALL = (unset),
++ 	LANG = "C.UTF-8"
++     are supported and installed on your system.
++ perl: warning: Falling back to the standard locale ("C").
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.

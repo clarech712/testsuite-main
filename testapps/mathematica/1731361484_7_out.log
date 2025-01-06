@@ -1,0 +1,110 @@
+
+********************
+Version: 11.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058585 on Submitted batch job 9058585.
+Waiting for job to complete...done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 13.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058588 on Submitted batch job 9058588.
+Waiting for job to complete...done.
+PASS mathematica - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 12.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058591 on Submitted batch job 9058591.
+Waiting for job to complete...done.
+PASS mathematica - p1cmp044 
+Cleaning up working directory.done.
+
+********************
+Version: 13.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058592 on Submitted batch job 9058592.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp044 
+Cleaning up working directory.done.
+
+********************
+Version: 10.4.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058596 on Submitted batch job 9058596.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 12.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058609 on Submitted batch job 9058609.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 13.2.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058610 on Submitted batch job 9058610.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 10.4.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058620 on Submitted batch job 9058620.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 12.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058624 on Submitted batch job 9058624.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 11.0.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058657 on Submitted batch job 9058657.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 12.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mathematica' with SLURM options '--constraint=rhel7'.
+Started job 9058659 on Submitted batch job 9058659.
+Waiting for job to complete..done.
+PASS mathematica - p1cmp029 
+Cleaning up working directory.done.

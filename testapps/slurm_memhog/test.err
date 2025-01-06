@@ -1,0 +1,4 @@
+stress: FAIL: ${*} <-- worker ${*} got signal 9
+stress: FAIL: ${*} kill error: No such process
+stress: FAIL: ${*} failed run completed in ${*}
+slurmstepd: error: Detected 1 oom${*}

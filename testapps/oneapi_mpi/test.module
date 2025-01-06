@@ -1,0 +1,8 @@
+#begin_module_parse#
+TESTPILOT_COMPILER='modtree,intel-oneapi-compilers'
+TESTPILOT_MPI='intel-oneapi-mpi'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1
+module load ${TESTPILOT_MPI} > /dev/null 2>&1

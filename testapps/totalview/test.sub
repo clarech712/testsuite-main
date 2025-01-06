@@ -1,0 +1,23 @@
+#SBATCH -N1 -t5 --exclusive
+#
+# Totalview example test - print a basic backtrace of a program.
+#
+# Note: this test is better to be executed in exclusive mode (or sequentially),
+# because under the hood TotalView creates a libraries cache directory based
+# on the execution host's name, and throws a fit if such directory already
+# exists from a concurrent Totalview test job:
+#     TotalView: FATAL ERROR STARTING UP: create_cache_dirs: Can't create local library cache directory '/home/lev/.totalview/lib_cache/a309.negishi.rcac.purdue.edu'; errno=File exists(17)
+# Chance of contention is small on an empty cluster, but exclusive just in case.
+
+cd ${SLURM_SUBMIT_DIR:-.}
+
+OUTPUT="output.log"
+if [[ -e "$OUTPUT" ]]; then
+	/bin/rm "$OUTPUT"
+fi
+tvscript -create_actionpoint "main=>display_backtrace -show_arguments" \
+         -maxruntime "00:00:10" -script_log_filename "$OUTPUT" \
+         ./hello > /dev/null
+
+echo | egrep 'argc|argv' "$OUTPUT"
+

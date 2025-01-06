@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Check if the correct number of parameters are provided
+if [ "$#" -ne 2 ]; then
+    echo "Illegal number of parameters. Usage: $0 <module_name> <number>"
+    exit 1
+fi
+
+MODULE_NAME=$1
+NUMBER=$2
+TIMESTAMP=$(date +%s)
+
+# Run the command and save output and errors to files
+./testapp_all $MODULE_NAME ../testapps/$MODULE_NAME/test.module $NUMBER 2> >(tee -a ../testapps/$MODULE_NAME/"$TIMESTAMP"_"$NUMBER"_err.log) > >(tee -a ../testapps/$MODULE_NAME/"$TIMESTAMP"_"$NUMBER"_out.log)
+

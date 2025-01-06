@@ -1,0 +1,6 @@
+#SBATCH -N1 -n1 -t5
+#
+# Test Matlab
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+matlab -nodesktop -nodisplay -nosplash -nojvm -r "disp('Hello, World'); exit;" 2>&1 | grep -v "Copyright" | grep -v "Update" | grep -v "January" | grep -v "February" | grep -v "March" | grep -v "April" | grep -v "May" | grep -v "June" | grep -v "July" | grep -v "August" | grep -v "September" | grep -v "October" | grep -v "November" | grep -v "December"

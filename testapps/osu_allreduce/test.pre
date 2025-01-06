@@ -1,0 +1,1 @@
+$CC -o osu_allreduce osu_allreduce.c

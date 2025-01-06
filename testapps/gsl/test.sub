@@ -1,0 +1,9 @@
+#SBATCH -N1 -t5
+#
+# GSL example test.
+# This test computing the value of the Bessel function J0
+# https://www.gnu.org/software/gsl/doc/html/usage.html#an-example-program
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+
+./gsl_bessel 5.0

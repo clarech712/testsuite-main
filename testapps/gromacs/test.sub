@@ -1,0 +1,30 @@
+#SBATCH -N2 -n4 -t20
+#
+# Run a simple ubiquitin in water MD simulation.
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+
+GMX='gmx_mpi'
+echo "mpirun: `which $GMX`"
+echo "GMX:    `which $GMX`"
+
+# Preprocess the system.
+# Gromacs dumps a lot of output to both stdout and stderr (which we really
+# don't need unless something went wrong), so capture it and handle as needed.
+GROMPP=$( $GMX grompp -f ubq_md.mdp -c ubiquitin_eq.gro -p topol.top -o input_md.tpr 2>&1 )
+if [[ $? -ne 0 ]]; then
+	echo "$GROMPP" 1>&2
+	echo "Failed to preprocess MD run, bailing out." 1>&2
+	exit 1
+fi
+
+# And run the MD.
+# Capture the stdout and stderr again. Dump it all back if something went
+# wrong, otherwise search captured output for signs of success.
+MDRUN=$( mpirun -np 4 $GMX mdrun -ntomp 1 -s input_md.tpr -deffnm output_md 2>&1 )
+if [[ $? -ne 0 ]]; then
+	echo "$MDRUN" 1>&2
+	echo "Failed to run the MD, bailing out." 1>&2
+	exit 1
+fi
+echo "$MDRUN" | egrep '^Using.*process|ns/day|^Performance'

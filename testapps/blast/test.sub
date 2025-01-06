@@ -1,0 +1,49 @@
+#!/bin/bash
+#SBATCH -N1 -t60:00 --exclusive
+#
+# On Negishi nodes, actual Blast run for this test takes about 900 seconds.
+# Assuming that for some scenarios we may have to copy few hundred GB's
+# worth of NR database... original 35 minutes may be too low.  For something
+# very quick , see 'blast_short' test.
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+DB=$TESTPILOT_DB
+NODES=1
+if [ -n "${SLURM_JOB_ID}" ]; then
+    NODES=`srun hostname | wc -l`
+fi
+
+QUERY=seq1
+mkdir -p output
+NRDB=/depot/itap/datasets/blast/latest
+BLASTDB=$NRDB
+if [[ $DB == "datasets" ]]; then
+	DBDIR=$NRDB
+elif [[ $DB == "depot" ]]; then
+	DBDIR=$NRDB
+elif [[ $DB == "scratch" ]]; then
+	DBDIR=${CLUSTER_SCRATCH}/nr
+elif [[ $DB == "tmp" ]]; then 
+	DBDIR=/tmp/nr
+elif [[ $DB == "shm" ]]; then
+	DBDIR=/dev/shm/nr
+fi
+if [[ $DB == "scratch" ]] || [[ $DB == "tmp" ]] || [[ $DB == "shm" ]]; then
+    mkdir -p $DBDIR
+    echo copy db
+    /usr/bin/time -f "copy DB %e seconds\n" cp -rp $NRDB/nr* $DBDIR 2>&1
+fi
+ncores=`cat /proc/cpuinfo | grep 'processor' | wc -l`
+
+# We used to do a '/usr/bin/time -f ... blastx ...', but this does not
+# work with biocontainers (time command expects a bona-fide executable,
+# not a shell function).  So do it the hardcore way.
+# A bc trick: use 'scale' and divide by 1 to force desired # of decimal places.
+# And filter out any 'INFO:' messages singularity runtime might generate.
+tStart=$(date +%s.%N) 				# Epoch seconds and nanoseconds
+blastx -db ${DBDIR}/nr -num_threads ${ncores} -query $QUERY                \
+       -out output/${ncores}-${DB}.out -outfmt 6 -evalue 0.0000000001 2>&1 \
+  | grep -v ^INFO:
+tFinish=$(date +%s.%N)
+tDelta=$(echo "scale=2; ($tFinish - $tStart)/1" | bc)
+printf "$DB with ${ncores} cores, blast time $tDelta\n"

@@ -1,0 +1,6 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+rclone --config=rclone.conf copy test.txt destination
+diff test.txt destination/test.txt
+rm destination/test.txt
+

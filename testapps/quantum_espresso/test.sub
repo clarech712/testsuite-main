@@ -1,0 +1,11 @@
+#SBATCH -N2 -n4 -t5
+#
+# Test Quantum Espresso: compute the equilibrium geometry of CO molecule
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+echo "mpirun: `which mpirun`"
+echo "pw.x:   `which pw.x`"
+
+export OMP_NUM_THREADS=1
+mpirun -np 4 pw.x < co.rx.in > co.rx.out
+egrep '^ *(Parallel version|Number of MPI|Threads/MPI process|Final energy)' co.rx.out

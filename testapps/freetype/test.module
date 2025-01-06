@@ -1,0 +1,8 @@
+#begin_module_parse#
+TESTPILOT_LIBPNG='libpng'
+TESTPILOT_FREETYPE='freetype'
+#end_module_parse#
+
+module purge 2>/dev/null
+module load ${TESTPILOT_LIBPNG} > /dev/null 2>&1
+module load ${TESTPILOT_FREETYPE} > /dev/null 2>&1

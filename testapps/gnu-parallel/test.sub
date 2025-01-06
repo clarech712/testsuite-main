@@ -1,0 +1,5 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+wget https://example.com/ 2> /dev/null
+find . -name '*.html' | parallel gzip --best
+rm ./index.html.gz

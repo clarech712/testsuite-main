@@ -1,0 +1,66 @@
+
+********************
+Version: 3.3.2-double
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel8'.
+Started job 10224243 on Submitted batch job 10224243.
+Waiting for job to complete...done.
+PASS fftw - d1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 3.3.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel8'.
+Started job 10224253 on Submitted batch job 10224253.
+Waiting for job to complete..done.
+PASS fftw - d1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 3.3.3-double
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel8'.
+Started job 10224263 on Submitted batch job 10224263.
+Waiting for job to complete..done.
+PASS fftw - d1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 3.3.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel8'.
+Started job 10224274 on Submitted batch job 10224274.
+Waiting for job to complete..done.
+PASS fftw - d1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 3.3.10_9.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel8'.
+Started job 10224276 on Submitted batch job 10224276.
+Waiting for job to complete..done.
+PASS fftw - d1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 3.3.10
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel8'.
+Started job 10224282 on Submitted batch job 10224282.
+Waiting for job to complete..done.
+PASS fftw - d1cmp029 
+Cleaning up working directory.done.

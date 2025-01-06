@@ -1,0 +1,20 @@
+
+********************
+Version: 1.9.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cdo' with SLURM options '--constraint=rhel8'.
+Started job 9057077 on Submitted batch job 9057077.
+Waiting for job to complete..done.
+PASS cdo - d1cmp014 
+Cleaning up working directory.done.
+
+********************
+Version: 2.4.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cdo' with SLURM options '--constraint=rhel8'.
+Started job 9057078 on Submitted batch job 9057078.
+Waiting for job to complete..done.
+PASS cdo - d1cmp030 
+Cleaning up working directory.done.

@@ -1,0 +1,60 @@
+
+********************
+Version: 1.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bcftools' with SLURM options '--constraint=rhel8'.
+Started job 10390306 on Submitted batch job 10390306.
+Waiting for job to complete...done.
+PASS bcftools - d1cmp020 
+Cleaning up working directory.done.
+
+********************
+Version: 1.12
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bcftools' with SLURM options '--constraint=rhel8'.
+Started job 10390309 on Submitted batch job 10390309.
+Waiting for job to complete..done.
+PASS bcftools - d1cmp020 
+Cleaning up working directory.done.
+
+********************
+Version: 1.13
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bcftools' with SLURM options '--constraint=rhel8'.
+Started job 10390310 on Submitted batch job 10390310.
+Waiting for job to complete..done.
+PASS bcftools - d1cmp020 
+Cleaning up working directory.done.
+
+********************
+Version: 1.14
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bcftools' with SLURM options '--constraint=rhel8'.
+Started job 10390311 on Submitted batch job 10390311.
+Waiting for job to complete..done.
+PASS bcftools - d1cmp020 
+Cleaning up working directory.done.
+
+********************
+Version: 1.17
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bcftools' with SLURM options '--constraint=rhel8'.
+Started job 10390312 on Submitted batch job 10390312.
+Waiting for job to complete..done.
+PASS bcftools - d1cmp020 
+Cleaning up working directory.done.
+
+********************
+Version: 1.20
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bcftools' with SLURM options '--constraint=rhel8'.
+Started job 10390313 on Submitted batch job 10390313.
+Waiting for job to complete..done.
+PASS bcftools - d1cmp020 
+Cleaning up working directory.done.

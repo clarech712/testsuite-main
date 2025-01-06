@@ -1,0 +1,3 @@
+Sample	Metric	Value
+sample1	metric1	10
+sample1	metric2	20

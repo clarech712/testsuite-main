@@ -1,0 +1,40 @@
+
+********************
+Version: 6.3.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel7'.
+Started job 10326656 on Submitted batch job 10326656.
+Waiting for job to complete...done.
+PASS proj - p1cmp043 
+Cleaning up working directory.done.
+
+********************
+Version: 7.2.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel7'.
+Started job 10326667 on Submitted batch job 10326667.
+Waiting for job to complete..done.
+PASS proj - p1cmp043 
+Cleaning up working directory.done.
+
+********************
+Version: 8.1.0_gcc_9.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel7'.
+Started job 10326676 on Submitted batch job 10326676.
+Waiting for job to complete..done.
+PASS proj - p1cmp043 
+Cleaning up working directory.done.
+
+********************
+Version: 8.1.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel7'.
+Started job 10326683 on Submitted batch job 10326683.
+Waiting for job to complete..done.
+PASS proj - p1cmp043 
+Cleaning up working directory.done.

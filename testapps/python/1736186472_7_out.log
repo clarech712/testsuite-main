@@ -1,0 +1,153 @@
+
+********************
+Version: 2.7.3
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748593 on Submitted batch job 10748593.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748593/slurm_script: line 8: ../../testapps_python_p1cmp029_130249/timestamp: No such file or directory
++ /var/spool/slurm/job10748593/slurm_script: line 12: ../../testapps_python_p1cmp029_130249/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 2.7.6
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748594 on Submitted batch job 10748594.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748594/slurm_script: line 8: ../../testapps_python_p1cmp029_130342/timestamp: No such file or directory
++ /var/spool/slurm/job10748594/slurm_script: line 12: ../../testapps_python_p1cmp029_130342/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 3.6.0
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748595 on Submitted batch job 10748595.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748595/slurm_script: line 8: ../../testapps_python_p1cmp029_130435/timestamp: No such file or directory
++ /var/spool/slurm/job10748595/slurm_script: line 12: ../../testapps_python_p1cmp029_130435/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 2.6.5
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748596 on Submitted batch job 10748596.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748596/slurm_script: line 8: ../../testapps_python_p1cmp029_130532/timestamp: No such file or directory
++ /var/spool/slurm/job10748596/slurm_script: line 12: ../../testapps_python_p1cmp029_130532/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 2.7.4
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748598 on Submitted batch job 10748598.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748598/slurm_script: line 8: ../../testapps_python_p1cmp029_130623/timestamp: No such file or directory
++ /var/spool/slurm/job10748598/slurm_script: line 12: ../../testapps_python_p1cmp029_130623/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 3.5.0
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748599 on Submitted batch job 10748599.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748599/slurm_script: line 8: ../../testapps_python_p1cmp029_130713/timestamp: No such file or directory
++ /var/spool/slurm/job10748599/slurm_script: line 12: ../../testapps_python_p1cmp029_130713/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 3.8.8
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748601 on Submitted batch job 10748601.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748601/slurm_script: line 8: ../../testapps_python_p1cmp029_130803/timestamp: No such file or directory
++ /var/spool/slurm/job10748601/slurm_script: line 12: ../../testapps_python_p1cmp029_130803/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 3.10.4
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748602 on Submitted batch job 10748602.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748602/slurm_script: line 8: ../../testapps_python_p1cmp029_130894/timestamp: No such file or directory
++ /var/spool/slurm/job10748602/slurm_script: line 12: ../../testapps_python_p1cmp029_130894/timestamp2: No such file or directory
+- 
+- 
+
+********************
+Version: 1.83
+CLUSTER_SCRATCH is not available, running tests from ../.. directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10748603 on Submitted batch job 10748603.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,2 @@
++ /var/spool/slurm/job10748603/slurm_script: line 8: ../../testapps_python_p1cmp029_130990/timestamp: No such file or directory
++ /var/spool/slurm/job10748603/slurm_script: line 12: ../../testapps_python_p1cmp029_130990/timestamp2: No such file or directory
+- 
+- 

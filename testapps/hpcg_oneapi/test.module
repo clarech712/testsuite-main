@@ -1,0 +1,12 @@
+#begin_module_parse#
+TESTPILOT_COMPILER='intel-oneapi-compilers'
+TESTPILOT_MKL='intel-oneapi-mkl'
+TESTPILOT_MPI='intel-oneapi-mpi'
+TESTPILOT_NUMACTL='numactl'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1
+module load ${TESTPILOT_MKL} > /dev/null 2>&1
+module load ${TESTPILOT_MPI} > /dev/null 2>&1
+module load ${TESTPILOT_NUMACTL} > /dev/null 2>&1

@@ -1,0 +1,7 @@
+#!/bin/bash 
+#SBATCH -N1 --exclusive -t10:00
+# FILENAME: STREAM benchmark
+
+cd ${SLURM_SUBMIT_DIR:-.}
+./stream > stream_tmp.txt
+echo | grep -A3 "Copy: " stream_tmp.txt | awk '{print $2}' | rev | cut -c 6- | rev

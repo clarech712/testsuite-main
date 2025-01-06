@@ -1,0 +1,8 @@
+#
+# Test to compute FFT of a sin wave
+#
+if [ "$CC" == "" ]; then
+	CC="aocc"
+fi
+
+$CC -o ffttest -lfftw3 fftw3-test.c

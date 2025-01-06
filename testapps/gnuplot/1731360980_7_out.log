@@ -1,0 +1,10 @@
+
+********************
+Version: 5.2.8
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gnuplot' with SLURM options '--constraint=rhel7'.
+Started job 9058232 on Submitted batch job 9058232.
+Waiting for job to complete..done.
+PASS gnuplot - p1cmp029 
+Cleaning up working directory.done.

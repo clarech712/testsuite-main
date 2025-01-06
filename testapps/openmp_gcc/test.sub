@@ -1,0 +1,7 @@
+#SBATCH -N1 -n2 -t5
+#
+# Test OpenMP
+#
+export OMP_NUM_THREADS=2
+cd ${SLURM_SUBMIT_DIR:-.}
+./hello

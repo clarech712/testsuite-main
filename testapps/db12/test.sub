@@ -1,0 +1,5 @@
+#SBATCH -N1 -t15 --exclusive
+cd ${SLURM_SUBMIT_DIR:-.}
+proc=`cat /proc/cpuinfo | grep ^processor | wc -l`
+./DIRACbenchmark.py ${proc}
+

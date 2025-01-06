@@ -1,0 +1,17 @@
+<net version="1.0">
+    <location netOffset="0,0" convBoundary="0.00,0.00,2000.00,2000.00" origBoundary="0.00,0.00,2000.00,2000.00" projParameter="!"/>
+    <edge id="edge0" from="node0" to="node1" numLanes="1" speed="13.89">
+        <lane id="edge0_0" index="0" speed="13.89" length="500.00" shape="0.00,0.00 500.00,0.00"/>
+    </edge>
+    <edge id="edge1" from="node1" to="node2" numLanes="1" speed="13.89">
+        <lane id="edge1_0" index="0" speed="13.89" length="500.00" shape="500.00,0.00 1000.00,0.00"/>
+    </edge>
+    <edge id="edge2" from="node2" to="node3" numLanes="1" speed="13.89">
+        <lane id="edge2_0" index="0" speed="13.89" length="500.00" shape="1000.00,0.00 1500.00,0.00"/>
+    </edge>
+    <junction id="node0" type="priority" x="0.00" y="0.00"/>
+    <junction id="node1" type="priority" x="500.00" y="0.00"/>
+    <junction id="node2" type="priority" x="1000.00" y="0.00"/>
+    <junction id="node3" type="priority" x="1500.00" y="0.00"/>
+</net>
+

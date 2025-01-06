@@ -1,0 +1,7 @@
+#!/bin/bash
+#SBATCH -N1
+#SBATCH -t1:00
+# Test the GCC compiler functionality
+cd ${SLURM_SUBMIT_DIR:-.}
+gcc -o hello hello.c
+./hello

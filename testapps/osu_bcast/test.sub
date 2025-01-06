@@ -1,0 +1,23 @@
+#SBATCH	-N8 --ntasks-per-node=128 -t10 --exclusive
+#
+# Test OSU benchmark bcast
+#
+
+cd ${SLURM_SUBMIT_DIR:-.}
+if [ -n "$SLURM_JOB_ID" ]; then
+   srun hostname | sort -u
+else
+   hostname
+fi
+
+# Assemble and pretty-print compiler+mpi combination
+# E.g.  "# ------ gcc + mvapich2 ------"
+tc="$TESTPILOT_COMPILER + $TESTPILOT_MPI"
+wfull=30                                           # Line-up with OSU header
+wleft=$(( (wfull - 2 - 1 - ${#tc} - 1) / 2 ))      # width of left '---'
+wrght=$((  wfull - 2 - 1 - wleft - ${#tc} - 1 ))   # width of right '---'
+left=$(printf -- "-%.0s" $(seq 1 $wleft))
+rght=$(printf -- "-%.0s" $(seq 1 $wrght))
+echo "# $left $tc $rght"
+
+mpiexec ./osu_bcast -m 524288

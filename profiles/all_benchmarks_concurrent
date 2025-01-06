@@ -1,0 +1,15 @@
+#
+# All available benchmarks in concurrent mode
+# (not sure how useful/accurate, but why not? At least it's faster)
+#
+C db12 4 5
+C iozone 4 5
+C osu_allreduce 4 5
+C osu_alltoall 4 5
+C osu_bcast 4 5
+C osu_bibw 4 5
+C osu_bw 4 5
+C osu_latency 4 5
+C osu_scatter 4 5
+C R_25 4 5
+C stream 4 5

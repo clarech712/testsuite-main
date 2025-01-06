@@ -1,0 +1,10 @@
+
+********************
+Version: 4.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'jags' with SLURM options '--constraint=rhel8'.
+Started job 10325280 on Submitted batch job 10325280.
+Waiting for job to complete..done.
+PASS jags - d1cmp040 
+Cleaning up working directory.done.

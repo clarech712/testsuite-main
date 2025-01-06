@@ -1,0 +1,80 @@
+
+********************
+Version: 13
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel8'.
+Started job 9095379 on Submitted batch job 9095379.
+Waiting for job to complete..done.
+FAIL stata - d1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ stata-mp: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 15
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel8'.
+Started job 9095389 on Submitted batch job 9095389.
+Waiting for job to complete..done.
+FAIL stata - d1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ stata-mp: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 16
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel8'.
+Started job 9095398 on Submitted batch job 9095398.
+Waiting for job to complete..done.
+FAIL stata - d1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ stata-mp: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 17
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel8'.
+Started job 9095403 on Submitted batch job 9095403.
+Waiting for job to complete..done.
+FAIL stata - d1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ stata-mp: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 18
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel8'.
+Started job 9095407 on Submitted batch job 9095407.
+Waiting for job to complete..done.
+FAIL stata - d1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ stata-mp: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory
+- 
+Cleaning up working directory.done.

@@ -1,0 +1,6 @@
+#begin_module_parse#
+TESTPILOT_PYTHON='bowtie2'
+#end_module_parse#
+
+module purge 2>/dev/null
+module load ${TESTPILOT_PYTHON} > /dev/null 2>&1

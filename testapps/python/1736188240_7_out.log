@@ -1,0 +1,90 @@
+
+********************
+Version: 2.7.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750309 on Submitted batch job 10750309.
+Waiting for job to complete.........done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.7.6
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750361 on Submitted batch job 10750361.
+Waiting for job to complete...done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 3.6.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750372 on Submitted batch job 10750372.
+Waiting for job to complete.........done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.6.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750392 on Submitted batch job 10750392.
+Waiting for job to complete..done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.7.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750393 on Submitted batch job 10750393.
+Waiting for job to complete..done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 3.5.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750394 on Submitted batch job 10750394.
+Waiting for job to complete..done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 3.8.8
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750395 on Submitted batch job 10750395.
+Waiting for job to complete..done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 3.10.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750397 on Submitted batch job 10750397.
+Waiting for job to complete..done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 1.83
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10750398 on Submitted batch job 10750398.
+Waiting for job to complete..done.
+PASS python - p1cmp028 
+Cleaning up working directory.done.

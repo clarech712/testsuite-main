@@ -1,0 +1,20 @@
+
+********************
+Version: 0.7.9a
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bwa' with SLURM options '--constraint=rhel7'.
+Started job 9110954 on Submitted batch job 9110954.
+Waiting for job to complete...done.
+PASS bwa - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 0.7.17
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bwa' with SLURM options '--constraint=rhel7'.
+Started job 9110956 on Submitted batch job 9110956.
+Waiting for job to complete..done.
+PASS bwa - p1cmp028 
+Cleaning up working directory.done.

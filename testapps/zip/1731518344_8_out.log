@@ -1,0 +1,10 @@
+
+********************
+Version: 3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'zip' with SLURM options '--constraint=rhel8'.
+Started job 9190681 on Submitted batch job 9190681.
+Waiting for job to complete..done.
+PASS zip - d1cmp017 
+Cleaning up working directory.done.

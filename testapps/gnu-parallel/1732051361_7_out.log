@@ -1,0 +1,10 @@
+
+********************
+Version: 20150122
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gnu-parallel' with SLURM options '--constraint=rhel7'.
+Started job 9480696 on Submitted batch job 9480696.
+Waiting for job to complete......done.
+PASS gnu-parallel - p1cmp028 
+Cleaning up working directory.done.

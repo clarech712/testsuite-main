@@ -1,0 +1,23 @@
+#
+# Parallel Library Tests
+#
+# MPI tests
+#
+C openmpi_gcc 8 10
+C openmpi_intel 8 10
+C impi 8 10
+C oneapi_mpi 8 10
+C mvapich2_gcc 8 10
+C mvapich2_intel 8 10
+#
+# OpenMP tests
+#
+C openmp_gcc 9 10
+C opemmp_intel 9 10
+C opemmp_oneapi 9 10
+#
+# Tests of some parallel applications worthy of inclusion
+# We might consider expanding these tests into swarms of "per compiler per MPI"
+# (instead using just a single default combination).
+#
+C parallel_netcdf 9 10

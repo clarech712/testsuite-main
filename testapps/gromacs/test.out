@@ -1,0 +1,6 @@
+mpirun: ${*}
+GMX: ${*}
+Using ${*} MPI processes
+Using ${*} OpenMP thread${*} per MPI process
+${*} (ns/day) ${*}
+Performance:${*}

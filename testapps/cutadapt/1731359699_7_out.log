@@ -1,0 +1,20 @@
+
+********************
+Version: 3.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cutadapt' with SLURM options '--constraint=rhel7'.
+Started job 9057509 on Submitted batch job 9057509.
+Waiting for job to complete..done.
+PASS cutadapt - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 3.7
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cutadapt' with SLURM options '--constraint=rhel7'.
+Started job 9057510 on Submitted batch job 9057510.
+Waiting for job to complete..done.
+PASS cutadapt - p1cmp028 
+Cleaning up working directory.done.

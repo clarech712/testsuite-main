@@ -1,0 +1,6 @@
+#begin_module_parse#
+TESTPILOT_TEXLIVE='texlive'
+#end_module_parse#
+
+module purge 2>/dev/null
+module load ${TESTPILOT_TEXLIVE} > /dev/null 2>&1

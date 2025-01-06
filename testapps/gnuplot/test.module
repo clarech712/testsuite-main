@@ -1,0 +1,6 @@
+#begin_module_parse#
+TESTPILOT_GNUPLOT='gnuplot'
+#end_module_parse#
+
+module purge 2>/dev/null
+module load ${TESTPILOT_GNUPLOT} > /dev/null 2>&1

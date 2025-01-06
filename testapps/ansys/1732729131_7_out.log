@@ -1,0 +1,110 @@
+
+********************
+Version: test-debug-192
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964118 on Submitted batch job 9964118.
+Waiting for job to complete...done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 14.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964126 on Submitted batch job 9964126.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 15
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964128 on Submitted batch job 9964128.
+Waiting for job to complete...done.
+PASS ansys - p1cmp043 
+Cleaning up working directory.done.
+
+********************
+Version: 16.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964135 on Submitted batch job 9964135.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 17.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964140 on Submitted batch job 9964140.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 18.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964144 on Submitted batch job 9964144.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 19.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964147 on Submitted batch job 9964147.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 19.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964155 on Submitted batch job 9964155.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 21.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964158 on Submitted batch job 9964158.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 22.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964167 on Submitted batch job 9964167.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 23.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ansys' with SLURM options '--constraint=rhel7'.
+Started job 9964172 on Submitted batch job 9964172.
+Waiting for job to complete..done.
+PASS ansys - p1cmp028 
+Cleaning up working directory.done.

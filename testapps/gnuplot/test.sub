@@ -1,0 +1,16 @@
+#SBATCH -N1 -t5
+#
+# Test Gnuplot - PNG
+#
+cd ${SLURM_SUBMIT_DIR:-}
+
+OUTPUT="output.png"
+if [[ -e "$OUTPUT" ]]; then
+	/bin/rm "$OUTPUT"
+fi
+
+unset DISPLAY
+gnuplot -c gnuplot-sin_png.plt
+
+# Validate by making sure we've got correct file type
+/usr/bin/file "$OUTPUT"

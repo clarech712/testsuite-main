@@ -1,0 +1,520 @@
+
+********************
+Version: 1.6.3-gnu
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326137 on Submitted batch job 10326137.
+Waiting for job to complete......done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:266559] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266559] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266559] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266559] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:266559] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 1.10.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326138 on Submitted batch job 10326138.
+Waiting for job to complete....done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:266665] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266665] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266665] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266665] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:266665] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 4.0.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326233 on Submitted batch job 10326233.
+Waiting for job to complete.....done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:266873] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266873] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266873] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266873] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:266873] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 1.8.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326389 on Submitted batch job 10326389.
+Waiting for job to complete.....done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:266977] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266977] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266977] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:266977] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:266977] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 1.10.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326391 on Submitted batch job 10326391.
+Waiting for job to complete....done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:267080] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267080] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267080] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267080] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:267080] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 1.8.6
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326396 on Submitted batch job 10326396.
+Waiting for job to complete....done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:267181] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267181] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267181] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267181] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:267181] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 2.1.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326399 on Submitted batch job 10326399.
+Waiting for job to complete....done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:267283] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267283] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267283] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267283] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:267283] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 3.1.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326400 on Submitted batch job 10326400.
+Waiting for job to complete.....done.
+FAIL openmpi - p1cmp[043-044] 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,18 @@
++ --------------------------------------------------------------------------
++ WARNING: No preset parameters were found for the device that Open MPI
++ detected:
++ 
++   Local host:            p1cmp043
++   Device name:           mlx5_0
++   Device vendor ID:      0x02c9
++   Device vendor part ID: 4119
++ 
++ Default device parameters will be used, which may result in lower
++ performance.  You can edit any of the files specified by the
++ btl_openib_device_param_files MCA parameter to set values for your
++ device.
++ 
++ NOTE: You can turn off this warning by setting the MCA parameter
++       btl_openib_warn_no_device_params_found to 0.
++ --------------------------------------------------------------------------
++ Hello world from processor p1cmp043.pax.tufts.edu, rank 0 out of 1 processors
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,5 @@
++ [p1cmp043.pax.tufts.edu:267392] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_ess_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267392] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_db_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267392] mca: base: component_find: unable to open /opt/shared/openmpi/1.8.2/lib/openmpi/mca_grpcomm_pmi: libslurm.so.27: cannot open shared object file: No such file or directory (ignored)
++ [p1cmp043.pax.tufts.edu:267392] 1 more process has sent help message help-mpi-btl-openib.txt / no device params found
++ [p1cmp043.pax.tufts.edu:267392] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+- 
+- 
+- 
+- 
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 4.0.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'openmpi' with SLURM options '--constraint=rhel7'.
+Started job 10326403 on Submitted batch job 10326403.
+Waiting for job to complete...Cleaning up working directory.done.

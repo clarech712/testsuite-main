@@ -1,0 +1,811 @@
+#!/bin/bash
+#
+# testapps
+# Submit a defined regression/acceptance type
+# test through SLURM and verify the results.
+
+# Define what hosts you're not allowed to run this on and kick them.
+#
+
+# Define where tests live and what the test file is called.
+#
+# TESTROOT="/cluster/home/kchura01/testsuite-main/testapps"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+HOME_LOCAL="$(realpath "$SCRIPT_DIR/../..")"
+TESTROOT="$(realpath "$SCRIPT_DIR/../testapps")"
+TESTROOT_PERSONAL=".testapps"
+ALLTESTDIRS="${TESTROOT}/* ${HOME_LOCAL}/${TESTROOT_PERSONAL}/*"
+SUBMISSION_FILE="test.sub"
+STDOUT_FILE="test.out"
+STDERR_FILE="test.err"
+PRESUBMIT_FILE="test.pre"
+RANGE_FILE="test.range"
+MODULE_FILE="test.module"
+VERIFY_OUT="verify.out"
+TEST_PREFIX="testpilot-"
+TORQUE_BIN="/usr/bin/"
+VERIFY_OUTPUT="verify_output"
+
+# Set the polling sleeps and timeouts.
+#
+SLEEP_OUTPUT=4
+SLEEP_QSTAT=20
+COMPLETE_TIMEOUT=120
+
+# Display usage information
+#
+function usage {
+	echo "Usage:  testapp [options] [tests ...] [-o qsub_options ...]" 1>&2
+	echo "" 1>&2
+	echo "Options:" 1>&2
+	echo "  -l             list available tests" 1>&2
+	echo "  -ll <test_name>                  " 1>&2
+	echo "                 list module variables for test_name" 1>&2
+	echo "  -v             verbose output (default)" 1>&2
+	echo "  -q             quiet (no verbose output)" 1>&2
+	echo "  -r             run tests on random, specifically-named nodes" 1>&2
+	echo "  -k             keep raw output directories" 1>&2
+	echo "  -t <path>      use path for temporary output directories" 1>&2
+	echo "" 1>&2
+	echo "  -o             any additional SLURM sbatch options" 1>&2
+	echo "                 (if present, must appear at the end of the command)" 1>&2
+	echo "" 1>&2
+	echo "  -p 	       Use personal test definitions " 1>&2 
+	echo "		       Personal tests are defined in ~/.testapps " 1>&2
+	echo "" 1>&2
+	echo "  --submit       dispatch asynchronous job" 1>&2
+	echo "                 (prints <test_name> <job_id> <test_id>)" 1>&2
+	echo "  --validate <test_name> <job_id> <test_id>" 1>&2
+	echo "                 validate completed asynchronous job" 1>&2
+	echo "  --status [ <test_name> | <job_id> ]              " 1>&2
+	echo "                 you can leave out one or both of the options" 1>&2
+	echo "                 check the status of a recently ran job" 1>&2
+	echo "" 1>&2
+	echo "  Suggested usage:  testapp <testname>" 1>&2
+	echo "" 1>&2
+}
+
+function dequeue_job {
+	# Check if the parameter is valid and then delete the job with that ID
+	#
+	if [ `echo "${1}" | grep "[1-9][0-9]*" | wc -l` -eq 1 ]; then
+		${TORQUE_BIN}scancel "${1}"
+	fi
+}
+
+function cleanup_directory {
+	if [ ${KEEPFILES} -eq 0 -a -d "${TMP}" ]; then
+		# Attempting this may get hung up on NFS issues, so dance around them.
+		#
+		rm -rf "${TMP}" 2> /dev/null
+		if [ ${VERBOSE} -eq 1 ]; then
+			echo -n "Cleaning up working directory."
+		fi
+		NFSLOCKS=(${TMP}/.nfs*)
+		while [ ${#NFSLOCKS[@]} -ne 1 -o -e ${NFSLOCKS[0]} ]; do
+			if [ ${VERBOSE} -eq 1 ]; then
+				echo -n "."
+			fi
+			sleep 2
+			NFSLOCKS=(${TMP}/.nfs*)
+		done
+		if [ ${VERBOSE} -eq 1 ]; then
+			echo "done."
+		fi
+		rm -rf "${TMP}"
+	fi
+}
+
+# Display usage help output if requested.
+#
+if [ "x${1}" == "x" -o "x${1}" == "x-h" -o "x${1}" == "x--help" ]; then
+	usage
+	exit 2
+fi
+
+# Parse arguments for a couple of options.
+#
+VERBOSE=1
+KEEPFILES=0
+RANDOMNODES=0
+SUBMIT=0
+VALIDATE=0
+TESTS=""
+SLURMOPTS=0
+LIST=0
+LONGLIST=0
+testappsQUEUE_AVAIL=0
+STATUS=0
+PERSONAL=0
+
+# By default, run tests from the user's scratch directory.
+# If scratch is unavailable run from user's home directory.
+#
+TMPROOT="/cluster/tufts/rt/shared/$USER"
+if [ ! -d "${TMPROOT}" ]; then
+	echo "CLUSTER_SCRATCH is not available, running tests from ${HOME_LOCAL} directory"
+	TMPROOT="${HOME_LOCAL}"
+fi
+
+while [ ${SLURMOPTS} -eq 0 ]; do
+
+	# (-o) All arguments that follow (if any) are intended for SLURM.
+	#
+	if [ "x${1}" == "x-o" -o "x${1}" == "x" ]; then
+		SLURMOPTS=1
+
+	# (-r) Select random, specific nodes for the test(s).
+	#
+	elif [ "x${1}" == "x-r" ]; then
+		RANDOMNODES=1
+
+	# (-v) Be more verbose about what is happening.
+	#
+	elif [ "x${1}" == "x-v" ]; then
+		VERBOSE=1
+
+	# (-q) Be more quiet about what is happening.
+	#
+	elif [ "x${1}" == "x-q" ]; then
+		VERBOSE=0
+
+	# (-k) Keep output directories.
+	#
+	elif [ "x${1}" == "x-k" ]; then
+		KEEPFILES=1
+
+	# (-t path) Use path for temporary output directories.
+	#
+	elif [ "x${1}" == "x-t" ]; then
+		TMPROOT="${2}"
+		shift
+
+	# (--submit) Submit a job for testing
+	#
+	elif [ "x${1}" == "x--submit" ]; then
+		SUBMIT=1
+
+	# (-l) List available tests
+	#
+	elif [ "x${1}" == "x-l" ]; then
+		LIST=1
+
+	# (-ll) List given tests with module variables
+	#
+	elif [ "x${1}" == "x-ll" ]; then
+		LONGLIST=1
+		shift
+		LISTOPT=$*
+
+	# (--validate) Validate the results of a given job
+	#
+	elif [ "x${1}" == "x--validate" ]; then
+		VALIDATE=1
+		shift
+		break
+
+	# (--status) Check the status of all, one or a group of jobs
+	#
+	elif [ "x${1}" == "x--status" ]; then
+		STATUS=1
+		shift
+		TEST_SEARCH=$*
+
+	# (-p) Use personal test definitions
+	#
+	elif [ "x${1}" == "x-p" ]; then
+		PERSONAL=1
+
+	# Anything else must be the name of a test to run.
+	#
+	else
+		TESTS="${TESTS} ${1}"
+		JOBNAME="${TEST_PREFIX}${TEST}"
+		
+	fi
+	shift
+done
+
+# List option must be used on its own
+#
+if [ \( ${LIST} -eq 1 -o ${LONGLIST} -eq 1 \) -a \( ${VALIDATE} -eq 1 -o ${SUBMIT} -eq 1 -o ${RANDOMNODES} -eq 1 \) ]; then
+	usage
+	exit 12
+fi
+
+if [ ${VERBOSE} -eq 1 ]; then
+	echo ""
+fi
+
+# Set up trap handler to cleanup the temp directory and remove the job from the queue
+#
+trap 'if [ ${VALIDATE} -ne 1 -a ${SUBMIT} -ne 1 ]; then dequeue_job "${JOBID}"; cleanup_directory; fi; trap 2; kill -2 $$' 2 15
+
+# Verify the testing root directory exists.
+#
+if [ ! -d "${TESTROOT}" ]; then
+	echo "testapp:  Error!  Job testing directory '${TESTROOT}' could not be found." 1>&2
+	exit 13
+fi
+
+# Verify the temporary output directory exists.
+# Except we don't care about temp dir when doing a listing
+#
+if [ ${LIST} -ne 1 -a ${LONGLIST} -ne 1 ]; then
+	if [ "x${TMPROOT}" == "x" -o ! -d "${TMPROOT}" ]; then
+		echo "testapp:  Error!  Temporary output directory '${TMPROOT}' could not be found." 1>&2
+		exit 14
+	fi
+fi
+
+# Get the first test to run.
+TESTS="`echo ${TESTS} | sed 's/^ //'`"
+TEST="`echo ${TESTS} | cut -d ' ' -f 1`"
+JOBNAME="${TEST_PREFIX}${TEST}"
+
+# Define where tests will actually be staged and run from.
+#
+HOSTNAME=`hostname | sed 's/\..*$//'`
+TMP="${TMPROOT}/testapps_${TEST}_${HOSTNAME}_$$"
+
+# Check if the testapps queue exists and is accessable for the current user
+#
+if [ `${TORQUE_BIN}sacctmgr show account | grep "testapps" | wc -l` -eq 1 ]; then
+	testappsQUEUE_AVAIL=1
+fi
+
+# List the tests available on the system, including private user tests in $HOME/.testapps
+#
+if [ ${LIST} -eq 1 ]; then
+	{
+	for TEST in ${ALLTESTDIRS}; do
+		# Ensure that all test files (except .pre) are present
+		#
+		if [ -d "${TEST}" -a -e "${TEST}/${SUBMISSION_FILE}" -a -e "${TEST}/${STDOUT_FILE}" -a -e "${TEST}/${STDERR_FILE}" ]; then
+			echo `basename ${TEST}`
+		fi
+	done
+	} | sort -u # We need this so overridden tests aren't printed twice
+	exit 0
+fi
+
+if [ ${LONGLIST} -eq 1 ]; then
+	if [ "x${LISTOPT}" == "x" ]; then
+		usage
+		exit 12
+	fi	
+	for i in ${LISTOPT}; do
+		echo "Module variable for test ${i} are:"
+		cat ${TESTROOT}/${i}/${MODULE_FILE} | grep "TESTPILOT_".*"="
+	done
+	exit 0
+fi
+
+if [ ${VALIDATE} -eq 1 ]; then
+	# Check for correct syntax
+	if [ "x${3}" == "x" ]; then
+		usage
+		exit 2
+	fi
+	TESTS="${1}"
+	TESTS="`echo ${TESTS} | sed 's/^ //'`"
+	TEST="`echo ${TESTS} | cut -d ' ' -f 1`"
+
+	STDERR="${TEST_PREFIX}${TEST}.e"${2}
+	STDOUT="${TEST_PREFIX}${TEST}.o"${2}
+	TMP="${TMPROOT}/testapps_${TEST}_${HOSTNAME}_${3}"
+	cd "${TMP}" 2>/dev/null
+
+	# Make sure everything is accessible
+	if [ $? -ne 0 ]; then
+		echo $0: Unable to access ${TMP}
+		exit 1
+	elif [ ! -f ${TMP}/${STDERR} ]; then
+		echo $0: Unable to access ${TMP}/${STDERR}
+		exit 1
+	elif [ ! -f ${TMP}/${STDOUT} ]; then
+		echo $0: Unable to access ${TMP}/${STDOUT}
+		exit 1
+	fi
+fi
+
+if [ ${STATUS} -eq 1 ]; then
+	# First we search for all jobs with testpilot- in the name.
+	# If this returns nothing let the user know and exit
+	#
+	JOB_NAMES=$(${TORQUE_BIN}scontrol show job | grep "/${TEST_PREFIX}")
+	if [ -z "${JOB_NAMES}" ]; then
+		echo "There are no instances of testapps currently running"
+		exit 0
+	fi
+	# Then we make sure they are indeed testapps jobs
+	#
+	TEST_NAMES=$({
+	for TEST in ${ALLTESTDIRS}; do
+		# Ensure that all test files (except .pre) are present
+		#
+		if [ -d "${TEST}" -a -e "${TEST}/${SUBMISSION_FILE}" -a -e "${TEST}/${STDOUT_FILE}" -a -e "${TEST}/${STDERR_FILE}" ]; then
+			echo `basename ${TEST}`
+		fi
+	done
+	} | sort -u)
+	JOB_IDs=$(for TEST in ${TEST_NAMES}; do
+			echo "${JOB_NAMES}" | grep "${TEST_PREFIX}${TEST}.o" | awk -F '\\.o' '{print $2}'
+		done)
+	n=0
+	# After we have a list of job IDs we use qstat -a for cleaner output
+	#
+	OUR_JOBS=$(for ID in ${JOB_IDs}; do
+			if [[ n -eq 0 ]]; then
+				${TORQUE_BIN}sinfo ${ID}
+				n=1
+			else
+				${TORQUE_BIN}sinfo ${ID} | grep "${ID}"
+			fi
+		done)
+	if [ -z "${TEST_SEARCH}" ]; then
+		echo "${OUR_JOBS}"
+	else
+	# If user specified job IDs or specific tests only output those indicated
+	#
+	for TEST in ${TEST_SEARCH}; do
+		echo "${OUR_JOBS}" | grep "${TEST_SEARCH}" > /dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			echo "There are no instances of ${TEST} currently running"
+			exit 0
+		fi
+		echo -n "${OUR_JOBS}" | head -5
+		echo "${OUR_JOBS}" | grep "${TEST}"
+	done
+	fi
+	exit 0
+fi
+
+# If the first test is not the only test, call myself for each in turn.
+if [ "x${TEST}" != "x${TESTS}" ]; then
+	VERBOSEOPT=""
+	RANDOMOPT=""
+	SUBMITOPT=""
+	VALIDATEOPT=""
+	SLURMOPT=""
+	EXIT=0
+
+	if [ ${VERBOSE} -eq 1 ]; then
+		VERBOSEOPT="-v "
+	fi
+	if [ ${RANDOMNODES} -eq 1 ]; then
+		RANDOMOPT="-r "
+	fi
+	if [ ${SUBMIT} -eq 1 ]; then
+		SUBMITOPT="--submit "
+	fi
+	if [ ${VALIDATE} -eq 1 ]; then
+		VALIDATEOPT="--validate "
+	fi
+	if [ "x${*}" != "x" ]; then
+		SLURMOPT="-o "
+	fi
+
+	for TEST in ${TESTS}; do
+		${0} ${VERBOSEOPT}${RANDOMOPT}${VALIDATEOPT}"${TEST}" ${SLURMOPT}${*}
+		if [ $? -gt ${EXIT} ]; then
+			EXIT=$?
+		fi
+	done
+	exit ${EXIT}
+fi
+
+# Verify the specific requested test exists.
+#
+TESTPERSONAL=""
+if [ -d "${HOME_LOCAL}/${TESTROOT_PERSONAL}/${TEST}" ] && [ ${PERSONAL} -eq 1 ]; then
+	if [ ${VERBOSE} -eq 1 ]; then
+		echo "Using personal test definition for '${TEST}' from '~/${TESTROOT_PERSONAL}/'."
+	fi
+	TESTPERSONAL="~/${TESTROOT_PERSONAL}/"
+	TESTROOT="${HOME_LOCAL}/${TESTROOT_PERSONAL}"
+fi
+if [ ! -d "${TESTROOT}/${TEST}" ]; then
+	echo "testapp:  Error!  Job test '${TEST}' is undefined in '${TESTROOT}/'." 1>&2
+	exit 5
+fi
+if [ ! -e "${TESTROOT}/${TEST}/${SUBMISSION_FILE}" ]; then
+	echo "testapp:  Error!  Job test '${TEST}' has no '${SUBMISSION_FILE}' in '${TESTROOT}/${TEST}/'." 1>&2
+	exit 6
+fi
+if [ ! -e "${TESTROOT}/${TEST}/${STDOUT_FILE}" ]; then
+	exit 7
+fi
+if [ ! -e "${TESTROOT}/${TEST}/${STDERR_FILE}" ]; then
+	echo "testapp:  Error!  Job test '${TEST}' has no '${STDERR_FILE}' in '${TESTROOT}/${TEST}/'." 1>&2
+	exit 8
+fi
+
+# If in validate mode skip down to the validation section
+#
+if [ ${VALIDATE} -eq 0 ]; then
+
+	# Any remaining arguments ("-o") are passed on to qsub.
+	#
+	OPTS="${*}"
+
+	# Standardize the form of any SLURM node options and strip off
+	# and "+N" for SLURM to choose more nodes as it seems fit.  The
+	# specific tests will add this number as needed.
+	#
+	OPTS=`echo "${OPTS}" | sed -r 's/node=/nodes=/;s/-lnodes=/-l nodes=/;s/nodes=([^ ]*)\+[0-9]*/nodes=\1/'`
+
+	# Copy the test to a unique, temporary, working directory.
+	#
+	umask 077
+	cp -rH "${TESTROOT}/${TEST}" "${TMP}"
+	chmod -R 700 "${TMP}"
+	cd "${TMP}"
+
+	# Strip out TTY complaints from any expected output.
+	#
+	grep -v '^Warning: no access to tty (Bad file descriptor).$' "${STDOUT_FILE}" \
+		| grep -v '^Thus no job control in this shell.$' \
+		> "${STDOUT_FILE}.stripped"
+	cp -f "${STDOUT_FILE}.stripped" "${STDOUT_FILE}"
+
+	# Create an empty file to source module variables from 
+	#
+	if [[ `grep "#SBATCH -S " ${SUBMISSION_FILE}` = "#SBATCH -S /bin/tcsh" ]]; then
+		tcsh_FLAG=1
+	fi
+	if [[ tcsh_FLAG -eq 1 ]];then
+		MODULE_FILE_SOURCE="test_source_module.tcsh"
+	else
+		MODULE_FILE_SOURCE="test_source.module"
+	fi
+	echo "" > ${MODULE_FILE_SOURCE}
+
+	# If user has defined module variables then insert them into
+	# MODULE_FILE_SOURCE with a module load command
+	# or else load defaults 
+	#
+	if [ -f ${MODULE_FILE} ]; then
+		while read -r line || [[ -n "${line}" ]]; do
+			if [[ "${line}" = '#begin_module_parse#' ]]; then
+				PARSE_MODULE_VAR=1
+				echo "${line}" >> ${MODULE_FILE_SOURCE}
+				continue
+			elif [[ "${line}" = '#end_module_parse#' ]]; then
+				PARSE_MODULE_VAR=0
+			fi
+			if [[ ${PARSE_MODULE_VAR} -eq 1 ]]; then
+				MOD_VAR_test=`echo "${line}" | cut -f1 -d"="`
+				if [ -z ${!MOD_VAR_test} ]; then
+					if [[ tcsh_FLAG -eq 0 ]]; then
+						echo "${line}" >> ${MODULE_FILE_SOURCE}
+					else
+						echo "set ${line}" >> ${MODULE_FILE_SOURCE}
+					fi
+				else
+					if [[ tcsh_FLAG -eq 0 ]]; then
+						echo "${MOD_VAR_test}='${!MOD_VAR_test}'" >> ${MODULE_FILE_SOURCE}
+					else
+						echo "set ${MOD_VAR_test}='${!MOD_VAR_test}'" >> ${MODULE_FILE_SOURCE}
+					fi
+				fi
+			else
+				echo "${line}" >> ${MODULE_FILE_SOURCE}
+			fi
+		done < ${MODULE_FILE} 2>/dev/null
+	fi
+	# Insert a command into the test submission to capture the hosts allocated.
+	# Note that this MUST come AFTER any initial comments, including SLURM directives.
+	#
+	SUBMISSION_FILE_HOST="test_host.sub"
+	COMMENTLINES=`cut -c 1 "${SUBMISSION_FILE}" | uniq -c | head -1 | grep '#$' | sed 's/^ *//g;s/ .*$//'`
+	echo "#!/bin/bash" > "${SUBMISSION_FILE_HOST}" #SLURM needs to see this at the begining of a batch script file
+	echo "#SBATCH -o ${JOBNAME}.o%j" >> "${SUBMISSION_FILE_HOST}"
+	echo "#SBATCH -e ${JOBNAME}.e%j" >> "${SUBMISSION_FILE_HOST}"
+	if [ "x${COMMENTLINES}" == "x" ]; then
+		COMMENTLINES=0
+	fi
+	head -${COMMENTLINES} "${SUBMISSION_FILE}" >> "${SUBMISSION_FILE_HOST}"
+	echo "echo \$SLURM_JOB_NODELIST | tr '\n' ' '; echo \"\"" >> "${SUBMISSION_FILE_HOST}"
+	echo "module purge 2>/dev/null" >> ${SUBMISSION_FILE_HOST}
+	if [[ -e "${TMP}/${MODULE_FILE_SOURCE}" ]]; then
+		echo "source ${TMP}/${MODULE_FILE_SOURCE}" >> "${SUBMISSION_FILE_HOST}"
+	fi
+	echo "date +%s > ${TMP}/timestamp" >> "${SUBMISSION_FILE_HOST}"
+	COMMENTLINES=`expr ${COMMENTLINES} + 1`
+	tail -n +${COMMENTLINES} "${SUBMISSION_FILE}" >> "${SUBMISSION_FILE_HOST}"
+	echo "date +%s > ${TMP}/timestamp2" >> "${SUBMISSION_FILE_HOST}"
+
+	# If the specific nodes are specified with SLURM options, then any tests must
+	# be altered to accomodate this, as SLURMPro does not offer a compatible way of
+	# specifying both a number of nodes and a list of nodes.  Ugh.  Bad Altair.
+	#
+	MINUSL=0
+	SLURMNODECOUNT=0
+	SLURMNODECOUNT_ADD=0
+	SLURMNODES=""
+	for OPT in ${OPTS}; do
+		OPTNAME=`echo "${OPT}" | cut -d '=' -f 1`
+		if [ ${MINUSL} -eq 1 -a "x${OPTNAME}" == "xnodes" ]; then
+			SLURMNODELIST=`echo "${OPT}" | cut -d '=' -f 2`
+			SLURMNODES=`srun hostname`
+			SLURMNODECOUNT=`echo "${SLURMNODES}" | sed 's/[^ ]//g' | wc -c`
+		elif [ "x${OPT}" == "x-l" ]; then
+			MINUSL=1
+		else
+			MINUSL=0
+		fi
+	done
+	if [ ${SLURMNODECOUNT} -gt 0 -o ${RANDOMNODES} -eq 1 ]; then
+		REQUIREDNODES=`grep '^#SBATCH' "${SUBMISSION_FILE_HOST}" | grep -i -e 'select=' -e 'nodes=[0-9]' | cut -d '=' -f 2 | cut -d ':' -f 1`
+		NODEOPTIONS=`grep '^#SBATCH' "${SUBMISSION_FILE_HOST}" | grep -i -e 'nodes=[0-9]' | cut -s -d '=' -f 2- | cut -s -d ':' -f 2-`
+		NCPUS=`grep '^#SBATCH' "${SUBMISSION_FILE_HOST}" | grep -i -e 'select=[0-9]' | cut -s -d ':' -f 2- | grep 'ncpus' | cut -s -d '=' -f 2 | cut -d ':' -f 1`
+		if [ "x${REQUIREDNODES}" == "x" ]; then
+			REQUIREDNODES=1
+		fi
+		REMOVELINES=`grep -n '^#SBATCH' "${SUBMISSION_FILE_HOST}" | grep -i -e 'select=' -e 'nodes=[0-9]' -e 'place=' | cut -d ':' -f 1 | tr '\n' ' '`
+		if [ ${REQUIREDNODES} -lt ${SLURMNODECOUNT} -a ${RANDOMNODES} -ne 1 ]; then
+			if [ ${REQUIREDNODES} -eq 1 ]; then
+				REQUIREDNODES_TEXT="${REQUIREDNODES} node"
+			else
+				REQUIREDNODES_TEXT="${REQUIREDNODES} nodes"
+			fi
+			if [ ${SLURMNODECOUNT} -eq 1 ]; then
+				SLURMNODECOUNT_TEXT="${SLURMNODECOUNT} node"
+			else
+				SLURMNODECOUNT_TEXT="${SLURMNODECOUNT} nodes"
+			fi
+			echo "testapp:  Error!  Job test '${TEST}' only requires ${REQUIREDNODES_TEXT}, but ${SLURMNODECOUNT_TEXT} named." 1>&2
+			exit 4
+		elif [ ${REQUIREDNODES} -gt ${SLURMNODECOUNT} ]; then
+			SLURMNODECOUNT_ADD=`expr ${REQUIREDNODES} - ${SLURMNODECOUNT}`
+		fi
+		REMOVELINES_SED=`echo "${REMOVELINES}" | sed 's/ /d;/g'`
+		sed "${REMOVELINES_SED}" "${SUBMISSION_FILE_HOST}" > "${SUBMISSION_FILE_HOST}_noselect"
+		cp -f "${SUBMISSION_FILE_HOST}_noselect" "${SUBMISSION_FILE_HOST}"
+	fi
+
+	# If random nodes were requested, now choose those nodes.
+	#
+	if [ ${RANDOMNODES} -eq 1 ]; then
+		if [ ${SLURMNODECOUNT_ADD} -ne ${REQUIREDNODES} ]; then
+			SLURMNODELIST_ORIG=`echo "${OPTS}" | sed -r 's/^.*nodes=([^ ]*).*$/\1/'`
+			OPTS=`echo "${OPTS}" | sed -r 's/-l nodes=[^ ]*//;s/ $//'`
+		fi
+		SLURMNODECOUNT_UNIQUE=0
+		while [ ${SLURMNODECOUNT_UNIQUE} -ne ${REQUIREDNODES} ]; do
+			NUMNODES=`${TORQUE_BIN}sinfo | sed 's/^     state = //' | grep -e '^[a-z]' | sed 'N;s/\n/ /' | grep 'free' | cut -d ' ' -f 1 | wc -l`
+			NODELINES=""
+			NUMNODELINES=0
+			while [ ${NUMNODELINES} -lt ${SLURMNODECOUNT_ADD} ]; do
+				NODELINE=0
+				while [ ${NODELINE} -eq 0 ]; do
+					NODELINE=`expr \`od -vAn -N4 -tu4 < /dev/urandom\` % ${NUMNODES} + 1`
+					for PREVNODELINE in ${NODELINES}; do
+						if [ ${NODELINE} -eq ${PREVNODELINE} ]; then
+							NODELINE=0;
+						fi
+					done
+				done
+				NODELINES="${NODELINES} ${NODELINE}"
+				NUMNODELINES=`expr ${NUMNODELINES} + 1`
+			done
+			NODELINES_SED=`echo "${NODELINES}" | sed 's/^ //;s/ /p\;/g;s/$/p/'`
+			SLURMNODELIST_ADD=`${TORQUE_BIN}sinfo | sed 's/^     state = //' | grep -e '^[a-z]' | sed 'N;s/\n/ /' | grep 'free' | cut -d ' ' -f 1 | sed -n "${NODELINES_SED}" | tr '\n' '+' | sed 's/\+$//'`
+			if [ ${SLURMNODECOUNT_ADD} -eq ${REQUIREDNODES} ]; then
+				SLURMNODELIST="${SLURMNODELIST_ADD}"
+			else
+				SLURMNODELIST="${SLURMNODELIST_ORIG}+${SLURMNODELIST_ADD}"
+			fi
+			SLURMNODECOUNT_UNIQUE=`echo "${SLURMNODELIST}" | tr '+' '\n' | sort -u | wc -l`
+		done
+		if [ ${VERBOSE} -eq 1 ]; then
+			echo -n "${SLURMNODECOUNT_ADD} "
+			if [ ${SLURMNODECOUNT_ADD} -ne ${REQUIREDNODES} ]; then
+				echo -n "more "
+			fi
+			echo -n "free node"
+			if [ ${SLURMNODECOUNT_ADD} -gt 1 ]; then
+				echo -n "s"
+			fi
+			echo -n " chosen at random:  "
+			echo "${SLURMNODELIST_ADD}" | sed 's/\+/, /g;s/, $//'
+		fi
+		if [ "x${OPTS}" != "x" ]; then
+			OPTS="${OPTS} "
+		fi
+		OPTS="${OPTS}-l nodes=${SLURMNODELIST}"
+		if [ "x${NODEOPTIONS}" != "x" ]; then
+			OPTS="${OPTS}:${NODEOPTIONS}"
+		elif [ "x${NCPUS}" != "x" ]; then
+			OPTS="${OPTS}:ppn=${NCPUS}"
+		fi
+	fi
+
+	# If some nodes were named, but more nodes are still needed, alter the SLURM request.
+	#
+	if [ ${RANDOMNODES} -eq 0 -a "x${SLURMNODELIST}" != "x" -a ${SLURMNODECOUNT_ADD} -gt 0 ]; then
+		OPTS=`echo "${OPTS}" | sed -r "s/(nodes=[^ ]*)/\1\+${SLURMNODECOUNT_ADD}/"`
+	fi
+	# Check if a queue was specified, otherwise attempt to use testapps
+	#
+	if [ `echo "${OPTS}" | grep -E "[ \t]*-q [ \t]*[^ \t]+" | wc -l` -ne 1 -a ${testappsQUEUE_AVAIL} -eq 1 ]; then
+		OPTS="${OPTS} -A testapps"
+	fi
+	# If this job has pre-submission commands, process those first.
+	#
+	if [ -e "${PRESUBMIT_FILE}" ]; then
+		if [ ${VERBOSE} -eq 1 ]; then
+			echo "Executing pre-submission commands for job test '${TEST}'."
+		fi
+		if [[ -f "${TMP}/${MODULE_FILE_SOURCE}" ]]; then
+			let PRESUB_COMMENTS=`cut -c 1 ${PRESUBMIT_FILE} | uniq -c | grep '#$' | head -1 | awk '{print $1}'`+1
+			sed -i "${PRESUB_COMMENTS} i\source ${TMP}/${MODULE_FILE_SOURCE}" ${PRESUBMIT_FILE}
+		fi
+		/bin/sh -l "${PRESUBMIT_FILE}" > /dev/null 2> "${PRESUBMIT_FILE}.stderr"
+		if [ -s "${PRESUBMIT_FILE}.stderr" ]; then
+			echo "FAIL ${TESTPERSONAL}${TEST} ${HOSTNAME}"
+			if [ ${VERBOSE} -eq 1 ]; then
+				echo "============================= PRE-SUBMISSION ERROR ============================="
+				cat "${PRESUBMIT_FILE}.stderr"
+				echo "================================================================================"
+			fi
+			logger "testapps ${TEST} FAIL - PRESUB"
+			cleanup_directory
+			exit 9
+		else
+			rm -f "${PRESUBMIT_FILE}.stderr"
+		fi
+	fi
+
+	# Submit the job to SLURM.
+	#
+	if [ ${VERBOSE} -eq 1 ]; then
+		if [ "x${OPTS}" == "x" ]; then
+			echo "Starting job test '${TEST}' with no SLURM options."
+		else
+			echo "Starting job test '${TEST}' with SLURM options '${OPTS}'."
+		fi
+	fi
+
+	SUBMISSION=`${TORQUE_BIN}sbatch ${OPTS} -J "${JOBNAME}" "${SUBMISSION_FILE_HOST}" 2> "${SUBMISSION_FILE}.stderr"`
+	SERVER="`echo "${SUBMISSION}" | cut -d '.' -f 2 | sed 's/\-.*$//'`"
+	JOBID="`echo "${SUBMISSION}" | awk '{print $4}'`"
+	if [ "x${SERVER}" == "x" -o "x${JOBID}" == "x" ]; then
+		if [ "x${SERVER}" == "x" ]; then
+			SERVER=`hostname | sed 's/\-.*$//'`
+		fi
+		echo "FAIL ${TESTPERSONAL}${TEST} ${SERVER}"
+		if [ ${VERBOSE} -eq 1 ]; then
+			echo "testapps:  Error!  Job test could not be submitted to SLURM." 1>&2
+			if [ -s "${SUBMISSION_FILE}.stderr" ]; then
+				echo "=============================== SUBMISSION ERROR ==============================="
+				cat "${SUBMISSION_FILE}.stderr"
+				echo "================================================================================"
+			fi
+		fi
+		logger "testapps ${TEST} FAIL - SUBMISSION"
+		cleanup_directory
+		exit 10
+	fi
+	rm -f "${SUBMISSION_FILE}.stderr"
+	if [ ${VERBOSE} -eq 1 ]; then
+		echo "Started job ${JOBID} on ${SERVER}."
+	fi
+
+	STDOUT="${JOBNAME}.o${JOBID}"
+	STDERR="${JOBNAME}.e${JOBID}"
+	# If only submitting job, return job info and then exit
+	if [ ${SUBMIT} -eq 1 ]; then
+		echo "START ${TEST} ${JOBID} $$ ${TMP}";
+		exit 0
+	fi
+
+	# Wait for the job to complete.
+	#
+	if [ ${VERBOSE} -eq 1 ]; then
+		echo -n "Waiting for job to complete."
+	fi
+	POLL=1
+	JOBCOMPLETE=0
+	if [ "x${SLURMNODELIST}" == "x" ]; then
+		FORCEDRUN=1
+	else
+		FORCEDRUN=0
+	fi
+	POLL_QSTAT=`expr ${SLEEP_QSTAT} / ${SLEEP_OUTPUT}`
+	COMPLETE_POLL=`expr ${COMPLETE_TIMEOUT} / ${SLEEP_QSTAT}`
+	while [ `${TORQUE_BIN}squeue --job "${JOBID}" | wc -l` -eq 2 ]; do
+		if [ ${VERBOSE} -eq 1 ]; then
+			echo -n "."
+		fi
+		if [ ${POLL} -gt ${POLL_QSTAT} -o ${FORCEDRUN} -eq 0  -a ${POLL} -gt 1 ]; then
+			if [ `squeue -j "${JOBID}" 2> /dev/null | wc -l` -eq 1 ]; then
+				JOBCOMPLETE=`expr ${JOBCOMPLETE} + 1`
+				if [ ${JOBCOMPLETE} -gt ${COMPLETE_POLL} ]; then
+					if [ ${VERBOSE} -eq 1 ]; then
+						echo ""
+					fi
+					echo "FAIL ${TESTPERSONAL}${TEST} - ${SERVER}"
+					if [ ${VERBOSE} -eq 1 ]; then
+						echo "testpilot:  Error!  SLURM job ${JOBID} terminated without returning output." 1>&2
+					fi
+					logger "testapps ${TEST} FAIL - ${SERVER}"
+					cleanup_directory
+					exit 11
+				fi
+			elif [ ${FORCEDRUN} -eq 0 ]; then
+				${TORQUE_BIN}scontrol update JobId="${JOBID}" StartTime=now Priority=300 2> /dev/null
+				FORCEDRUN=1
+			else
+				JOBCOMPLETE=0
+			fi
+			POLL=1
+		fi
+		POLL=`expr ${POLL} + 1`
+		sleep ${SLEEP_OUTPUT}
+	done
+	sleep ${SLEEP_OUTPUT}
+	if [ ${VERBOSE} -eq 1 ]; then
+		echo "done."
+	fi
+fi
+
+# Strip out TTY complaints from any received output.
+#
+grep -v '^Warning: no access to tty (Bad file descriptor).$' "${STDOUT}" \
+	| grep -v '^Thus no job control in this shell.$' > "${STDOUT}.stripped"
+cp -f "${STDOUT}.stripped" "${STDOUT}"
+# Strip messages coming from MIC prologue which can make testapps sad.
+# We assume that the prologue messages occupy first N lines in ${STDOUT}
+#
+MIC_READY=`grep -n "^MIC is now ready." ${STDOUT} | cut -d\: -f1`
+if [ "x$MIC_READY" != "x" ]; then
+	sed -i -e "1,${MIC_READY}d" ${STDOUT}
+fi
+
+# Tease out the inserted hostlist-capture output from the job output.
+#
+HOSTS=`head -1 "${STDOUT}"`
+HOSTNAME=`echo "${HOSTS}" | cut -d ' ' -f 1`
+tail -n +2 "${STDOUT}" > "${STDOUT}.host"
+cp -f "${STDOUT}.host" "${STDOUT}"
+
+RET_CODE=1
+
+# Invoke the verification script, giving it the range file if one exists
+#
+if [ -e "${RANGE_FILE}" ]; then
+	${VERIFY_OUTPUT} -o ${STDOUT} -O ${STDOUT_FILE} -e ${STDERR} -E ${STDERR_FILE} -r ${RANGE_FILE} > "${VERIFY_OUT}"
+	RET_CODE=$?
+else
+	${VERIFY_OUTPUT} -o ${STDOUT} -O ${STDOUT_FILE} -e ${STDERR} -E ${STDERR_FILE} > "${VERIFY_OUT}"
+	RET_CODE=$?
+fi
+
+# Verify that the output matches expected output (and error).
+#
+if [ ${RET_CODE} -eq 0 ]; then
+		if [ -e "${RANGE_FILE}" ]; then
+			echo "PASS ${TESTPERSONAL}${TEST} `cat "${VERIFY_OUT}"` ${HOSTS}"
+			logger "testapps ${TEST} PASS `cat "${VERIFY_OUT}"` ${HOSTS}"
+		else
+			echo "PASS ${TESTPERSONAL}${TEST} - ${HOSTS}"
+			logger "testapps ${TEST} PASS - ${HOSTS}"
+		fi
+		cleanup_directory
+		exit 0
+fi
+
+if [ -e "${RANGE_FILE}" -a ${RET_CODE} -eq 2 ]; then
+	echo "FAIL ${TESTPERSONAL}${TEST} `cat "${VERIFY_OUT}"` ${HOSTS}"
+	logger "testapps ${TEST} FAIL `cat "${VERIFY_OUT}"` ${HOSTS}"
+else
+	echo "FAIL ${TESTPERSONAL}${TEST} - ${HOSTS}"
+	logger "testapps ${TEST} FAIL - ${HOSTS}"
+	cat "${VERIFY_OUT}"
+fi
+
+cleanup_directory
+
+exit 1

@@ -1,0 +1,12 @@
+#SBATCH -N2 -t5 --exclusive
+#
+# Test OpenMPI
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+# map-by would enforce that it uses both nodes
+if [ -n "${SLURM_JOB_ID}" ]; then
+    srun hostname | cut -d. -f1 > nodefile
+else
+    hostname -s > nodefile
+fi
+mpiexec -machinefile ./nodefile -n 2 --map-by ppr:1:node ./hello

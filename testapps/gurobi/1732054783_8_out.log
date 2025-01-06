@@ -1,0 +1,59 @@
+
+********************
+Version: 6.5.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel8'.
+Started job 9483450 on Submitted batch job 9483450.
+Waiting for job to complete.....done.
+FAIL gurobi - d1cmp019 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 13,13 @@
++ Presolve time: 0.01s
+- Presolve time: 0.00s
+@@ 18,18 @@
++ Solved in 0 iterations and 0.01 seconds (0.00 work units)
+- Solved in 0 iterations and 0.00 seconds (0.00 work units)
+Cleaning up working directory.done.
+
+********************
+Version: 7.5.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel8'.
+Started job 9483462 on Submitted batch job 9483462.
+Waiting for job to complete...............done.
+PASS gurobi - d1cmp019 
+Cleaning up working directory.done.
+
+********************
+Version: 8.1.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel8'.
+Started job 9483553 on Submitted batch job 9483553.
+Waiting for job to complete......done.
+PASS gurobi - d1cmp019 
+Cleaning up working directory.done.
+
+********************
+Version: 9.5.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel8'.
+Started job 9483573 on Submitted batch job 9483573.
+Waiting for job to complete........done.
+PASS gurobi - d1cmp019 
+Cleaning up working directory.done.
+
+********************
+Version: 10.0.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel8'.
+Started job 9483596 on Submitted batch job 9483596.
+Waiting for job to complete..............done.
+PASS gurobi - d1cmp019 
+Cleaning up working directory.done.

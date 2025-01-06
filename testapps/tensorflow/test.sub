@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH -N1 -n6 -t5:00 --gres=gpu:1 -p gpu
+#
+
+cd ${SLURM_SUBMIT_DIR:-.}
+
+python3 mmult.py  2>/dev/null
+

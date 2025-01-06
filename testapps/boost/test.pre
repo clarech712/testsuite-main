@@ -1,0 +1,8 @@
+#
+# Boost example test. This test prints strings and values using Boost locale library.
+#
+if [ "$CXX" == "" ]; then
+	CXX="g++"
+fi
+
+$CXX -o boost_hello -lboost_locale boost_locale_hello.cpp 2>/dev/null

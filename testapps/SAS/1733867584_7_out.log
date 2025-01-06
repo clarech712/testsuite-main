@@ -1,0 +1,20 @@
+
+********************
+Version: 9.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'SAS' with SLURM options '--constraint=rhel7'.
+Started job 10391250 on Submitted batch job 10391250.
+Waiting for job to complete.......done.
+PASS SAS - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 9.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'SAS' with SLURM options '--constraint=rhel7'.
+Started job 10391252 on Submitted batch job 10391252.
+Waiting for job to complete...done.
+PASS SAS - p1cmp029 
+Cleaning up working directory.done.

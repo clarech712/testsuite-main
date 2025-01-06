@@ -1,0 +1,88 @@
+
+********************
+Version: 4.7.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058184 on Submitted batch job 9058184.
+Waiting for job to complete..done.
+PASS gcc - d1cmp014 
+Cleaning up working directory.done.
+
+********************
+Version: 4.9.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058185 on Submitted batch job 9058185.
+Waiting for job to complete..done.
+PASS gcc - d1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 5.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058186 on Submitted batch job 9058186.
+Waiting for job to complete..done.
+PASS gcc - d1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 7.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058210 on Submitted batch job 9058210.
+Waiting for job to complete..done.
+PASS gcc - d1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 8.4.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058220 on Submitted batch job 9058220.
+Waiting for job to complete..done.
+PASS gcc - d1cmp014 
+Cleaning up working directory.done.
+
+********************
+Version: 8.5.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058221 on Submitted batch job 9058221.
+Waiting for job to complete..done.
+PASS gcc - d1cmp014 
+Cleaning up working directory.done.
+
+********************
+Version: 9.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058225 on Submitted batch job 9058225.
+Waiting for job to complete..done.
+PASS gcc - d1cmp014 
+Cleaning up working directory.done.
+
+********************
+Version: 11.2.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel8'.
+Started job 9058229 on Submitted batch job 9058229.
+Waiting for job to complete..done.
+PASS gcc - d1cmp014 
+Cleaning up working directory.done.

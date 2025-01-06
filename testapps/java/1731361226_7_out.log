@@ -1,0 +1,130 @@
+
+********************
+Version: 1.6.0_25_64bit
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058367 on Submitted batch job 9058367.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 1.7.0_51
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058369 on Submitted batch job 9058369.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 1.4.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058378 on Submitted batch job 9058378.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 1.6.0_25
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058379 on Submitted batch job 9058379.
+Waiting for job to complete..done.
+PASS java - p1cmp044 
+Cleaning up working directory.done.
+
+********************
+Version: 1.8.0_60
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058382 on Submitted batch job 9058382.
+Waiting for job to complete..done.
+PASS java - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 1.5.0_64bit
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058383 on Submitted batch job 9058383.
+Waiting for job to complete..done.
+PASS java - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 1.6.0_64bit
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058386 on Submitted batch job 9058386.
+Waiting for job to complete...done.
+PASS java - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.3.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058403 on Submitted batch job 9058403.
+Waiting for job to complete..done.
+PASS java - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 1.5.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058414 on Submitted batch job 9058414.
+Waiting for job to complete...done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 1.6.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058416 on Submitted batch job 9058416.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 11.0.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058423 on Submitted batch job 9058423.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 15.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058429 on Submitted batch job 9058429.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 15.0.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 9058435 on Submitted batch job 9058435.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.

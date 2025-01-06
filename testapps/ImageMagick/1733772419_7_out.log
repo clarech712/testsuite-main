@@ -1,0 +1,16 @@
+
+********************
+Version: 6.9.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ImageMagick' with SLURM options '--constraint=rhel7'.
+Started job 10376383 on Submitted batch job 10376383.
+Waiting for job to complete..done.
+FAIL ImageMagick - p1cmp029 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ convert: error while loading shared libraries: libtiff.so.3: cannot open shared object file: No such file or directory
+- 
+Cleaning up working directory.done.

@@ -1,0 +1,3 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+echo "40dN 10dW" | cs2cs +proj=latlong +datum=WGS84 +to +proj=utm +zone=15

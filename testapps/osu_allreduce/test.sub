@@ -1,0 +1,24 @@
+#SBATCH -N8 -n8 -t10 --exclusive
+# #SBATCH --tasks-per-node=16
+#
+# Test OSU benchmark allreduce
+#
+
+cd ${SLURM_SUBMIT_DIR:-.}
+if [ -n "$SLURM_JOB_ID" ]; then
+   srun hostname
+else
+   hostname
+fi
+
+# Assemble and pretty-print compiler+mpi combination
+# E.g.  "# ------ gcc + mvapich2 ------"
+tc="$TESTPILOT_COMPILER + $TESTPILOT_MPI"
+wfull=30                                           # Line-up with OSU header
+wleft=$(( (wfull - 2 - 1 - ${#tc} - 1) / 2 ))      # width of left '---'
+wrght=$((  wfull - 2 - 1 - wleft - ${#tc} - 1 ))   # width of right '---'
+left=$(printf -- "-%.0s" $(seq 1 $wleft))
+rght=$(printf -- "-%.0s" $(seq 1 $wrght))
+echo "# $left $tc $rght"
+
+mpiexec -n 8 ./osu_allreduce -m 524288

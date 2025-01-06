@@ -1,0 +1,20 @@
+
+********************
+Version: 2.11.0_gcc_9.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'freetype' with SLURM options '--constraint=rhel7'.
+Started job 9057874 on Submitted batch job 9057874.
+Waiting for job to complete...done.
+PASS freetype - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 2.11.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'freetype' with SLURM options '--constraint=rhel7'.
+Started job 9057875 on Submitted batch job 9057875.
+Waiting for job to complete..done.
+PASS freetype - p1cmp029 
+Cleaning up working directory.done.

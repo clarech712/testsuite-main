@@ -1,0 +1,10 @@
+copy 295000 -10 10 1
+scale 262000 -10 10 1
+add 285000 -10 10 1
+triad 262000 -10 10 1
+
+#First column - variable name
+#Second column - expected value
+#Third column - % low tolerance
+#Fourth column - % high tolerance
+#Fifth column - scaling factor (weighted importance)

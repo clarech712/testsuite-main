@@ -1,0 +1,4 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+rsync source_directory/hello.world destination_directory
+rm destination_directory/hello.world

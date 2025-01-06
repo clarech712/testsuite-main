@@ -1,0 +1,20 @@
+
+********************
+Version: 1.7.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'multiqc' with SLURM options '--constraint=rhel7'.
+Started job 9854931 on Submitted batch job 9854931.
+Waiting for job to complete...done.
+PASS multiqc - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 1.21
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'multiqc' with SLURM options '--constraint=rhel7'.
+Started job 9854939 on Submitted batch job 9854939.
+Waiting for job to complete...done.
+PASS multiqc - p1cmp029 
+Cleaning up working directory.done.

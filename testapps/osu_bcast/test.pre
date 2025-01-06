@@ -1,0 +1,1 @@
+$CC -o osu_bcast osu_bcast.c

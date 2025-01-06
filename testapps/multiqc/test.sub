@@ -1,0 +1,4 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+multiqc example_data 2>&1 | grep -v "v1" | grep -v "path"
+

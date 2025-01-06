@@ -1,0 +1,10 @@
+
+********************
+Version: 2.14
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'pandoc' with SLURM options '--constraint=rhel8'.
+Started job 9922023 on Submitted batch job 9922023.
+Waiting for job to complete..done.
+PASS pandoc - d1cmp002 
+Cleaning up working directory.done.

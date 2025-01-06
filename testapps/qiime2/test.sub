@@ -1,0 +1,4 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+(qiime tools import --type EMPSingleEndSequences --input-path emp-single-end-sequences --output-path emp-single-end-sequences.qza >&1 2> >(grep -v "temporary config/cache directory" >&2))
+

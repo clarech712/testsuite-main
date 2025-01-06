@@ -1,0 +1,4 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+povray test.pov 2> /dev/null
+diff test.png test-sample.png

@@ -1,0 +1,3 @@
+FATAL:   Image file already exists: "hello-world_latest.sif" - will not overwrite
+WARNING: passwd file doesn't exist in container, not updating
+WARNING: group file doesn't exist in container, not updating

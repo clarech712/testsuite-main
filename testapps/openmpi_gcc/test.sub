@@ -1,0 +1,6 @@
+#SBATCH -N2 --ntasks-per-node=1 -t5 --constraint=rhel7
+#
+# Test OpenMPI
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+mpirun --mca btl tcp,self  -n 2 ./hello

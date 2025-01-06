@@ -1,0 +1,11 @@
+#
+# GSL example test.
+# This test computing the value of the Bessel function J0
+# https://www.gnu.org/software/gsl/doc/html/usage.html#an-example-program
+#
+if [ "$CC" == "" ]; then
+	CC="gcc"
+fi
+
+# To get compile flags: gsl-config --cflags --libs
+$CC -o gsl_bessel -lgsl -lgslcblas -lm gsl_bessel.c 2>/dev/null

@@ -1,0 +1,12 @@
+model in "model.bug"
+data in "data.json"
+init in "inits.json"
+compile, nchains(1)
+initialize
+update 1000
+monitor mu
+monitor sigma
+update 1000
+coda *
+exit
+

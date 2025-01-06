@@ -1,0 +1,9 @@
+This benchmark uses Intel precompiled xhpcg executable from MKL that
+in the past ran on genuine Intel CPUs (and refused to run on anything else).
+It no longer refuses to run on other CPUs now.
+
+We should probably add an entirely separate 'hpcg_amd'.  AMD has a Spack
+recipe for how to build one:
+        https://developer.amd.com/spack/hpcg-benchmark/
+so we can even have a modulefile for it.
+

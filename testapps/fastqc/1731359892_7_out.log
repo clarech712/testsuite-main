@@ -1,0 +1,40 @@
+
+********************
+Version: 0.11.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fastqc' with SLURM options '--constraint=rhel7'.
+Started job 9057615 on Submitted batch job 9057615.
+Waiting for job to complete...done.
+PASS fastqc - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 0.11.8
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fastqc' with SLURM options '--constraint=rhel7'.
+Started job 9057617 on Submitted batch job 9057617.
+Waiting for job to complete...done.
+PASS fastqc - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 0.11.9
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fastqc' with SLURM options '--constraint=rhel7'.
+Started job 9057634 on Submitted batch job 9057634.
+Waiting for job to complete...done.
+PASS fastqc - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 0.12.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fastqc' with SLURM options '--constraint=rhel7'.
+Started job 9057637 on Submitted batch job 9057637.
+Waiting for job to complete...done.
+PASS fastqc - p1cmp028 
+Cleaning up working directory.done.

@@ -1,0 +1,50 @@
+
+********************
+Version: 2.17.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bedtools' with SLURM options '--constraint=rhel8'.
+Started job 9106336 on Submitted batch job 9106336.
+Waiting for job to complete...done.
+PASS bedtools - d1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.19.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bedtools' with SLURM options '--constraint=rhel8'.
+Started job 9106344 on Submitted batch job 9106344.
+Waiting for job to complete..done.
+PASS bedtools - d1cmp023 
+Cleaning up working directory.done.
+
+********************
+Version: 2.26.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bedtools' with SLURM options '--constraint=rhel8'.
+Started job 9106352 on Submitted batch job 9106352.
+Waiting for job to complete..done.
+PASS bedtools - d1cmp017 
+Cleaning up working directory.done.
+
+********************
+Version: 2.30.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bedtools' with SLURM options '--constraint=rhel8'.
+Started job 9106355 on Submitted batch job 9106355.
+Waiting for job to complete..done.
+PASS bedtools - d1cmp017 
+Cleaning up working directory.done.
+
+********************
+Version: 2.31.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bedtools' with SLURM options '--constraint=rhel8'.
+Started job 9106363 on Submitted batch job 9106363.
+Waiting for job to complete..done.
+PASS bedtools - d1cmp017 
+Cleaning up working directory.done.

@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH -N1 -t10:00 --exclusive
+
+cd ${SLURM_SUBMIT_DIR:-.}
+cp ${MKLROOT}/benchmarks/hpcg/bin/x* ./
+if [ -n "${SLURM_JOB_ID}" ]; then
+    srun hostname > ./nodes
+else
+    hostname -s > ./nodes
+fi
+HPCG_BIN=""
+LSCPU=$(/bin/lscpu)
+binaries="$(ls ./xhpcg* | sort -r)"
+for bin in ${binaries}; do
+    arch=$(echo ${bin} | cut -d\_ -f2)
+    if echo "${LSCPU}" | grep 'Flags' | grep ${arch} &>/dev/null ; then
+        HPCG_BIN=${bin}
+        break
+    fi
+done
+if [[ -z "${HPCG_BIN}" ]]; then
+	exit 1
+fi
+NUM_RANKS=$(echo "${LSCPU}" | grep 'Socket(s):' | awk '{print $2}')
+sed -i "s/$/\:${NUM_RANKS}/g" ./nodes
+export I_MPI_ADJUST_ALLREDUCE=5 
+export KMP_AFFINITY=granularity=fine,compact,1,0
+mpiexec -ppn ${NUM_RANKS} -machinefile ./nodes ${HPCG_BIN} --n=192 --t=60
+# grep "HPCG result is" *.txt

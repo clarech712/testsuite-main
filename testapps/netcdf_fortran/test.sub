@@ -1,0 +1,12 @@
+#SBATCH -N1 -t5
+#
+# Test netcdf
+#
+# An example program demonstrating a simple 2D write. 
+# Note: can be compiled with MPI compiler, but the code is not parallel.
+cd ${SLURM_SUBMIT_DIR:-.}
+
+./simple_xy_wr
+
+diff <(ncdump -n simple_xy test.nc) <(ncdump simple_xy.nc)
+echo $?

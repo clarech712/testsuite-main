@@ -1,0 +1,50 @@
+
+********************
+Version: 3.1.9
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cellprofiler' with SLURM options '--constraint=rhel7'.
+Started job 9057114 on Submitted batch job 9057114.
+Waiting for job to complete.....done.
+PASS cellprofiler - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 4.0.6
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cellprofiler' with SLURM options '--constraint=rhel7'.
+Started job 9057140 on Submitted batch job 9057140.
+Waiting for job to complete....done.
+PASS cellprofiler - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 4.1.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cellprofiler' with SLURM options '--constraint=rhel7'.
+Started job 9057141 on Submitted batch job 9057141.
+Waiting for job to complete....done.
+PASS cellprofiler - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 4.2.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cellprofiler' with SLURM options '--constraint=rhel7'.
+Started job 9057142 on Submitted batch job 9057142.
+Waiting for job to complete....done.
+PASS cellprofiler - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 4.2.6
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cellprofiler' with SLURM options '--constraint=rhel7'.
+Started job 9057144 on Submitted batch job 9057144.
+Waiting for job to complete....done.
+PASS cellprofiler - p1cmp028 
+Cleaning up working directory.done.

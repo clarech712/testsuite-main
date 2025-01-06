@@ -1,0 +1,28 @@
+/PREP7
+! Define a simple geometry
+RECTNG,0,1,0,1
+
+! Define material properties
+MP,EX,1,210000
+MP,PRXY,1,0.3
+
+! Define boundary conditions
+D,1,ALL,0
+D,2,ALL,0
+D,3,ALL,0
+D,4,ALL,0
+
+! Apply load
+F,2,FY,-1000
+
+! Solve the problem
+/SOLU
+SOLVE
+FINISH
+
+! Post-processing
+/POST1
+SET,LAST
+PLNSOL,S,EQV
+FINISH
+

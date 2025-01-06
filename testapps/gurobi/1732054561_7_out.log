@@ -1,0 +1,50 @@
+
+********************
+Version: 6.5.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel7'.
+Started job 9483268 on Submitted batch job 9483268.
+Waiting for job to complete................done.
+PASS gurobi - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 7.5.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel7'.
+Started job 9483361 on Submitted batch job 9483361.
+Waiting for job to complete......done.
+PASS gurobi - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 8.1.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel7'.
+Started job 9483375 on Submitted batch job 9483375.
+Waiting for job to complete........done.
+PASS gurobi - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 9.5.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel7'.
+Started job 9483394 on Submitted batch job 9483394.
+Waiting for job to complete...............done.
+PASS gurobi - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 10.0.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gurobi' with SLURM options '--constraint=rhel7'.
+Started job 9483429 on Submitted batch job 9483429.
+Waiting for job to complete......done.
+PASS gurobi - p1cmp028 
+Cleaning up working directory.done.

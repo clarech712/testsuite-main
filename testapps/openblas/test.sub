@@ -1,0 +1,5 @@
+#SBATCH -N1 -t5
+#
+
+cd ${SLURM_SUBMIT_DIR:-.}
+./cblas

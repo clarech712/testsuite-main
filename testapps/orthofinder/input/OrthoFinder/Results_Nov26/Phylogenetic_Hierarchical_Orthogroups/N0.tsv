@@ -1,0 +1,3 @@
+HOG	OG	Gene Tree Parent Clade	species1	species2
+N0.HOG0000000	OG0000000	n1	species1_gene1	species2_gene2
+N0.HOG0000001	OG0000000	n2	species1_gene2	species2_gene1

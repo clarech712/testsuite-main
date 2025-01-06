@@ -1,0 +1,10 @@
+
+********************
+Version: 1.10.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'libgcrypt' with SLURM options '--constraint=rhel8'.
+Started job 9600893 on Submitted batch job 9600893.
+Waiting for job to complete...............done.
+PASS libgcrypt - d1cmp001 
+Cleaning up working directory.done.

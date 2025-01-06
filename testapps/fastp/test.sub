@@ -1,0 +1,3 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+fastp -i 1_control_18S_2019_minq7.fastq -o output.fastq 2> /dev/null

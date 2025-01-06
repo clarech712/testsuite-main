@@ -1,0 +1,7 @@
+#begin_module_parse#
+TESTPILOT_TENSORFLOW='tensorflow/11-python2.7'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ngc  > /dev/null 2>&1
+module load ${TESTPILOT_TENSORFLOW} > /dev/null 2>&1

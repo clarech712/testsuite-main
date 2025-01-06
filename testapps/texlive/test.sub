@@ -1,0 +1,2 @@
+latex test.tex # latex
+pdflatex test.tex # pdflatex

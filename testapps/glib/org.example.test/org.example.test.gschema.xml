@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.example.test" path="/org/example/test/">
+    <key name="test-key" type="s">
+      <default>'default-value'</default>
+      <summary>Test Key</summary>
+      <description>A key for testing purposes</description>
+    </key>
+  </schema>
+</schemalist>
+

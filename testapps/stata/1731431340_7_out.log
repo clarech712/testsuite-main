@@ -1,0 +1,50 @@
+
+********************
+Version: 13
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel7'.
+Started job 9095338 on Submitted batch job 9095338.
+Waiting for job to complete...done.
+PASS stata - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 15
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel7'.
+Started job 9095345 on Submitted batch job 9095345.
+Waiting for job to complete..done.
+PASS stata - p1cmp044 
+Cleaning up working directory.done.
+
+********************
+Version: 16
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel7'.
+Started job 9095349 on Submitted batch job 9095349.
+Waiting for job to complete..done.
+PASS stata - p1cmp044 
+Cleaning up working directory.done.
+
+********************
+Version: 17
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel7'.
+Started job 9095356 on Submitted batch job 9095356.
+Waiting for job to complete..done.
+PASS stata - p1cmp044 
+Cleaning up working directory.done.
+
+********************
+Version: 18
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'stata' with SLURM options '--constraint=rhel7'.
+Started job 9095362 on Submitted batch job 9095362.
+Waiting for job to complete..done.
+PASS stata - p1cmp044 
+Cleaning up working directory.done.

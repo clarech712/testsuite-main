@@ -1,0 +1,12 @@
+2024-11-26 15:28:31 : Started OrthoFinder version 2.5.5
+Command Line: /usr/local/bin/orthofinder -f input
+
+WorkingDirectory_Base: /cluster/home/kchura01/testsuite-main/testapps/orthofinder/input/OrthoFinder/Results_Nov26_1/WorkingDirectory/
+
+Species used: 
+0: species1.fasta
+1: species2.fasta
+
+FN_Orthogroups: /cluster/home/kchura01/testsuite-main/testapps/orthofinder/input/OrthoFinder/Results_Nov26_1/WorkingDirectory/clusters_OrthoFinder_I1.5.txt_id_pairs.txt
+WorkingDirectory_Trees: /cluster/home/kchura01/testsuite-main/testapps/orthofinder/input/OrthoFinder/Results_Nov26_1/WorkingDirectory/
+2024-11-26 15:28:38 : OrthoFinder run completed

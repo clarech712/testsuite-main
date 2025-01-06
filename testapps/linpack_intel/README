@@ -1,0 +1,7 @@
+This benchmark uses Intel precompiled xhpl executable that only runs
+on genuine Intel CPUs (and refuses to run on anything else).
+
+We should probably add an entirely separate 'linpack_amd'.  AMD has a Spack
+recipe how to build one:
+	https://developer.amd.com/spack/hpl-benchmark/
+so we can even have a modulefile for it.

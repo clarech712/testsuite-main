@@ -1,0 +1,32 @@
+
+********************
+Version: 1.4.2577
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mesa' with SLURM options '--constraint=rhel7'.
+Started job 9851981 on Submitted batch job 9851981.
+Waiting for job to complete...done.
+FAIL mesa - p1cmp029 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,1 @@
++ Error: couldn't open display localhost:25.0
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 21.3.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'mesa' with SLURM options '--constraint=rhel7'.
+Started job 9851997 on Submitted batch job 9851997.
+Waiting for job to complete..done.
+FAIL mesa - p1cmp029 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,1 @@
++ Error: couldn't open display localhost:25.0
+- 
+Cleaning up working directory.done.

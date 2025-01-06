@@ -1,0 +1,10 @@
+
+********************
+Version: 23.10
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'miniconda' with SLURM options '--constraint=rhel8'.
+Started job 9058733 on Submitted batch job 9058733.
+Waiting for job to complete..done.
+PASS miniconda - d1cmp014 
+Cleaning up working directory.done.

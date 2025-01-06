@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH -N1 -n1 --mem=2000M -t5:00
+#
+# Test SLURM memory limit allocation when the node is shared with other people
+# (i.e. "does cgroups limit my access to only the memory that I requested?")
+# This version tries to use a memory hog (stress), and success is if we
+# actually do get OoM-killed.
+#
+
+# Bail out if not inside a Slurm job
+if [[ -z $SLURM_JOB_ID ]]; then
+    echo "Not in a Slurm job, bailing out!" 1>&2
+#    exit
+fi
+
+# Do we have the hog?
+if ! command -v stress > /dev/null; then
+    echo "Can not find stress program, bailing out!" 1>&2
+    exit 1
+fi
+
+# And proceed with the suicide mission.
+stress --timeout 5s --vm 1 --vm-bytes 2000M --quiet

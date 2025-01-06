@@ -1,0 +1,10 @@
+
+********************
+Version: 0.23.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fastp' with SLURM options '--constraint=rhel8'.
+Started job 9057573 on Submitted batch job 9057573.
+Waiting for job to complete...done.
+PASS fastp - d1cmp028 
+Cleaning up working directory.done.

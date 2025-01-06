@@ -1,0 +1,8 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+echo -e "Line 1\r\nLine 2\r\nLine 3" > example.txt
+file example.txt
+dos2unix example.txt
+file example.txt
+
+

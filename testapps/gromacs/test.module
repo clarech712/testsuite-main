@@ -1,0 +1,12 @@
+#begin_module_parse#
+TESTPILOT_MODTREE='modtree/rhel8'
+TESTPILOT_COMPILER='gcc/13.2.0'
+TESTPILOT_MPI='openmpi/4.1.6-ucx'
+TESTPILOT_GROMACS='gromacs/2023'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ${TESTPILOT_MODTREE} > /dev/null 2>&1
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1
+module load ${TESTPILOT_MPI} > /dev/null 2>&1
+module load ${TESTPILOT_GROMACS} > /dev/null 2>&1

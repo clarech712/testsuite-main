@@ -1,0 +1,50 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 - Spack) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./test.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(/cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gc
+c-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-dist/tex/latex/
+base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gc
+c-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-dist/tex/latex/
+base/size10.clo))
+(/cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gc
+c-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-dist/tex/latex/
+l3backend/l3backend-dvips.def) (./test.aux) [1] (./test.aux) )
+Output written on test.dvi (1 page, 476 bytes).
+Transcript written on test.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 - Spack) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./test.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(/cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gc
+c-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-dist/tex/latex/
+base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+
+(/cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gc
+c-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-dist/tex/latex/
+base/size10.clo))
+(/cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gc
+c-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-dist/tex/latex/
+l3backend/l3backend-pdftex.def) (./test.aux) [1{/cluster/tufts/hpc/tools/spack/
+0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gcc-7.3.0/texlive-20210325-3vmlrnf
+v7crkklac7cmwpztbdiyxukwg/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
+(./test.aux) )</cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel
+7-ivybridge/gcc-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></cluster/tufts/hpc/tools/spack/0
+.17.1/spack/opt/spack/linux-rhel7-ivybridge/gcc-7.3.0/texlive-20210325-3vmlrnfv
+7crkklac7cmwpztbdiyxukwg/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/spack/linux-rhel7-ivybridge/gcc-
+7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbdiyxukwg/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></cluster/tufts/hpc/tools/spack/0.17.1/spack/opt/s
+pack/linux-rhel7-ivybridge/gcc-7.3.0/texlive-20210325-3vmlrnfv7crkklac7cmwpztbd
+iyxukwg/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on test.pdf (1 page, 33877 bytes).
+Transcript written on test.log.

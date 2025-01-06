@@ -1,0 +1,44 @@
+
+********************
+Version: 2.7.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10746969 on Submitted batch job 10746969.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+
+********************
+Version: 2.7.6
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10746970 on Submitted batch job 10746970.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+
+********************
+Version: 3.6.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10746971 on Submitted batch job 10746971.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+
+********************
+Version: 2.6.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10747135 on Submitted batch job 10747135.
+Waiting for job to complete..done.
+FAIL python - p1cmp028 
+
+********************
+Version: 2.7.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel7'.
+Started job 10747136 on Submitted batch job 10747136.
+Waiting for job to complete.

@@ -1,0 +1,8 @@
+#begin_module_parse#
+TESTPILOT_COMPILER='gcc'
+TESTPILOT_R='R'
+#end_module_parse#
+
+module purge 2>/dev/null
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1
+module load ${TESTPILOT_R} > /dev/null 2>&1

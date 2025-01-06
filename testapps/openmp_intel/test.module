@@ -1,0 +1,6 @@
+#begin_module_parse#
+TESTPILOT_COMPILER='intel'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1

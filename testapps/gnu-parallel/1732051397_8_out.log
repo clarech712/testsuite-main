@@ -1,0 +1,42 @@
+
+********************
+Version: 20150122
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'gnu-parallel' with SLURM options '--constraint=rhel8'.
+Started job 9480730 on Submitted batch job 9480730.
+Waiting for job to complete....done.
+FAIL gnu-parallel - d1cmp019 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,14 @@
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
+- perl: warning: Setting locale failed.
+- perl: warning: Please check that your locale settings:
+- 	LANGUAGE = (unset),
+- 	LC_ALL = (unset),
+- 	LANG = "C.UTF-8"
+-     are supported and installed on your system.
+- perl: warning: Falling back to the standard locale ("C").
+- perl: warning: Setting locale failed.
+- perl: warning: Please check that your locale settings:
+- 	LANGUAGE = (unset),
+- 	LC_ALL = (unset),
+- 	LANG = "C.UTF-8"
+-     are supported and installed on your system.
+- perl: warning: Falling back to the standard locale ("C").
+Cleaning up working directory.done.

@@ -1,0 +1,7 @@
+#SBATCH -N1 -t5
+#
+# Boost example test. This test prints strings and values using Boost locale library.
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+
+./boost_hello

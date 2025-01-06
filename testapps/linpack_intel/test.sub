@@ -1,0 +1,21 @@
+#SBATCH -N1 -n16 -t10:00 --exclusive
+#!/bin/bash
+# FILENAME: linpack
+
+cd ${SLURM_SUBMIT_DIR:-.}
+SHORTJOBID=${SLURM_JOBID:-outdir}
+dirname=${SHORTJOBID}.linpack
+mkdir $dirname
+cd $dirname
+cp -r ${MKLROOT}/benchmarks/linpack/* ./
+input="lininput_xeon64"
+sed -i 's/.*number of tes.*$/ 1				# number of tests/' $input
+sed -i 's/.*problem sizes.*$/ 20000			# problem sizes/' $input
+sed -i 's/.*leading dimen.*$/ 20000			# leading dimensions/' $input
+sed -i 's/.*times to run .*$/ 3				# times to run a test/' $input
+sed -i 's/.*alignment val.*$/ 4				# alignment value (in KBytes)/' $input
+
+#./runme_xeon64 2> /dev/null > tmp.linpack
+./runme_xeon64 > tmp.linpack
+grep -A2 "Maximal" tmp.linpack | awk '{print $5}'
+

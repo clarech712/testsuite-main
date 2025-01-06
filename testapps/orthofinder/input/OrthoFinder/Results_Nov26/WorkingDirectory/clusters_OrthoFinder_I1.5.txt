@@ -1,0 +1,9 @@
+# cline: mcl /cluster/home/kchura01/testsuite-main/testapps/orthofinder/input/OrthoFinder/Results_Nov26/WorkingDirectory/OrthoFinder_graph.txt "-I" "1.5" "-o" "/cluster/home/kchura01/testsuite-main/testapps/orthofinder/input/OrthoFinder/Results_Nov26/WorkingDirectory/clusters_OrthoFinder_I1.5.txt" "-te" "1" "-V" "all"
+(mclheader
+mcltype matrix
+dimensions 4x1
+)
+(mclmatrix
+begin
+0 0 1 2 3 $
+)

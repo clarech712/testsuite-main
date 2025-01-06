@@ -1,0 +1,9 @@
+SIZE16384 20 -75 50 -1
+SIZE65536 40 -70 50 -1
+SIZE524288 160 -50 50 -1
+
+#First column - variable name
+#Second column - expected value
+#Third column - % low tolerance
+#Fourth column - % high tolerance
+#Fifth column - scaling factor (weighted importance)

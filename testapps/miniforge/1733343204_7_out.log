@@ -1,0 +1,20 @@
+
+********************
+Version: 24.3.0-py310
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'miniforge' with SLURM options '--constraint=rhel7'.
+Started job 10325878 on Submitted batch job 10325878.
+Waiting for job to complete...done.
+PASS miniforge - p1cmp043 
+Cleaning up working directory.done.
+
+********************
+Version: 24.7.1-py312
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'miniforge' with SLURM options '--constraint=rhel7'.
+Started job 10325879 on Submitted batch job 10325879.
+Waiting for job to complete..done.
+PASS miniforge - p1cmp043 
+Cleaning up working directory.done.

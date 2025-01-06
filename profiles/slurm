@@ -1,0 +1,8 @@
+#
+# SLURM Tests
+#
+C slurm_exclusive 9 10
+C slurm_cpusets 9 10
+C slurm_memlimit 9 10
+C slurm_memhog 9 10
+S slurm_1core_4nodes 9 10

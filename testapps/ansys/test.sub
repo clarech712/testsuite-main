@@ -1,0 +1,3 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+ansysdis simple.inp > /dev/null

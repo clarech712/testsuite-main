@@ -1,0 +1,32 @@
+#!/bin/bash
+#PBS -l nodes=1,naccesspolicy=singlejob
+#PBS -l walltime=10:00:00
+cd $PBS_O_WORKDIR
+DB=$TESTPILOT_DB
+NODES=`cat $PBS_NODEFILE | wc -l`
+CORES=`cat /proc/cpuinfo | grep 'processor' | wc -l`
+QUERY=seq1
+mkdir -p output
+NRDB=/depot/diagrid/databases/ncbi/latest
+BLASTDB=$NRDB
+if [[ $DB == "depot" ]]; then
+    DBDIR=$NRDB
+elif [[ $DB == "scratch" ]]; then
+    DBDIR=${CLUSTER_SCRATCH}/nr
+elif [[ $DB == "tmp" ]]; then 
+    DBDIR=/tmp/nr
+elif [[ $DB == "shm" ]]; then
+    DBDIR=/dev/shm/nr
+fi
+if [[ $DB == "scratch" ]] || [[ $DB == "shm" ]]; then
+    mkdir -p $DBDIR
+    /usr/bin/time -f "copy DB %e seconds\n" cp -rp $NRDB/nr* $DBDIR 2>&1
+fi
+ncores=(1 20)
+for i in "${ncores[@]}"; do 
+	if [[ $i -gt $CORES ]]; then
+		continue
+	fi
+
+	/usr/bin/time -f "$DB with ${i} cores, blast time %e\n" blastx -db ${DBDIR}/nr -num_threads ${i} -query $QUERY -out output/${i}-${DB}.out -outfmt 6 -evalue 0.0000000001 2>&1
+done

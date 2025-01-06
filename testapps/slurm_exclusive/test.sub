@@ -1,0 +1,9 @@
+#!/bin/bash
+#SBATCH -N1 -n1 -t10:00 --exclusive
+#
+# Test SLURM exclusive node allocation
+#
+
+cd ${SLURM_SUBMIT_DIR:-.}
+squeue -a --format '%A %h' | grep $SLURM_JOB_ID | cut -d' ' -f2
+

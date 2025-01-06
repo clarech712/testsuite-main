@@ -1,0 +1,22 @@
+
+********************
+Version: 1.18
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'sumo' with SLURM options '--constraint=rhel8'.
+Started job 9969399 on Submitted batch job 9969399.
+Waiting for job to complete..done.
+FAIL sumo - d1cmp036 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,1 @@
++ Step #0.00 (2ms ~= 500.00*RT, ~500.00UPS, vehicles TOT 1 ACT 1 BUF 0)                     Step #45.00 (0ms ?*RT. ?UPS, vehicles TOT 1 ACT 0 BUF 0)                                  
+- Step #0.00 (0ms ?*RT. ?UPS, vehicles TOT 1 ACT 1 BUF 0)                                   Step #45.00 (0ms ?*RT. ?UPS, vehicles TOT 1 ACT 0 BUF 0)                                  
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ 
+- Warning: Could not set locale to 'C'.
+Cleaning up working directory.done.

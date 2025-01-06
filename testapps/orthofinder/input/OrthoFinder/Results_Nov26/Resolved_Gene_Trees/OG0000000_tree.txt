@@ -1,0 +1,1 @@
+((species2_species2_gene2:0,species1_species1_gene1:0)n1:0,(species2_species2_gene1:0,species1_species1_gene2:0)n2:0)n0;

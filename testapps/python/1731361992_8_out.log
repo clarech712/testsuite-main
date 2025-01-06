@@ -1,0 +1,90 @@
+
+********************
+Version: 2.7.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058926 on Submitted batch job 9058926.
+Waiting for job to complete...done.
+PASS python - d1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 3.6.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058929 on Submitted batch job 9058929.
+Waiting for job to complete..done.
+PASS python - d1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.6.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058944 on Submitted batch job 9058944.
+Waiting for job to complete..done.
+PASS python - d1cmp026 
+Cleaning up working directory.done.
+
+********************
+Version: 2.7.6
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058956 on Submitted batch job 9058956.
+Waiting for job to complete..done.
+PASS python - d1cmp026 
+Cleaning up working directory.done.
+
+********************
+Version: 2.7.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058957 on Submitted batch job 9058957.
+Waiting for job to complete..done.
+PASS python - d1cmp026 
+Cleaning up working directory.done.
+
+********************
+Version: 3.5.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058964 on Submitted batch job 9058964.
+Waiting for job to complete..done.
+PASS python - d1cmp026 
+Cleaning up working directory.done.
+
+********************
+Version: 3.8.8
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058966 on Submitted batch job 9058966.
+Waiting for job to complete..done.
+PASS python - d1cmp026 
+Cleaning up working directory.done.
+
+********************
+Version: 3.10.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058975 on Submitted batch job 9058975.
+Waiting for job to complete..done.
+PASS python - d1cmp026 
+Cleaning up working directory.done.
+
+********************
+Version: 1.83
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'python' with SLURM options '--constraint=rhel8'.
+Started job 9058976 on Submitted batch job 9058976.
+Waiting for job to complete..done.
+PASS python - d1cmp026 
+Cleaning up working directory.done.

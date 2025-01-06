@@ -1,0 +1,20 @@
+
+********************
+Version: 4.2.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'libtiff' with SLURM options '--constraint=rhel8'.
+Started job 9847525 on Submitted batch job 9847525.
+Waiting for job to complete..done.
+PASS libtiff - d1cmp013 
+Cleaning up working directory.done.
+
+********************
+Version: 4.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'libtiff' with SLURM options '--constraint=rhel8'.
+Started job 9847535 on Submitted batch job 9847535.
+Waiting for job to complete..done.
+PASS libtiff - d1cmp013 
+Cleaning up working directory.done.

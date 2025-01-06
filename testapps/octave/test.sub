@@ -1,0 +1,7 @@
+#SBATCH -N1 -t5
+#
+# Test Octave
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+unset DISPLAY
+octave -q --no-window-system input_test.m

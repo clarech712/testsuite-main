@@ -1,0 +1,9 @@
+#
+# Totalview example test - print a basic backtrace of a program.
+#
+if [ "$CC" == "" ]; then
+	CC="gcc"
+fi
+
+$CC -o hello -g hello.c 2>/dev/null
+

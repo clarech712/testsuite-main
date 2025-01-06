@@ -1,0 +1,10 @@
+
+********************
+Version: 7.1.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'imagemagick' with SLURM options '--constraint=rhel7'.
+Started job 10376379 on Submitted batch job 10376379.
+Waiting for job to complete...done.
+PASS imagemagick - p1cmp029 
+Cleaning up working directory.done.

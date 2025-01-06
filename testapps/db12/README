@@ -1,0 +1,13 @@
+2021-10-08 by Lev Gorenstein:
+
+This official DIRAC benchmark is in Python2, which none of our Anacondas
+provide anymore.  CentOS 8 does provide /usr/bin/python2, so we could use
+that for now.
+
+There is a reworked Python3-compatible DIRAC benchmark at
+	https://gitlab.cern.ch/giordano/DB12-cpp
+but in my quick testing it behaved differently and gave very different
+numbers (so needs tweaking/adjusting).
+
+For now, I have taken a path of least resistance and switched the shebang
+line to use /usr/bin/python2.

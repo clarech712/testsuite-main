@@ -1,0 +1,6 @@
+#!/bin/bash
+#SBATCH -N1 -n1 -t5:00 --exclusive
+
+cd ${SLURM_SUBMIT_DIR:-.}
+unset DISPLAY
+R --slave --vanilla < R-25

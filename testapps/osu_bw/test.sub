@@ -1,0 +1,30 @@
+#SBATCH -N2 -n2 -t10 --exclusive
+#
+# Test OSU benchmark bw
+#
+
+cd ${SLURM_SUBMIT_DIR:-.}
+if [ -n "$SLURM_JOB_ID" ]; then
+   srun hostname
+else
+   hostname
+fi
+
+# Assemble and pretty-print compiler+mpi combination
+# E.g.  "# ------ gcc + mvapich2 ------"
+tc="$TESTPILOT_COMPILER + $TESTPILOT_MPI"
+wfull=30                                           # Line-up with OSU header
+wleft=$(( (wfull - 2 - 1 - ${#tc} - 1) / 2 ))      # width of left '---'
+wrght=$((  wfull - 2 - 1 - wleft - ${#tc} - 1 ))   # width of right '---'
+left=$(printf -- "-%.0s" $(seq 1 $wleft))
+rght=$(printf -- "-%.0s" $(seq 1 $wrght))
+echo "# $left $tc $rght"
+
+# Pin process to core 0 (or really, any core on the first socket) as it is
+# closest to the network card.  Without binding (or with binding to the
+# second socket) performance is significantly lower.
+# Note: binding options are implementation specific and need to be tweaked
+# if/when you switch your MPI.  And MVAPICh2 binds by default anyways.
+mpiexec --cpu-list 0 ./osu_bw -m 2097152                  # OpenMPI
+# mpiexec --bind-to core:0 --ppn 1 ./osu_bw -m 2097152    # IMPI
+# mpiexec ./osu_bw -m 2097152                             # MVAPICH2

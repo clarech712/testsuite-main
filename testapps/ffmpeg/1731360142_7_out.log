@@ -1,0 +1,10 @@
+
+********************
+Version: 3.2.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'ffmpeg' with SLURM options '--constraint=rhel7'.
+Started job 9057738 on Submitted batch job 9057738.
+Waiting for job to complete..done.
+PASS ffmpeg - p1cmp028 
+Cleaning up working directory.done.

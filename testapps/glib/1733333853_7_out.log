@@ -1,0 +1,20 @@
+
+********************
+Version: 2.56.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'glib' with SLURM options '--constraint=rhel7'.
+Started job 10322678 on Submitted batch job 10322678.
+Waiting for job to complete....done.
+PASS glib - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 2.66.7
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'glib' with SLURM options '--constraint=rhel7'.
+Started job 10322683 on Submitted batch job 10322683.
+Waiting for job to complete..done.
+PASS glib - p1cmp029 
+Cleaning up working directory.done.

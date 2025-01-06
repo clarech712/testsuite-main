@@ -1,0 +1,7 @@
+#SBATCH -N4 -t5 --exclusive
+#
+# Test Mvapich2
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+mpicc -o hello hello.c
+mpiexec -n 4 ./hello

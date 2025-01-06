@@ -1,0 +1,4 @@
+0_0: species1_gene1
+0_1: species1_gene2
+1_0: species2_gene1
+1_1: species2_gene2

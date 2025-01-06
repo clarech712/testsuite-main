@@ -1,0 +1,4 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+FastTree -nt alignment.fasta 2> >(grep -v "FastTree Version" >&2)
+

@@ -1,0 +1,71 @@
+This is cutadapt 3.7 with Python 3.7.12
+Command line parameters: -a AACCGGTT -o output.fastq 1_control_18S_2019_minq7.fastq
+Processing reads on 1 core in single-end mode ...
+
+=== Summary ===
+
+Total reads processed:                  18,357
+Reads with adapters:                       269 (1.5%)
+Reads written (passing filters):        18,357 (100.0%)
+
+Total basepairs processed:     4,107,879 bp
+Total written (filtered):      4,094,701 bp (99.7%)
+
+=== Adapter 1 ===
+
+Sequence: AACCGGTT; Type: regular 3'; Length: 8; Trimmed: 269 times
+
+Minimum overlap: 3
+No. of allowed errors:
+1-8 bp: 0
+
+Bases preceding removed adapters:
+  A: 16.4%
+  C: 33.5%
+  G: 19.3%
+  T: 30.9%
+  none/other: 0.0%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	199	286.8	0	199
+4	10	71.7	0	10
+5	1	17.9	0	1
+121	1	0.3	0	1
+126	1	0.3	0	1
+130	1	0.3	0	1
+144	1	0.3	0	1
+149	1	0.3	0	1
+152	1	0.3	0	1
+156	2	0.3	0	2
+157	1	0.3	0	1
+158	1	0.3	0	1
+160	1	0.3	0	1
+161	1	0.3	0	1
+163	1	0.3	0	1
+164	2	0.3	0	2
+166	1	0.3	0	1
+168	2	0.3	0	2
+169	4	0.3	0	4
+170	1	0.3	0	1
+171	1	0.3	0	1
+172	1	0.3	0	1
+173	1	0.3	0	1
+174	1	0.3	0	1
+175	1	0.3	0	1
+177	2	0.3	0	2
+178	7	0.3	0	7
+180	3	0.3	0	3
+181	2	0.3	0	2
+182	2	0.3	0	2
+183	2	0.3	0	2
+184	3	0.3	0	3
+185	1	0.3	0	1
+187	1	0.3	0	1
+190	1	0.3	0	1
+191	1	0.3	0	1
+192	2	0.3	0	2
+270	1	0.3	0	1
+298	1	0.3	0	1
+1156	1	0.3	0	1
+1417	1	0.3	0	1

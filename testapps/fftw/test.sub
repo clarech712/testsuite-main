@@ -1,0 +1,6 @@
+#SBATCH -N1 -t5
+#
+# Test to compute FFT of a sin wave
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+./ffttest

@@ -1,0 +1,1 @@
+$CC -o osu_bibw osu_bibw.c

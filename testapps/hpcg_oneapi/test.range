@@ -1,0 +1,7 @@
+HPCG_GFLOPS 5 -10 20 1
+
+#First column - variable name
+#Second column - expected value
+#Third column - % low tolerance
+#Fourth column - % high tolerance
+#Fifth column - scaling factor (weighted importance)

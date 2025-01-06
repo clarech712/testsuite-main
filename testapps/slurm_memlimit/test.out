@@ -1,0 +1,5 @@
+Cgroup ${*} detected.
+Cgroup file:   ${*}
+Slurm request: ${*}
+Cgroup limit:  ${*}
+Cgroup memory limit matches Slurm job request.

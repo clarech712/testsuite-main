@@ -1,0 +1,20 @@
+
+********************
+Version: 2.5.4
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'orthofinder' with SLURM options '--constraint=rhel8'.
+Started job 9921861 on Submitted batch job 9921861.
+Waiting for job to complete......done.
+PASS orthofinder - d1cmp004 
+Cleaning up working directory.done.
+
+********************
+Version: 2.5.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'orthofinder' with SLURM options '--constraint=rhel8'.
+Started job 9921876 on Submitted batch job 9921876.
+Waiting for job to complete.....done.
+PASS orthofinder - d1cmp002 
+Cleaning up working directory.done.

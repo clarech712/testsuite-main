@@ -1,0 +1,3 @@
+${?}copy DB ${*} seconds
+${?}
+${*} with ${*} cores, blast time ${TIME}

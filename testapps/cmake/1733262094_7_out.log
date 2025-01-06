@@ -1,0 +1,77 @@
+
+********************
+Version: 2.8
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cmake' with SLURM options '--constraint=rhel7'.
+Started job 10293583 on Submitted batch job 10293583.
+Waiting for job to complete...done.
+FAIL cmake - p1cmp029 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,2 @@
++ CMake Error: The current CMakeCache.txt directory /cluster/home/kchura01/testapps_cmake_login-prod-01_128512/CMakeCache.txt is different than the directory /cluster/home/kchura01/testsuite-main/testapps/cmake where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
++ 
+- -- Configuring done
+- -- Generating done
+Cleaning up working directory.done.
+
+********************
+Version: 2.8.11.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cmake' with SLURM options '--constraint=rhel7'.
+Started job 10293596 on Submitted batch job 10293596.
+Waiting for job to complete..done.
+FAIL cmake - p1cmp029 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,2 @@
++ CMake Error: The current CMakeCache.txt directory /cluster/home/kchura01/testapps_cmake_login-prod-01_128646/CMakeCache.txt is different than the directory /cluster/home/kchura01/testsuite-main/testapps/cmake where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
++ 
+- -- Configuring done
+- -- Generating done
+Cleaning up working directory.done.
+
+********************
+Version: 3.2.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cmake' with SLURM options '--constraint=rhel7'.
+Started job 10293604 on Submitted batch job 10293604.
+Waiting for job to complete..done.
+FAIL cmake - p1cmp029 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,2 @@
++ CMake Error: The current CMakeCache.txt directory /cluster/home/kchura01/testapps_cmake_login-prod-01_128758/CMakeCache.txt is different than the directory /cluster/home/kchura01/testsuite-main/testapps/cmake where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
++ 
+- -- Configuring done
+- -- Generating done
+Cleaning up working directory.done.
+
+********************
+Version: 3.4.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'cmake' with SLURM options '--constraint=rhel7'.
+Started job 10293608 on Submitted batch job 10293608.
+Waiting for job to complete..done.
+FAIL cmake - p1cmp029 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,2 @@
++ CMake Error: The current CMakeCache.txt directory /cluster/home/kchura01/testapps_cmake_login-prod-01_128871/CMakeCache.txt is different than the directory /cluster/home/kchura01/testsuite-main/testapps/cmake where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
++ 
+- -- Configuring done
+- -- Generating done
+Cleaning up working directory.done.
+
+********************
+Version: 3.18
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+

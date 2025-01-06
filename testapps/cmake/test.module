@@ -1,0 +1,6 @@
+#begin_module_parse#
+TESTPILOT_CMAKE='cmake'
+#end_module_parse#
+
+module purge 2>/dev/null
+module load ${TESTPILOT_CMAKE} > /dev/null 2>&1

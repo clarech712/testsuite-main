@@ -1,0 +1,113 @@
+
+********************
+Version: 2023.0.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'geneious' with SLURM options '--constraint=rhel7'.
+Started job 9359229 on Submitted batch job 9359229.
+Waiting for job to complete................done.
+FAIL geneious - p1cmp029 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 3,50 @@
++ Export Options for fasta:
++     wrap
++         [Label: Wrap sequence lines every 80 chars]
++         [Default: false]
++         [Accepts: 'true' or 'false']
++         [Description: Some programs, such as BCFtools, cannot cope with FASTA
++          files with lines of arbitrary length]
++     replaceSpacesInNameWithUnderscore
++         [Label: Replace spaces in sequence name with underscores]
++         [Default: true]
++         [Accepts: 'true' or 'false']
++         [Description: The FASTA format specifies the anything after the first
++          space is the sequence description. However, some programs treat the
++          entire name and description as a single value.]
++     description
++         [Label: Include sequence description]
++         [Default: true]
++         [Accepts: 'true' or 'false']
++         [Description: Some programs cannot cope with FASTA files which include a
++          description after the name]
++     exportedSequenceCase
++         [Label: Export sequence in:]
++         [Default: uppercase]
++         [Accepts:
++             uppercase (Upper case) ()
++             lowercase (Lower case) ()
++         ]
++     exportInsertionsAndReplacementsInOppositeCase
++         [Label: Use different character case for any regions annotated by
++          "Editing History" annotations]
++         [Default: false]
++         [Accepts: 'true' or 'false']
++     exportMissingEndAs
++         [Label: Export missing ends of alignment as:]
++         [Default: missingEndsAsGaps]
++         [Accepts:
++             missingEndsAsGaps (gaps (-)) ()
++             missingEndsAsN (Ns) ()
++         ]
++     allGaps
++         [Default: remove]
++         [Accepts:
++             remove (Remove them completely) ()
++             gaps (Export them as a sequence made entirely of gaps) ()
++         ]
++ 
++ Listed 7 options. Use "--filter <text>" to only show options related to <text>
++ Export Options for fastaPairedExporter:
+- Export Options for fastaPairedExporter:
+- 
+- No options found, options which depend on input sequence cannot be shown 
+- Export Options for fasta:
+-     wrap
+-         [Label: Wrap sequence lines every 80 chars]
+-         [Default: false]
+-         [Accepts: 'true' or 'false']
+-         [Description: Some programs, such as BCFtools, cannot cope with FASTA
+-          files with lines of arbitrary length]
+-     replaceSpacesInNameWithUnderscore
+-         [Label: Replace spaces in sequence name with underscores]
+-         [Default: true]
+-         [Accepts: 'true' or 'false']
+-         [Description: The FASTA format specifies the anything after the first
+-          space is the sequence description. However, some programs treat the
+-          entire name and description as a single value.]
+-     description
+-         [Label: Include sequence description]
+-         [Default: true]
+-         [Accepts: 'true' or 'false']
+-         [Description: Some programs cannot cope with FASTA files which include a
+-          description after the name]
+-     exportedSequenceCase
+-         [Label: Export sequence in:]
+-         [Default: uppercase]
+-         [Accepts: 
+-             uppercase (Upper case) ()
+-             lowercase (Lower case) ()
+-         ]
+-     exportInsertionsAndReplacementsInOppositeCase
+-         [Label: Use different character case for any regions annotated by
+-          "Editing History" annotations]
+-         [Default: false]
+-         [Accepts: 'true' or 'false']
+-     exportMissingEndAs
+-         [Label: Export missing ends of alignment as:]
+-         [Default: missingEndsAsGaps]
+-         [Accepts: 
+-             missingEndsAsGaps (gaps (-)) ()
+-             missingEndsAsN (Ns) ()
+-         ]
+-     allGaps
+-         [Default: remove]
+-         [Accepts: 
+-             remove (Remove them completely) ()
+-             gaps (Export them as a sequence made entirely of gaps) ()
+-         ]
+@@ 52,52 @@
++ No options found, options which depend on input sequence cannot be shown
+- Listed 7 options. Use "--filter <text>" to only show options related to <text>
+Cleaning up working directory.done.

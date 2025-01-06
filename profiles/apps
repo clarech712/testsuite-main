@@ -1,0 +1,36 @@
+#
+# Specific Application Tests
+#
+C amber 9 10
+C anaconda 9 10
+# C aocc 9 10
+C blast 9 10
+C blast_short 9 10
+C boost 9 10
+C fftw 9 10
+C gcc 9 10
+C gnuplot 9 10
+C gromacs 9 10
+C gsl 9 10
+C hdf5 9 10
+C impi 9 10
+C intel 9 10
+C matlab 9 10
+C mvapich2_gcc 9 10
+C mvapich2_intel 9 10
+C netcdf_c 9 10
+C netcdf_fortran 9 10
+C octave 9 10
+C oneapi 9 10
+C oneapi_mpi 9 10
+C openblas 9 10
+C openmpi_gcc 9 10
+C openmpi_intel 9 10
+C openmp_gcc 9 10
+C openmp_intel 9 10
+C openmp_oneapi 9 10
+C parallel_netcdf 9 10
+C quantum_espresso 9 10
+C r 9 10
+C tensorflow 9 10
+C totalview 9 10

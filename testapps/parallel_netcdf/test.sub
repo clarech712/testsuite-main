@@ -1,0 +1,16 @@
+#SBATCH -N2 -n4 -t5
+#
+# Test parallel-netcdf
+#
+# An example program demonstrating a parllel i/o on a shared file  write. 
+# use hydra explicitly for impi/5.1.3*
+cd ${SLURM_SUBMIT_DIR:-.}
+
+MPIRUN=mpiexec
+[[ "$RCAC_INTEL_MPI_VERSION" == 5.1.3.* ]] && MPIRUN=mpiexec.hydra
+
+$MPIRUN -np 4 ./pnetcdf-write-standard
+
+$MPIRUN -np 4 ncmpidiff -q testfile.nc  test.nc
+
+echo $?

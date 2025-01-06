@@ -1,0 +1,1 @@
+icc -o hello -fopenmp hello.c

@@ -1,0 +1,15 @@
+#SBATCH -N2 -t5
+# #SBATCH -N2 -t5 --exclusive
+#
+# Test Intel OneAPI MPI
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+
+if [ -n "${SLURM_JOB_ID}" ]; then
+    srun hostname | cut -d. -f1 > nodefile
+else
+    hostname -s > ./nodefile
+fi
+
+# rr would enforce that it uses both nodes
+mpiexec -machinefile ./nodefile -n 2 -rr ./hello

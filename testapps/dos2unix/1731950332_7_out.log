@@ -1,0 +1,20 @@
+
+********************
+Version: 6.0.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'dos2unix' with SLURM options '--constraint=rhel7'.
+Started job 9357487 on Submitted batch job 9357487.
+Waiting for job to complete...done.
+PASS dos2unix - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 7.4.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'dos2unix' with SLURM options '--constraint=rhel7'.
+Started job 9357492 on Submitted batch job 9357492.
+Waiting for job to complete..............done.
+PASS dos2unix - p1cmp029 
+Cleaning up working directory.done.

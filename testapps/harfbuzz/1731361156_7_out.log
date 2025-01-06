@@ -1,0 +1,30 @@
+
+********************
+Version: 2.9.1_gcc9.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'harfbuzz' with SLURM options '--constraint=rhel7'.
+Started job 9058313 on Submitted batch job 9058313.
+Waiting for job to complete..done.
+PASS harfbuzz - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.9.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'harfbuzz' with SLURM options '--constraint=rhel7'.
+Started job 9058316 on Submitted batch job 9058316.
+Waiting for job to complete..done.
+PASS harfbuzz - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 5.1.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'harfbuzz' with SLURM options '--constraint=rhel7'.
+Started job 9058343 on Submitted batch job 9058343.
+Waiting for job to complete..done.
+PASS harfbuzz - p1cmp029 
+Cleaning up working directory.done.

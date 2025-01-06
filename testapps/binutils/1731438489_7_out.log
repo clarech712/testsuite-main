@@ -1,0 +1,10 @@
+
+********************
+Version: 2.29.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'binutils' with SLURM options '--constraint=rhel7'.
+Started job 9107705 on Submitted batch job 9107705.
+Waiting for job to complete..done.
+PASS binutils - p1cmp028 
+Cleaning up working directory.done.

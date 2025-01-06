@@ -1,0 +1,112 @@
+
+********************
+Version: 1.7.6
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'perl' with SLURM options '--constraint=rhel7'.
+Started job 9058734 on Submitted batch job 9058734.
+Waiting for job to complete..done.
+FAIL perl - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,7 @@
++ 
++ 
++ 
++ 
++ 
++ 
++ 
+- perl: warning: Setting locale failed.
+- perl: warning: Please check that your locale settings:
+- 	LANGUAGE = (unset),
+- 	LC_ALL = (unset),
+- 	LANG = "C.UTF-8"
+-     are supported and installed on your system.
+- perl: warning: Falling back to the standard locale ("C").
+Cleaning up working directory.done.
+
+********************
+Version: 5.32.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'perl' with SLURM options '--constraint=rhel7'.
+Started job 9058735 on Submitted batch job 9058735.
+Waiting for job to complete..done.
+FAIL perl - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,7 @@
++ 
++ 
++ 
++ 
++ 
++ 
++ 
+- perl: warning: Setting locale failed.
+- perl: warning: Please check that your locale settings:
+- 	LANGUAGE = (unset),
+- 	LC_ALL = (unset),
+- 	LANG = "C.UTF-8"
+-     are supported and installed on your system.
+- perl: warning: Falling back to the standard locale ("C").
+Cleaning up working directory.done.
+
+********************
+Version: 5.34.0_gcc7.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'perl' with SLURM options '--constraint=rhel7'.
+Started job 9058737 on Submitted batch job 9058737.
+Waiting for job to complete..done.
+FAIL perl - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,7 @@
++ 
++ 
++ 
++ 
++ 
++ 
++ 
+- perl: warning: Setting locale failed.
+- perl: warning: Please check that your locale settings:
+- 	LANGUAGE = (unset),
+- 	LC_ALL = (unset),
+- 	LANG = "C.UTF-8"
+-     are supported and installed on your system.
+- perl: warning: Falling back to the standard locale ("C").
+Cleaning up working directory.done.
+
+********************
+Version: 5.34.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'perl' with SLURM options '--constraint=rhel7'.
+Started job 9058780 on Submitted batch job 9058780.
+Waiting for job to complete..done.
+FAIL perl - p1cmp028 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,7 @@
++ 
++ 
++ 
++ 
++ 
++ 
++ 
+- perl: warning: Setting locale failed.
+- perl: warning: Please check that your locale settings:
+- 	LANGUAGE = (unset),
+- 	LC_ALL = (unset),
+- 	LANG = "C.UTF-8"
+-     are supported and installed on your system.
+- perl: warning: Falling back to the standard locale ("C").
+Cleaning up working directory.done.

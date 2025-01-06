@@ -1,0 +1,30 @@
+
+********************
+Version: 2.2.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bowtie2' with SLURM options '--constraint=rhel7'.
+Started job 9057001 on Submitted batch job 9057001.
+Waiting for job to complete...done.
+PASS bowtie2 - p1cmp044 
+Cleaning up working directory.done.
+
+********************
+Version: 2.4.2
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bowtie2' with SLURM options '--constraint=rhel7'.
+Started job 9057004 on Submitted batch job 9057004.
+Waiting for job to complete...done.
+PASS bowtie2 - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 2.5.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'bowtie2' with SLURM options '--constraint=rhel7'.
+Started job 9057049 on Submitted batch job 9057049.
+Waiting for job to complete...done.
+PASS bowtie2 - p1cmp028 
+Cleaning up working directory.done.

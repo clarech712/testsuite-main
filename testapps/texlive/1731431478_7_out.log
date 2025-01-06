@@ -1,0 +1,10 @@
+
+********************
+Version: 20210325
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'texlive' with SLURM options '--constraint=rhel7'.
+Started job 9095537 on Submitted batch job 9095537.
+Waiting for job to complete...done.
+PASS texlive - p1cmp044 
+Cleaning up working directory.done.

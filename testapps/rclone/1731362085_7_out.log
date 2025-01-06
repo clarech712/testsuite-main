@@ -1,0 +1,30 @@
+
+********************
+Version: 1.51.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'rclone' with SLURM options '--constraint=rhel7'.
+Started job 9058992 on Submitted batch job 9058992.
+Waiting for job to complete..done.
+PASS rclone - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 1.59.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'rclone' with SLURM options '--constraint=rhel7'.
+Started job 9058993 on Submitted batch job 9058993.
+Waiting for job to complete..done.
+PASS rclone - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 1.63.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'rclone' with SLURM options '--constraint=rhel7'.
+Started job 9058996 on Submitted batch job 9058996.
+Waiting for job to complete..done.
+PASS rclone - p1cmp028 
+Cleaning up working directory.done.

@@ -1,0 +1,168 @@
+
+********************
+Version: 2.2.24
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'blast' with SLURM options '--constraint=rhel7'.
+Started job 10390346 on Submitted batch job 10390346.
+Waiting for job to complete..........done.
+FAIL blast - p1cmp043 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,4 @@
++ BLAST Database error: No alias or index file found for protein database [/depot/itap/datasets/blast/latest/nr] in search path [/cluster/home/kchura01/testapps_blast_login-prod-03_15629:/blast/blastdb:/blast/blastdb_custom:]
++ BLAST ran out of memory
++ /blast/bin/blastx: line 25: 58869 Segmentation fault      (core dumped) blastx.REAL "$@"
++ datasets with 80 cores, blast time
+- ${*} with ${*} cores, blast time ${TIME}
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ /var/spool/slurm/job10390346/slurm_script: line 55: bc: command not found
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 2.2.31
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'blast' with SLURM options '--constraint=rhel7'.
+Started job 10390349 on Submitted batch job 10390349.
+Waiting for job to complete.........done.
+FAIL blast - p1cmp043 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,4 @@
++ BLAST Database error: No alias or index file found for protein database [/depot/itap/datasets/blast/latest/nr] in search path [/cluster/home/kchura01/testapps_blast_login-prod-03_16761:/blast/blastdb:/blast/blastdb_custom:]
++ BLAST ran out of memory
++ /blast/bin/blastx: line 25: 63015 Segmentation fault      (core dumped) blastx.REAL "$@"
++ datasets with 80 cores, blast time
+- ${*} with ${*} cores, blast time ${TIME}
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ /var/spool/slurm/job10390349/slurm_script: line 55: bc: command not found
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 2.3.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'blast' with SLURM options '--constraint=rhel7'.
+Started job 10390351 on Submitted batch job 10390351.
+Waiting for job to complete.........done.
+FAIL blast - p1cmp043 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,4 @@
++ BLAST Database error: No alias or index file found for protein database [/depot/itap/datasets/blast/latest/nr] in search path [/cluster/home/kchura01/testapps_blast_login-prod-03_17283:/blast/blastdb:/blast/blastdb_custom:]
++ BLAST ran out of memory
++ /blast/bin/blastx: line 25: 67162 Segmentation fault      (core dumped) blastx.REAL "$@"
++ datasets with 80 cores, blast time
+- ${*} with ${*} cores, blast time ${TIME}
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ /var/spool/slurm/job10390351/slurm_script: line 55: bc: command not found
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 2.8.1
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'blast' with SLURM options '--constraint=rhel7'.
+Started job 10390354 on Submitted batch job 10390354.
+Waiting for job to complete..........done.
+FAIL blast - p1cmp043 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,4 @@
++ BLAST Database error: No alias or index file found for protein database [/depot/itap/datasets/blast/latest/nr] in search path [/cluster/home/kchura01/testapps_blast_login-prod-03_17843:/blast/blastdb:/blast/blastdb_custom:]
++ BLAST ran out of memory
++ /blast/bin/blastx: line 25: 71312 Segmentation fault      (core dumped) blastx.REAL "$@"
++ datasets with 80 cores, blast time
+- ${*} with ${*} cores, blast time ${TIME}
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ /var/spool/slurm/job10390354/slurm_script: line 55: bc: command not found
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 1.5.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'blast' with SLURM options '--constraint=rhel7'.
+Started job 10390356 on Submitted batch job 10390356.
+Waiting for job to complete.........done.
+FAIL blast - p1cmp043 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,4 @@
++ BLAST Database error: No alias or index file found for protein database [/depot/itap/datasets/blast/latest/nr] in search path [/cluster/home/kchura01/testapps_blast_login-prod-03_18470:/blast/blastdb:/blast/blastdb_custom:]
++ BLAST ran out of memory
++ /blast/bin/blastx: line 25: 75455 Segmentation fault      (core dumped) blastx.REAL "$@"
++ datasets with 80 cores, blast time
+- ${*} with ${*} cores, blast time ${TIME}
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ /var/spool/slurm/job10390356/slurm_script: line 55: bc: command not found
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 2.15.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'blast' with SLURM options '--constraint=rhel7'.
+Started job 10390361 on Submitted batch job 10390361.
+Waiting for job to complete.........done.
+FAIL blast - p1cmp043 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,4 @@
++ BLAST Database error: No alias or index file found for protein database [/depot/itap/datasets/blast/latest/nr] in search path [/cluster/home/kchura01/testapps_blast_login-prod-03_19089:/blast/blastdb:/blast/blastdb_custom:]
++ BLAST ran out of memory
++ /blast/bin/blastx: line 25: 79594 Segmentation fault      (core dumped) blastx.REAL "$@"
++ datasets with 80 cores, blast time
+- ${*} with ${*} cores, blast time ${TIME}
+- 
+- 
+- 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ /var/spool/slurm/job10390361/slurm_script: line 55: bc: command not found
+- 
+Cleaning up working directory.done.

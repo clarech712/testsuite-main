@@ -1,0 +1,9 @@
+Today ${*} we had run our first localization example
+This is how we show numbers in this locale 103.34
+This is how we show currency in this locale $103.34
+This is typical date in the locale ${*}
+This is typical time in the locale ${*}
+This is upper case HELLO WORLD!
+This is lower case hello world!
+This is title case Hello World!
+This is fold case hello world!

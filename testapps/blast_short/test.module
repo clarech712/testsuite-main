@@ -1,0 +1,9 @@
+#begin_module_parse#
+TESTPILOT_BLAST='blast'
+TESTPILOT_DB='datasets'
+TESTPILOT_CORES='1'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ${TESTPILOT_BLAST} > /dev/null 2>&1
+ncores=$TESTPILOT_CORES

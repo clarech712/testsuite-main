@@ -1,0 +1,16 @@
+#SBATCH -N1 -t5
+#
+# Test hdf5  (C and Fortran).
+#
+
+# Compile C
+if [ "$CC" == "" ]; then
+        CC="gcc"
+fi
+$CC h5ex_d_rdwr.c -I${HDF5_HOME}/include -L${HDF5_HOME}/lib -lhdf5 -o h5ex_d_rdwr
+
+# Compile Fortran
+if [ "$FC" == "" ]; then
+        FC="gfortran"
+fi
+$FC h5ex_t_float_F03.f90 -I${HDF5_HOME}/include -L${HDF5_HOME}/lib -lhdf5_fortran -lhdf5 -o h5ex_t_float

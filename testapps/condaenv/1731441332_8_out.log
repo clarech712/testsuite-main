@@ -1,0 +1,10 @@
+
+********************
+Version: bracken
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'condaenv' with SLURM options '--constraint=rhel8'.
+Started job 9111632 on Submitted batch job 9111632.
+Waiting for job to complete...done.
+PASS condaenv - d1cmp026 
+Cleaning up working directory.done.

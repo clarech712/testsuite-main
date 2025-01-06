@@ -1,0 +1,50 @@
+
+********************
+Version: 5.1.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'root' with SLURM options '--constraint=rhel8'.
+Started job 9192938 on Submitted batch job 9192938.
+Waiting for job to complete...done.
+PASS root - d1cmp017 
+Cleaning up working directory.done.
+
+********************
+Version: 5.34.18
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'root' with SLURM options '--constraint=rhel8'.
+Started job 9192945 on Submitted batch job 9192945.
+Waiting for job to complete..done.
+PASS root - d1cmp017 
+Cleaning up working directory.done.
+
+********************
+Version: 6.22.08_pythia6
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'root' with SLURM options '--constraint=rhel8'.
+Started job 9192947 on Submitted batch job 9192947.
+Waiting for job to complete..done.
+PASS root - d1cmp017 
+Cleaning up working directory.done.
+
+********************
+Version: 6.22.08
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'root' with SLURM options '--constraint=rhel8'.
+Started job 9192948 on Submitted batch job 9192948.
+Waiting for job to complete..done.
+PASS root - d1cmp017 
+Cleaning up working directory.done.
+
+********************
+Version: 6.24.06
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'root' with SLURM options '--constraint=rhel8'.
+Started job 9192949 on Submitted batch job 9192949.
+Waiting for job to complete..done.
+PASS root - d1cmp017 
+Cleaning up working directory.done.

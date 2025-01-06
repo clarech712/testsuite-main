@@ -1,0 +1,10 @@
+#
+# Test netcdf
+#
+# An example program demonstrating a simple 2D write. 
+# Note: can be compiled with MPI compiler, but the code is not parallel.
+if [ "$FC" == "" ]; then
+        FC="gfortran"
+fi
+
+$FC -o simple_xy_wr -I${NETCDF_FORTRAN_HOME}/include -L${NETCDF_FORTRAN_HOME}/lib -lnetcdff simple_xy_wr.f90

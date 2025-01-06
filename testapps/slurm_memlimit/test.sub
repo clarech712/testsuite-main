@@ -1,0 +1,46 @@
+#!/bin/bash
+#SBATCH -N1 -n1 --mem=2000M -t5:00
+#
+# Test SLURM memory limit allocation when the node is shared with other people
+# (i.e. "does cgroups limit my access to only the memory that I requested?")
+#
+
+# Bail out if not inside a Slurm job
+if [[ -z $SLURM_JOB_ID ]]; then
+    echo "Not in a Slurm job, bailing out!" 1>&2
+    exit
+fi
+
+# Determine Cgroup version
+# We have a mixture of hierarchies in effect, which is not ideal, so
+# testing several outcomes.
+readarray -t MOUNTS < <(mount | grep ^cgroup)
+if [[ ${#MOUNTS[@]} -gt 1 && ${MOUNTS[0]} =~ ^"cgroup on" ]]; then
+    echo "Cgroup v1 detected."
+    cgroup_file="/sys/fs/cgroup/memory/slurm/uid_$UID/job_$SLURM_JOB_ID/memory.limit_in_bytes"
+elif [[ ${#MOUNTS[@]} -eq 1 && ${MOUNTS[0]} =~ ^"cgroup2 on" ]]; then
+    echo "Cgroup v2 detected."
+    cgroup_file="/sys/fs/cgroup/system.slice/slurmstepd.scope/job_$SLURM_JOB_ID/memory.max"
+else
+    echo "Error: can not determine Croup type, bailing out." 1>&2
+    exit 1
+fi
+
+# Requested and received memory.
+# Convert both to MB (because Slurm does not give output in raw bytes)
+mem_requested=$(sacct --noheader -P -o ReqMem --units=M -j $SLURM_JOB_ID | tr -d '[A-Za-z]')
+mem_limit_raw=$(cat $cgroup_file)
+mem_limited=$(echo "$mem_limit_raw / 1024 /1024" | bc)
+
+# And compare
+if [[ $mem_requested -eq $mem_limited ]]; then
+   MATCH="matches"
+else
+   MATCH="does NOT match"
+fi
+
+echo "Cgroup file:   $cgroup_file"
+echo "Slurm request: $mem_requested MB"
+echo "Cgroup limit:  $mem_limited MB ($mem_limit_raw bytes)"
+echo "Cgroup memory limit $MATCH Slurm job request."
+

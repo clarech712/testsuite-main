@@ -1,0 +1,10 @@
+
+********************
+Version: 1.0.5
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fribidi' with SLURM options '--constraint=rhel8'.
+Started job 9057961 on Submitted batch job 9057961.
+Waiting for job to complete..done.
+PASS fribidi - d1cmp014 
+Cleaning up working directory.done.

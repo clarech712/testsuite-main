@@ -1,0 +1,6 @@
+#begin_module_parse#
+TESTPILOT_MODULE='nvhpc/22.3'
+#end_module_parse#
+
+module purge 2>/dev/null
+module load ${TESTPILOT_MODULE} > /dev/null 2>&1

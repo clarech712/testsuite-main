@@ -1,0 +1,8 @@
+#begin_module_parse#
+TESTPILOT_MODTREE='modtree/rhel8'
+TESTPILOT_COMPILER='intel-oneapi-compilers'
+#end_module_parse#
+
+module --force purge 2>/dev/null
+module load ${TESTPILOT_MODTREE} > /dev/null 2>&1
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1

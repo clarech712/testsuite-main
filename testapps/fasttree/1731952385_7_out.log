@@ -1,0 +1,42 @@
+
+********************
+Version: 2.1.10
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fasttree' with SLURM options '--constraint=rhel7'.
+Started job 9358012 on Submitted batch job 9358012.
+Waiting for job to complete...............done.
+FAIL fasttree - p1cmp029 
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,10 @@
++ Alignment: alignment.fasta
++ Nucleotide distances: Jukes-Cantor Joins: balanced Support: SH-like 1000
++ Search: Normal +NNI +SPR (2 rounds range 10) +ML-NNI opt-each=1
++ TopHits: 1.00*sqrtN close=default refresh=0.80
++ ML Model: Jukes-Cantor, CAT approximation with 20 rate categories
++ Initial topology in 0.00 seconds
++ Refining topology: 0 rounds ME-NNIs, 2 rounds ME-SPRs, 0 rounds ML-NNIs
++ Total branch-length 0.000 after 0.00 sec
++ Total time: 0.00 seconds Unique: 1/3 Bad splits: 0/0
++ 
+- FastTree Version 2.1.11 Double precision (No SSE3)
+- Alignment: alignment.fasta
+- Nucleotide distances: Jukes-Cantor Joins: balanced Support: SH-like 1000
+- Search: Normal +NNI +SPR (2 rounds range 10) +ML-NNI opt-each=1
+- TopHits: 1.00*sqrtN close=default refresh=0.80
+- ML Model: Jukes-Cantor, CAT approximation with 20 rate categories
+- Initial topology in 0.00 seconds
+- Refining topology: 0 rounds ME-NNIs, 2 rounds ME-SPRs, 0 rounds ML-NNIs
+- Total branch-length 0.000 after 0.00 sec
+- Total time: 0.00 seconds Unique: 1/3 Bad splits: 0/0
+Cleaning up working directory.done.
+
+********************
+Version: 2.1.11
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fasttree' with SLURM options '--constraint=rhel7'.
+Started job 9358033 on Submitted batch job 9358033.
+Waiting for job to complete.......Cleaning up working directory.done.

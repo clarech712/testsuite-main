@@ -1,0 +1,10 @@
+#
+# Test netcdf-c
+#
+# An example program demonstrating a simple 2D write. 
+# Note: can be compiled with MPI compiler, but the code is not parallel.
+if [ "$CC" == "" ]; then
+        CC="gcc"
+fi
+
+$CC -o simple_xy_wr -I${NETCDF_HOME}/include -L${NETCDF_HOME}/lib -lnetcdf simple_xy_wr.c

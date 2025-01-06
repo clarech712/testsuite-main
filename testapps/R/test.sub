@@ -1,0 +1,7 @@
+#SBATCH -N1 -n1 -t5 -p batch
+#
+# Test R
+#
+cd ${SLURM_SUBMIT_DIR:-.}
+unset DISPLAY
+R -q --vanilla --no-save < input_test

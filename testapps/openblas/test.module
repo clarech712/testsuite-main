@@ -1,0 +1,8 @@
+#begin_module_parse#
+TESTPILOT_COMPILER='gcc'
+TESTPILOT_OPENBLAS='openblas'
+#end_module_parse#
+
+module --force purge
+module load ${TESTPILOT_COMPILER} > /dev/null 2>&1
+module load ${TESTPILOT_OPENBLAS} > /dev/null 2>&1

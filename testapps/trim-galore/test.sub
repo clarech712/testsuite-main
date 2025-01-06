@@ -1,0 +1,3 @@
+##SBATCH -N1 -t15
+cd ${SLURM_SUBMIT_DIR:-.}
+trim_galore -q 20 --phred33 --length 36 -e 0.1 --stringency 3 --output_dir ./trimmed_reads/ ERR101899_1.fastq.gz 2>&1 | grep "sequences processed in total"

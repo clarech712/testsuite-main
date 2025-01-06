@@ -1,0 +1,34 @@
+#!/bin/bash
+#SBATCH -N1 -n4 -t5:00
+#
+# Test SLURM cpuset allocation when the node is shared with other people
+# (i.e. "does cgroups limit my access to only the cores that I requested?")
+#
+
+# Bail out if not inside a Slurm job
+if [[ -z $SLURM_JOB_ID ]]; then
+    echo "Not in a Slurm job, bailing out!" 1>&2
+    exit
+fi
+
+# Determine Cgroup version
+# We have a mixture of hierarchies in effect, which is not ideal, so
+# testing several outcomes.
+readarray -t MOUNTS < <(mount | grep ^cgroup)
+if [[ ${#MOUNTS[@]} -gt 1 && ${MOUNTS[0]} =~ ^"cgroup on" ]]; then
+    echo "Cgroup v1 detected."
+    cgroup_file="/sys/fs/cgroup/cpuset/slurm/uid_$UID/job_$SLURM_JOB_ID/cpuset.cpus"
+elif [[ ${#MOUNTS[@]} -eq 1 && ${MOUNTS[0]} =~ ^"cgroup2 on" ]]; then
+    echo "Cgroup v2 detected."
+    cgroup_file="/sys/fs/cgroup/system.slice/slurmstepd.scope/job_$SLURM_JOB_ID/cpuset.cpus"
+else
+    echo "Error: can not determine Croup type, bailing out." 1>&2
+    exit 1
+fi
+
+for range in $(sed -e "s/,/ /g" -e "s/-/../g" < $cgroup_file); do
+    for cpu in $(eval echo "{$range}"); do
+        echo $cpu;
+    done;
+done | wc -l
+

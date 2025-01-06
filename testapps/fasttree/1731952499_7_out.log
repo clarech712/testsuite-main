@@ -1,0 +1,20 @@
+
+********************
+Version: 2.1.10
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fasttree' with SLURM options '--constraint=rhel7'.
+Started job 9358056 on Submitted batch job 9358056.
+Waiting for job to complete................done.
+PASS fasttree - p1cmp029 
+Cleaning up working directory.done.
+
+********************
+Version: 2.1.11
+CLUSTER_SCRATCH is not available, running tests from /cluster/home/kchura01 directory
+
+Starting job test 'fasttree' with SLURM options '--constraint=rhel7'.
+Started job 9358096 on Submitted batch job 9358096.
+Waiting for job to complete..............done.
+PASS fasttree - p1cmp029 
+Cleaning up working directory.done.
