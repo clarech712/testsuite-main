@@ -162,6 +162,8 @@ Options:
                       (this option must come last, after the profile names)
 ```
 
+**TODO**: Develop the same procedure for `testapp_all_run`
+
 ## Available profiles
 
 All profiles are stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/profiles/`.
@@ -221,6 +223,8 @@ C r 9 10
 C parallel_netcdf 9 10
 C tensorflow 9 10
 ```
+
+**TODO**: Understand what is going on in this step
 
 ### Basic testsuite run
 The simplest way to launch testsuite is to run it with no arguments. 
