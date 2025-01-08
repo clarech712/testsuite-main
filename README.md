@@ -38,7 +38,7 @@ Options:
 ```
 
 ### Available tests
-By default, `testapp` will search for available tests stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/`.
+By default, `testapp` will search for available tests stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/`. **TODO**: Update as needed
 ```
 $ testapp -l
 
@@ -108,6 +108,8 @@ Every tests contains at least three files.
 - `test.err`: Expected error file. Some applications print info in `stderr`
 - (optional) `test.pre`: Some tests also include a pre-submission script, e.g. the `intel` test has a `test.pre` script where the binary is compiled. This happens *before* the job is submitted.
 
+There may be additional files such as input files or includes.
+
 ### Updating tests or developing new tests
 To update testapp (matlab in the below example), the first step is to copy our matlab testapp to `$HOME/.testapps`. 
 ```
@@ -123,7 +125,25 @@ $ testapp -k -p matlab  # -k means keep output files
 
 If the modified test runs without error and you want the change deployed for everyone, then you can upload it to this github repo, and create a PR.
 
-## tessuite
+**TODO**: Test this entire step out
+
+## testapp_all_run: run test for all versions of single package
+
+### Syntax
+```
+Usage:  testapp_all_run [module_name] [redhat_version]
+```
+
+This is available for each package that has a test written. Red Hat versions this has been tested on are 7 and 8.
+
+### Effects
+
+This program runs `testapp <module_name>` for each available version obtained with `module av <module_name>`.
+The test executes for all versions regardless of whether it fails for some of them. The output to the terminal
+is saved as two separate `.log` files in the test folder: one for stdout and one for stderr. Each `.log` file
+is named using a timestamp of when the `testapp_all_run` program began to execute.
+
+## testsuite
 testsuite will automically many jobs to the cluster and periodically print the `PASS/FAIL` results as each test is run.
 ```
 $ testsuite -h
