@@ -38,67 +38,94 @@ Options:
 ```
 
 ### Available tests
-By default, `testapp` will search for available tests stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/`. **TODO**: Update as needed
+By default, `testapp` will search for available tests stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/`.
 ```
 $ testapp -l
 
-amber
-amdfftw
+ImageMagick
+NCAR
+R
+R_25
+SAS
 anaconda
-aocc
+ansys
+bcftools
+bedtools
+binutils
 blast
 blast_short
 boost
-db12
+bowtie
+bowtie2
+bwa
+cdo
+cellprofiler
+chimera
+cmake
+condaenv
+curl
+cutadapt
+dos2unix
+fastp
+fastqc
+fasttree
+ffmpeg
 fftw
+fontconfig
+freetype
+fribidi
 gcc
+geneious
+glib
+gnu-parallel
 gnuplot
-gromacs
+graphviz
 gsl
-hdf5
-hpcg_intel
-hpcg_oneapi
-iozone
-linpack_intel
+gurobi
+harfbuzz
+idl
+imagemagick
+jags
+java
+julia
+libgcrypt
+libgpg-error
+libtiff
+mafft
+mathematica
 matlab
-mpi4py
-mvapich2_aocc
-mvapich2_gcc
-mvapich2_intel
-netcdf_c
-netcdf_fortran
-nvhpc
+mesa
+miniconda
+miniforge
+multiqc
 octave
-oneapi
-oneapi_mpi
 openblas
-openmp_aocc
-openmp_gcc
-openmpi_aocc
-openmpi_gcc
-openmpi_intel
-openmp_intel
-openmp_oneapi
-osu_allreduce
-osu_alltoall
-osu_bcast
-osu_bibw
-osu_bw
-osu_latency
-osu_scatter
-parallel_netcdf
+openmpi
+orca
+orthofinder
+pandoc
+parallel
+perl
+proj
 python
-quantum_espresso
-r
-R_25
-slurm_1core_4nodes
-slurm_cpusets
-slurm_exclusive
-slurm_memhog
-slurm_memlimit
-stream
-tensorflow
-totalview
+pytorchgpu
+qiime2
+r-bioinformatics
+r-scrnaseq
+r-shinyngs
+rclone
+root
+rsync
+singularity
+sqlite
+stata
+sumo
+swig
+texlive
+trim-galore
+velvet
+xerces
+zip
 ```
 
 Every tests contains at least three files.
@@ -124,8 +151,6 @@ $ testapp -k -p matlab  # -k means keep output files
 ```
 
 If the modified test runs without error and you want the change deployed for everyone, then you can upload it to this github repo, and create a PR.
-
-**TODO**: Test this entire step out
 
 ## testapp_all_run: run test for all versions of single package
 
