@@ -4,11 +4,14 @@ is easier to interpret. Ideally all the tests in testsuite should `PASS` but som
 `testsuite` results after a maintenance should be no worse than the one before.
 
 # Programs
+
+These can all be found in the `bin` directory.
+
 ## testapp: run a single test
 
 ### Syntax
 ```
-Usage:  testapp [options] [tests ...] [-o sbatch_options ...]
+Usage:  ./testapp [options] [tests ...] [-o sbatch_options ...]
 
 Options:
   -l             list available tests
@@ -36,6 +39,7 @@ Options:
 
   Suggested usage:  testapp <testname>
 ```
+**TODO**: What is the point of personal definitions if the user is given the full repo?
 
 ### Available tests
 By default, `testapp` will search for available tests stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/`.
