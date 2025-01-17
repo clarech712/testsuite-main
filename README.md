@@ -144,19 +144,12 @@ Every tests contains at least three files.
 There may be additional files such as input files or includes.
 
 ### Updating tests or developing new tests
-To update testapp (`matlab` in the below example), the first step is to copy our matlab testapp to `$HOME/.testapps`. 
+To update testapp (`matlab` in the below example), the first step is to navigate to the `testapps` folder and locate the module directory. 
 ```
-$ mkdir $HOME/.testapps && cp -r /cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/matlab $HOME/.testapps
+$ cd testsuite-main/testapps/matlab
 ```
-In most cases, we can need to edit `test.module`, `test.out` and `test.err`. 
-
-To test the updated test app in `$HOME/.testapps`, use `-p`.
-```
-$ testapp -k -p matlab  # -k means keep output files
-                        # -p means use personal test definitions.
-```
-
-If the modified test runs without error and you want the change deployed for everyone, then you can upload it to this github repo, and create a PR.
+In most cases, we can need to edit `test.module`, `test.out` and `test.err`. If the modified test runs without error and you want the
+change deployed for everyone, then you can upload it to this github repo, and create a PR.
 
 ## testapp_forall
 
@@ -164,7 +157,7 @@ This program is for running a test for all versions of a single module.
 
 ### Syntax
 ```
-Usage:  ./testapp_all_run [module_name] [redhat_version]
+Usage:  ./testapp_forall [module_name] [redhat_version]
 ```
 
 This is available for each package that has a test written. Red Hat versions this has been tested on are 7 and 8.
@@ -174,7 +167,7 @@ This is available for each package that has a test written. Red Hat versions thi
 This program runs `testapp <module_name>` for each available version obtained with `module av <module_name>`.
 The test executes for all versions regardless of whether it fails for some of them. The output to the terminal
 is saved as two separate `.log` files in the test folder: one for stdout and one for stderr. Each `.log` file
-is named using a timestamp of when the `testapp_all_run` program began to execute.
+is named using a timestamp of when the `testapp_forall` program began to execute.
 
 ## testsuite
 testsuite will automically many jobs to the cluster and periodically print the `PASS/FAIL` results as each test is run.
