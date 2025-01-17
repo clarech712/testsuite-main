@@ -5,9 +5,11 @@ is easier to interpret. Ideally all the tests in testsuite should `PASS` but som
 
 # Programs
 
-These can all be found in the `bin` directory.
+These can all be found in the `bin` directory. To run the default version of a module, see [testapp](#testapp). To run all versions of a module, see [testapp_forall](#testapp_forall).
 
-## testapp: run a single test
+## testapp
+
+This program is for running a test for the default version of a single module.
 
 ### Syntax
 ```
@@ -26,9 +28,6 @@ Options:
   -o             any additional SLURM sbatch options
                  (if present, must appear at the end of the command)
 
-  -p 	       Use personal test definitions 
-		       Personal tests are defined in ~/.testapps 
-
   --submit       dispatch asynchronous job
                  (prints <test_name> <job_id> <test_id>)
   --validate <test_name> <job_id> <test_id>
@@ -37,14 +36,13 @@ Options:
                  you can leave out one or both of the options
                  check the status of a recently ran job
 
-  Suggested usage:  testapp <testname>
+  Suggested usage:  ./testapp <testname>
 ```
-**TODO**: What is the point of personal definitions if the user is given the full repo?
 
 ### Available tests
-By default, `testapp` will search for available tests stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/`.
+By default, `./testapp` will search for available tests stored in the relative path `testsuite-main/testapps/`.
 ```
-$ testapp -l
+$ ./testapp -l
 
 ImageMagick
 NCAR
@@ -142,7 +140,7 @@ Every tests contains at least three files.
 There may be additional files such as input files or includes.
 
 ### Updating tests or developing new tests
-To update testapp (matlab in the below example), the first step is to copy our matlab testapp to `$HOME/.testapps`. 
+To update testapp (`matlab` in the below example), the first step is to copy our matlab testapp to `$HOME/.testapps`. 
 ```
 $ mkdir $HOME/.testapps && cp -r /cluster/tufts/hpc/tools/testsuite/0.0.1/testapps/matlab $HOME/.testapps
 ```
@@ -156,11 +154,13 @@ $ testapp -k -p matlab  # -k means keep output files
 
 If the modified test runs without error and you want the change deployed for everyone, then you can upload it to this github repo, and create a PR.
 
-## testapp_all_run: run test for all versions of single package
+## testapp_forall
+
+This program is for running a test for all versions of a single module.
 
 ### Syntax
 ```
-Usage:  testapp_all_run [module_name] [redhat_version]
+Usage:  ./testapp_all_run [module_name] [redhat_version]
 ```
 
 This is available for each package that has a test written. Red Hat versions this has been tested on are 7 and 8.
