@@ -5,7 +5,11 @@ is easier to interpret. Ideally all the tests in testsuite should `PASS` but som
 
 # Programs
 
-These can all be found in the `bin` directory. To run the default version of a module, see [testapp](#testapp). To run all versions of a module, see [testapp_forall](#testapp_forall).
+These can all be found in the `bin` directory.
+
++ [testapp](#testapp) tests the default version of a module
+
++ [testapp_forall](#testapp_forall) tests all versions of a module
 
 ## testapp
 
