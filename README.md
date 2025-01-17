@@ -170,16 +170,15 @@ is saved as two separate `.log` files in the test folder: one for stdout and one
 is named using a timestamp of when the `testapp_forall` program began to execute.
 
 ## testsuite
-testsuite will automically many jobs to the cluster and periodically print the `PASS/FAIL` results as each test is run.
+`testsuite` will automically many jobs to the cluster and periodically print the `PASS/FAIL` results as each test is run.
 ```
 $ testsuite -h
-Usage:  testsuite [options] [test profiles] [-o SLURM options]
+Usage:  ./testsuite [options] [test profiles] [-o SLURM options]
 Options:
          -l          list available tests
          -n          output any nodes which fail tests
          -k          keep testsuite/testapp output after tests have finished
                      (useful for seeing why they failed if working a problem)
-         -t <path>   use <path> for temporary output directories (such as -k)
          -v          verbose output (default)
          -q          quiet (no verbose output)
          -r          force all tests to be run on random nodes
@@ -188,7 +187,7 @@ Options:
                       (this option must come last, after the profile names)
 ```
 
-**TODO**: Develop the same procedure for `testapp_all_run`
+**TODO**: Develop the same procedure for `testapp_forall`
 
 ## Available profiles
 
