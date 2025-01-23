@@ -1,23 +1,24 @@
-# testsuite for Tufts HPC
+# `testsuite` for Tufts HPC
 Testsuite is a collection of tests that are used to validate a cluster before and after a maintenance. It produces a simple `PASS/FAIL` output for each test which 
-is easier to interpret. Ideally all the tests in testsuite should `PASS` but sometimes tests may `FAIL` due to version changes or license issues. At a minimum, the
+is easier to interpret. Ideally all the tests in testsuite should `PASS` but sometimes tests may `FAIL` due to license issues or other changes. At a minimum, the
 `testsuite` results after a maintenance should be no worse than the one before.
 
-# Programs
+## Programs
 
 These can all be found in the `bin` directory.
 
-+ [testapp](#testapp) tests the default version of a module
+- [testapp](#testapp): Tests the default version of a module
+- [testapp_forall](#testapp_forall): Tests all versions of a module
+- [testsuite](#testsuite): Tests the default version of each module in a profile
+- [testsuite_forall](#testsuite_forall): Tests all versions of each module in a profile
 
-+ [testapp_forall](#testapp_forall) tests all versions of a module
+## `testapp`
 
-## testapp
-
-This program is for running a test for the default version of a single module.
+This program runs a test of the default version of a single module.
 
 ### Syntax
 ```
-Usage:  ./testapp [options] [tests ...] [-o sbatch_options ...]
+Usage:  testapp [options] [tests ...] [-o sbatch_options ...]
 
 Options:
   -l             list available tests
@@ -40,14 +41,14 @@ Options:
                  you can leave out one or both of the options
                  check the status of a recently ran job
 
-  Suggested usage:  ./testapp <testname>
+  Suggested usage:  testapp <testname>
 ```
 
 ### Available tests
+
 By default, `./testapp` will search for available tests stored in the relative path `testsuite-main/testapps/`.
 ```
 $ ./testapp -l
-
 ImageMagick
 NCAR
 R
@@ -144,36 +145,38 @@ Every tests contains at least three files.
 There may be additional files such as input files or includes.
 
 ### Updating tests or developing new tests
+
 To update testapp (`matlab` in the below example), the first step is to navigate to the `testapps` folder and locate the module directory. 
 ```
 $ cd testsuite-main/testapps/matlab
 ```
 In most cases, we can need to edit `test.module`, `test.out` and `test.err`. If the modified test runs without error and you want the
-change deployed for everyone, then you can upload it to this github repo, and create a PR.
+change deployed for everyone, then you can upload it to this github repo, and create a pull request.
 
-## testapp_forall
+## `testapp_forall`
 
-This program is for running a test for all versions of a single module.
+This program runs a test of all versions of a single module.
 
-### Syntax
-```
-Usage:  ./testapp_forall [module_name] [redhat_version]
-```
-
-This is available for each package that has a test written. Red Hat versions this has been tested on are 7 and 8.
-
-### Effects
-
-This program runs `testapp <module_name>` for each available version obtained with `module av <module_name>`.
+It runs `testapp <module_name>` for each available version obtained with `module av <module_name>`.
 The test executes for all versions regardless of whether it fails for some of them. The output to the terminal
 is saved as two separate `.log` files in the test folder: one for stdout and one for stderr. Each `.log` file
 is named using a timestamp of when the `testapp_forall` program began to execute.
 
-## testsuite
-`testsuite` will automically many jobs to the cluster and periodically print the `PASS/FAIL` results as each test is run.
+### Syntax
+```
+Usage:  testapp_forall [module_name] [redhat_version]
+```
+
+This is available for each package that has a test written. Red Hat versions this has been tested on are 7 and 8.
+
+## `testsuite`
+
+This program will automatically send many jobs to the cluster and periodically print the `PASS/FAIL` results as each test is run.
+The default version of each module will be used.
+
 ```
 $ testsuite -h
-Usage:  ./testsuite [options] [test profiles] [-o SLURM options]
+Usage:  testsuite [options] [test profiles] [-o SLURM options]
 Options:
          -l          list available tests
          -n          output any nodes which fail tests
@@ -187,26 +190,19 @@ Options:
                       (this option must come last, after the profile names)
 ```
 
-**TODO**: Develop the same procedure for `testapp_forall`
+### Available profiles
 
-## Available profiles
-
-All profiles are stored in `/cluster/tufts/hpc/tools/testsuite/0.0.1/profiles/`.
+All profiles are stored in `testsuite-main/profiles/`.
 ```
-$ testsuite -l
+$ ./testsuite -l
 testsuite: Warning! $CLUSTER_SCRATCH is undefined.
 Will be creating temporary space in your home directory.
-/cluster/home/yzhang85/testsuite_tmp/testsuite_login-prod-02.pax.tufts.edu_2482418
-all_benchmarks_concurrent
-apps
-benchmarks
-compilers
-default
-osu_benchmarks
-parallel
-slurm
+/cluster/tufts/hpc/swtests/testsuite_tmp
+/cluster/tufts/hpc/swtests/testsuite_tmp/testsuite_login-prod-01.pax.tufts.edu_91427
+temp
 ```
 
+**TODO**: Modify the below to match current packages.
 Below is an example of `default` profile:
 ```
 #
@@ -249,10 +245,10 @@ C parallel_netcdf 9 10
 C tensorflow 9 10
 ```
 
-**TODO**: Understand what is going on in this step
+### Basic `testsuite` run
 
-### Basic testsuite run
-The simplest way to launch testsuite is to run it with no arguments. 
+**TODO**: Modify the below to match current packages.
+The simplest way to launch `testsuite` is to run it with no arguments.
 ```
 $ testsuite
 testsuite: Warning! $CLUSTER_SCRATCH is undefined.
@@ -321,12 +317,21 @@ PASS    tensorflow                   10      0      0     10
 ```
 
 ### Submit jobs with other options
-By default, all tests will be submitted to `batch` partition, but we can use other partitions to submit jobs by specifying the `-o` option in testsuite. `-o` allows you to add any slurm (sbatch/srun) options at the
+
+By default, all tests will be submitted to `batch` partition, but we can use other partitions to submit jobs
+by specifying the `-o` option in testsuite. `-o` allows you to add any slurm (sbatch/srun) options at the
 end of the testsuite command. The following command submits `testsuite` jobs in the `preempt` partition.
 ```
-$ testsuite -o -p preempt 
+$ ./testsuite -o -p preempt 
 ```
 
+## `testsuite_forall`
+
+This program is an equivalent of `testsuite` except that it tests each version of each module in a given profile.
+`options`, `test profiles`, and `-o SLURM options` are currently unavailable for `testsuite_forall`.
+```
+$ ./testsuite_forall 
+```
 
 ## Acknowledgement
 `testsuite` and `testapp` are modified from `testsuite` and `testpbs` developed by Rose Center for Advanced Computing ([RCAC](https://www.rcac.purdue.edu/)) at Purdue University. Many thanks to RCAC for developing such useful tools and sharing with us.
