@@ -192,15 +192,25 @@ Options:
 
 ### Available profiles
 
+**TODO**: Fix the hyphen problem
+**TODO**: Fix `-l` to only display profiles
 All profiles are stored in `testsuite-main/profiles/`.
 ```
 $ ./testsuite -l
 testsuite: Warning! $CLUSTER_SCRATCH is undefined.
 Will be creating temporary space in your home directory.
 /cluster/tufts/hpc/swtests/testsuite_tmp
-/cluster/tufts/hpc/swtests/testsuite_tmp/testsuite_login-prod-01.pax.tufts.edu_91427
+/cluster/tufts/hpc/swtests/testsuite_tmp/testsuite_login-prod-03.pax.tufts.edu_19017
 all
+bio
+data_sci
 default
+dev
+file
+hpc
+lang
+sci
+viz
 ```
 
 Below is an example of `default` profile, which covers the most popular cluster modules.
