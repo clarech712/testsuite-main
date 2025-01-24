@@ -193,7 +193,9 @@ Options:
 ### Available profiles
 
 **TODO**: Fix the hyphen problem
+
 **TODO**: Fix `-l` to only display profiles
+
 All profiles are stored in `testsuite-main/profiles/`.
 ```
 $ ./testsuite -l
