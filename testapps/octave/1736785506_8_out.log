@@ -1,0 +1,10 @@
+
+********************
+Version: 8.1.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'octave' with SLURM options '--constraint=rhel8'.
+Started job 10986052 on Submitted batch job 10986052.
+Waiting for job to complete.....done.
+PASS octave - d1cmp003 
+Cleaning up working directory.done.

@@ -204,8 +204,9 @@ function launchjobs {
 			# Then print and save the PID of the testapp instance
 			#
 			sleep ${STAGGERDELAY}
-			PIDS[$JOBINDEX]=`(bash ${SCRIPT_DIR}/testapp ${TESTAPPARGS} -t ${TMP} ${TESTNAME} -o ${SLURMARGS} ${DEPEND} >> "${TMP}/${TESTINDEX}_${TESTNAME}_${NEWIND}_${JOBCOUNT}" 2>&1 & echo $!)`
-			echo "Spawned testapp PID ${PIDS[$JOBINDEX]}." >> "${TMP}/${TESTINDEX}_${TESTNAME}_${NEWIND}_${JOBCOUNT}"
+			# PIDS[$JOBINDEX]=`(bash ${SCRIPT_DIR}/testapp ${TESTAPPARGS} -t ${TMP} ${TESTNAME} -o ${SLURMARGS} ${DEPEND} >> "${TMP}/${TESTINDEX}_${TESTNAME}_${NEWIND}_${JOBCOUNT}" 2>&1 & echo $!)`
+			PIDS[$JOBINDEX]=`(bash ${SCRIPT_DIR}/testapp_forall ${TESTAPPARGS} >> "${TMP}/${TESTINDEX}_${TESTNAME}_${NEWIND}_${JOBCOUNT}" 2>&1 & echo $!)`
+                        echo "Spawned testapp PID ${PIDS[$JOBINDEX]}." >> "${TMP}/${TESTINDEX}_${TESTNAME}_${NEWIND}_${JOBCOUNT}"
 			JOBSTATUS[$JOBINDEX]=2
 			JOBS_RUN[$TESTINDEX]=${JOBCOUNT}
 

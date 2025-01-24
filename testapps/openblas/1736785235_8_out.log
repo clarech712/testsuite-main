@@ -1,0 +1,33 @@
+
+********************
+Version: 0.3.10
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'openblas'.
+Starting job test 'openblas' with SLURM options '--constraint=rhel8'.
+Started job 10985941 on Submitted batch job 10985941.
+Waiting for job to complete.....done.
+PASS openblas - d1cmp003 
+Cleaning up working directory.done.
+
+********************
+Version: 0.3.14
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'openblas'.
+Starting job test 'openblas' with SLURM options '--constraint=rhel8'.
+Started job 10985946 on Submitted batch job 10985946.
+Waiting for job to complete......done.
+PASS openblas - d1cmp003 
+Cleaning up working directory.done.
+
+********************
+Version: 0.3.19
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'openblas'.
+Starting job test 'openblas' with SLURM options '--constraint=rhel8'.
+Started job 10985974 on Submitted batch job 10985974.
+Waiting for job to complete..............done.
+PASS openblas - d1cmp003 
+Cleaning up working directory.done.

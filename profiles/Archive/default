@@ -1,0 +1,38 @@
+#
+# SLURM Tests
+#
+C slurm_exclusive 4 5
+C slurm_cpusets 9 10
+C slurm_memlimit 9 10
+C slurm_memhog 9 10
+S slurm_1core_4nodes 9 10
+#
+# Compiler Tests
+#
+C gcc 9 10
+C oneapi 9 10
+#
+# Parallel Library Tests
+#
+C openmpi_gcc 9 10
+C openmpi_intel 9 10
+# C mvapich2_aocc 9 10
+C mvapich2_gcc 9 10
+C mvapich2_intel 9 10
+C oneapi_mpi 9 10
+C openmp_gcc 9 10
+C openmp_intel 9 10
+C openmp_oneapi 9 10
+#
+# Specific Application Tests
+#
+C anaconda 9 10
+C blast_short 9 10
+C boost 9 10
+C gromacs 9 10
+C matlab 9 10
+C netcdf_c 9 10
+C netcdf_fortran 9 10
+C r 9 10
+C parallel_netcdf 9 10
+C tensorflow 9 10

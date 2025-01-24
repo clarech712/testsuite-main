@@ -1,0 +1,20 @@
+
+********************
+Version: 1.49.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'boost'.
+Starting job test 'boost' with SLURM options '--constraint=rhel7'.
+Started job 11112327 on Submitted batch job 11112327.
+Waiting for job to complete...............done.
+FAIL boost - p1cmp028 
+Cleaning up working directory.done.
+
+********************
+Version: 1.54.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'boost'.
+Starting job test 'boost' with SLURM options '--constraint=rhel7'.
+Started job 11112381 on Submitted batch job 11112381.
+Waiting for job to complete.Cleaning up working directory.done.

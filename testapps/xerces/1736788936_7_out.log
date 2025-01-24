@@ -1,0 +1,10 @@
+
+********************
+Version: 3.1.3
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'xerces' with SLURM options '--constraint=rhel7'.
+Started job 10987799 on Submitted batch job 10987799.
+Waiting for job to complete............done.
+PASS xerces - p1cmp028 
+Cleaning up working directory.done.

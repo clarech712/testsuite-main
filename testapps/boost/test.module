@@ -1,7 +1,7 @@
 #begin_module_parse#
 TESTPILOT_COMPILER='gcc'
 TESTPILOT_MPI='openmpi'
-TESTPILOT_BOOST='boost/1.75.0'
+TESTPILOT_BOOST='boost'
 #end_module_parse#
 
 module --force purge 2>/dev/null

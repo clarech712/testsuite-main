@@ -1,0 +1,108 @@
+#
+# lang
+#
+C java 9 10
+C julia 9 10
+C idl 9 10
+C matlab 9 10
+C octave 9 10
+C perl 9 10
+C python 9 10
+C stata 9 10
+#
+# data_sci
+#
+C R 9 10
+C R_25 9 10
+C r-bioinformatics 9 10
+C r-scrnaseq 9 10
+C r-shinyngs 9 10
+C SAS 9 10
+C jags 9 10
+C mathematica 9 10
+C pytorchgpu 9 10
+C gurobi 9 10
+#
+# bio
+#
+C bcftools 9 10
+C bedtools 9 10
+C blast 9 10
+C blast_short 9 10
+C bowtie 9 10
+C bowtie2 9 10
+C bwa 9 10
+C cellprofiler 9 10
+C chimera 9 10
+C cutadapt 9 10
+C fastp 9 10
+C fastqc 9 10
+C fasttree 9 10
+C geneious 9 10
+C mafft 9 10
+C multiqc 9 10
+C orthofinder 9 10
+C qiime2 9 10
+C trim-galore 9 10
+C velvet 9 10
+#
+# sci
+#
+C NCAR 9 10
+C ansys 9 10
+C cdos 9 10
+C fftw 9 10
+C gsl 9 10
+C orca 9 10
+C proj 9 10
+C sumo 9 10
+#
+# hpc
+#
+C openblas 9 10
+C openmpi 9 10
+C gnu-parallel 9 10
+C parallel 9 10
+C singularity 9 10
+#
+# viz
+#
+C ImageMagick 9 10
+C imagemagick 9 10
+C ffmpeg 9 10
+C fontconfig 9 10
+C graphviz 9 10
+C mesa 9 10
+C pandoc 9 10
+C texlive 9 10
+C xerces 9 10
+C freetype 9 10
+C fribidi 9 10
+C gnuplot 9 10
+C harfbuzz 9 10
+#
+# dev
+#
+C binutils 9 10
+C boost 9 10
+C cmake 9 10
+C gcc 9 10
+C glib 9 10
+C swig 9 10
+#
+# file
+#
+C curl 9 10
+C dos2unix 9 10
+C libgcrypt 9 10
+C libgpg-error 9 10
+C libtiff 9 10
+C rclone 9 10
+C rsync 9 10
+C sqlite 9 10
+C zip 9 10
+C anaconda 9 10
+C condaenv 9 10
+C miniconda 9 10
+C miniforge 9 10
+C libtiff 9 10

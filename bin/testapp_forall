@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Check if a module name and a file path were provided
+if [ -z "$1" ] || [ -z "$2" ]
+then
+    echo "Usage: $0 <module_name> <number>"
+    exit 1
+fi
+
+MODULE_NAME=$1
+NUMBER=$2
+TIMESTAMP=$(date +%s)
+IN_PATH="../testapps/$MODULE_NAME/test.module"
+ERR_PATH="../testapps/$MODULE_NAME/${TIMESTAMP}_${NUMBER}_err.log"
+OUT_PATH="../testapps/$MODULE_NAME/${TIMESTAMP}_${NUMBER}_out.log"
+
+# Run module av command and filter output to only include version numbers
+module av $1 2>&1 | grep -oP "(?<=$1\/)[^\/ -]*(-[^\/ -]*)*(?= |$)" | while read -r version; do
+    echo ""
+    echo "********************"
+    echo "Version: $version"
+    sed "s/'${MODULE_NAME}'/'${MODULE_NAME}\/${version}'/g" "$IN_PATH" | tee /dev/tty > /dev/null
+    ./testapp ${MODULE_NAME} -o --constraint=rhel${NUMBER} 2> >(tee -a "$ERR_PATH") > >(tee -a "$OUT_PATH")
+done

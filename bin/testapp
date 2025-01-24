@@ -24,7 +24,8 @@ MODULE_FILE="test.module"
 VERIFY_OUT="verify.out"
 TEST_PREFIX="testpilot-"
 TORQUE_BIN="/usr/bin/"
-VERIFY_OUTPUT="verify_output"
+# VERIFY_OUTPUT="verify_output"
+VERIFY_OUTPUT="${SCRIPT_DIR}/verify_output"
 
 # Set the polling sleeps and timeouts.
 #

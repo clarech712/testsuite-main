@@ -1,6 +1,6 @@
 #begin_module_parse#
 TESTPILOT_COMPILER='gcc'
-TESTPILOT_R='R/4.4.1'
+TESTPILOT_R='R'
 #end_module_parse#
 
 module purge 2>/dev/null

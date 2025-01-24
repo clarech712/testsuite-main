@@ -17,7 +17,8 @@ def replace_home_variable(file_path):
             content = file.read()
 
         # Replace "${HOME}" with "${HOME_LOCAL}"
-        updated_content = content.replace("${HOME}", "${HOME_LOCAL}")
+        # updated_content = content.replace("${HOME}", "${HOME_LOCAL}")
+        updated_content = content.replace("$HOME", "$HOME_LOCAL")
 
         # Write the updated content back to the file
         with open(file_path, 'w') as file:

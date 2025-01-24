@@ -1,0 +1,28 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel8'.
+Started job 11179218 on Submitted batch job 11179218.
+Waiting for job to complete.....done.
+PASS proj - d1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel8'.
+Started job 11179268 on Submitted batch job 11179268.
+Waiting for job to complete...............done.
+PASS proj - d1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel8'.
+Started job 11179295 on Submitted batch job 11179295.
+Waiting for job to complete......done.
+PASS proj - d1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'proj' with SLURM options '--constraint=rhel8'.
+Started job 11179323 on Submitted batch job 11179323.
+Waiting for job to complete........done.
+PASS proj - d1cmp029 
+Cleaning up working directory.done.

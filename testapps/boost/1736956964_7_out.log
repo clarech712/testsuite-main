@@ -1,0 +1,48 @@
+
+********************
+Version: 1.49.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'boost'.
+Starting job test 'boost' with SLURM options '--constraint=rhel7'.
+Started job 11112397 on Submitted batch job 11112397.
+Waiting for job to complete.....done.
+FAIL boost - p1cmp028 
+=====================================================
+==================== STDOUT DIFF ====================
+=====================================================
+@@ 1,9 @@
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
++ 
+- Today ${*} we had run our first localization example
+- This is how we show numbers in this locale 103.34
+- This is how we show currency in this locale $103.34
+- This is typical date in the locale ${*}
+- This is typical time in the locale ${*}
+- This is upper case HELLO WORLD!
+- This is lower case hello world!
+- This is title case Hello World!
+- This is fold case hello world!
+=====================================================
+==================== STDERR DIFF ====================
+=====================================================
+@@ 1,1 @@
++ /var/spool/slurm/job11112397/slurm_script: line 14: ./boost_hello: No such file or directory
+- 
+Cleaning up working directory.done.
+
+********************
+Version: 1.54.0
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'boost'.
+Starting job test 'boost' with SLURM options '--constraint=rhel7'.
+Started job 11112429 on Submitted batch job 11112429.
+Waiting for job to complete........Cleaning up working directory.done.
