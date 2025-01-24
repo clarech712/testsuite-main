@@ -199,121 +199,117 @@ testsuite: Warning! $CLUSTER_SCRATCH is undefined.
 Will be creating temporary space in your home directory.
 /cluster/tufts/hpc/swtests/testsuite_tmp
 /cluster/tufts/hpc/swtests/testsuite_tmp/testsuite_login-prod-01.pax.tufts.edu_91427
-temp
+all
+default
 ```
 
-**TODO**: Modify the below to match current packages.
-Below is an example of `default` profile:
+Below is an example of `default` profile, which covers the most popular cluster modules.
 ```
 #
-# SLURM Tests
+# Languages and Envs
 #
-C slurm_exclusive 4 5
-C slurm_cpusets 9 10
-C slurm_memlimit 9 10
-C slurm_memhog 9 10
-S slurm_1core_4nodes 9 10
+C java 9 10
+C python 9 10
 #
-# Compiler Tests
+# Data Sci and Stats
+#
+# C r-bioinformatics 9 10
+# C r-scrnaseq 9 10
+#
+# Science
+#
+C fftw 9 10
+#
+# HPC and Parallel
+#
+C singularity 9 10
+#
+# Viz
+#
+C fontconfig 9 10
+C freetype 9 10
+C fribidi 9 10
+C graphviz 9 10
+C harfbuzz 9 10
+C texlive 9 10
+#
+# Compilers and Dev Tools
 #
 C gcc 9 10
-C oneapi 9 10
 #
-# Parallel Library Tests
-#
-C openmpi_gcc 9 10
-C openmpi_intel 9 10
-# C mvapich2_aocc 9 10
-C mvapich2_gcc 9 10
-C mvapich2_intel 9 10
-C oneapi_mpi 9 10
-C openmp_gcc 9 10
-C openmp_intel 9 10
-C openmp_oneapi 9 10
-#
-# Specific Application Tests
+# File and Env Management
 #
 C anaconda 9 10
-C blast_short 9 10
-C boost 9 10
-C gromacs 9 10
-C matlab 9 10
-C netcdf_c 9 10
-C netcdf_fortran 9 10
-C r 9 10
-C parallel_netcdf 9 10
-C tensorflow 9 10
+C curl 9 10
+C proj 9 10
+C rclone 9 10
+C sqlite 9 10
 ```
 
 ### Basic `testsuite` run
 
-**TODO**: Modify the below to match current packages.
 The simplest way to launch `testsuite` is to run it with no arguments.
 ```
-$ testsuite
+$ ./testsuite
 testsuite: Warning! $CLUSTER_SCRATCH is undefined.
 Will be creating temporary space in your home directory.
-/cluster/home/yzhang85/testsuite_tmp/testsuite_login-prod-02.pax.tufts.edu_2482681
+/cluster/tufts/hpc/swtests/testsuite_tmp
+/cluster/tufts/hpc/swtests/testsuite_tmp/testsuite_login-prod-03.pax.tufts.edu_113404
 No profiles named.  Running the 'default' profile.
-Created working directory '/cluster/home/yzhang85/testsuite_tmp/testsuite_login-prod-02.pax.tufts.edu_2482681'.
+Created working directory '/cluster/tufts/hpc/swtests/testsuite_tmp/testsuite_login-prod-03.pax.tufts.edu_113404'.
 Launching tests....
-Launching test: slurm_1core_4nodes without SLURM options and without testapp options
-Launching test: slurm_exclusive without SLURM options and without testapp options
-Launching test: slurm_cpusets without SLURM options and without testapp options
-Launching test: slurm_memlimit without SLURM options and without testapp options
-Launching test: slurm_memhog without SLURM options and without testapp options
+Launching test: java without SLURM options and without testapp options
+Launching test: python without SLURM options and without testapp options
+Launching test: fftw without SLURM options and without testapp options
+Launching test: singularity without SLURM options and without testapp options
+Launching test: fontconfig without SLURM options and without testapp options
+Launching test: freetype without SLURM options and without testapp options
+Launching test: fribidi without SLURM options and without testapp options
+Launching test: graphviz without SLURM options and without testapp options
+Launching test: harfbuzz without SLURM options and without testapp options
+Launching test: texlive without SLURM options and without testapp options
 Launching test: gcc without SLURM options and without testapp options
-Launching test: oneapi without SLURM options and without testapp options
-Launching test: openmpi_gcc without SLURM options and without testapp options
-Launching test: openmpi_intel without SLURM options and without testapp options
-Launching test: mvapich2_gcc without SLURM options and without testapp options
-Launching test: mvapich2_intel without SLURM options and without testapp options
-Launching test: oneapi_mpi without SLURM options and without testapp options
-Launching test: openmp_gcc without SLURM options and without testapp options
-Launching test: openmp_intel without SLURM options and without testapp options
-Launching test: openmp_oneapi without SLURM options and without testapp options
 Launching test: anaconda without SLURM options and without testapp options
-Launching test: blast_short without SLURM options and without testapp options
-Launching test: boost without SLURM options and without testapp options
-Launching test: gromacs without SLURM options and without testapp options
-Launching test: matlab without SLURM options and without testapp options
-srun: error: PMK_KVS_Barrier duplicate request from task 0
-Launching test: netcdf_c without SLURM options and without testapp options
-srun: error: PMK_KVS_Barrier duplicate request from task 0
-srun: error: PMK_KVS_Barrier duplicate request from task 0
-srun: error: PMK_KVS_Barrier duplicate request from task 0
-srun: error: PMK_KVS_Barrier duplicate request from task 0
-Launching test: netcdf_fortran without SLURM options and without testapp options
-Launching test: r without SLURM options and without testapp options
-Launching test: parallel_netcdf without SLURM options and without testapp options
-Launching test: tensorflow without SLURM options and without testapp options
+Launching test: curl without SLURM options and without testapp options
+Launching test: proj without SLURM options and without testapp options
+Launching test: rclone without SLURM options and without testapp options
+Launching test: sqlite without SLURM options and without testapp options
 
 Status  Test                       Pass   Fail    Run  Total
-PASS    slurm_1core_4nodes           10      0      0     10
-PASS    slurm_exclusive               5      0      0      5
-PASS    slurm_cpusets                10      0      0     10
-FAIL    slurm_memlimit                1      9      0     10
-FAIL    slurm_memhog                  0     10      0     10
+PASS    java                         10      0      0     10
+PASS    python                       10      0      0     10
+PASS    fftw                         10      0      0     10
+PASS    singularity                  10      0      0     10
+PASS    fontconfig                   10      0      0     10
+PASS    freetype                     10      0      0     10
+PASS    fribidi                      10      0      0     10
+PASS    graphviz                     10      0      0     10
+PASS    harfbuzz                     10      0      0     10
+PASS    texlive                      10      0      0     10
 PASS    gcc                          10      0      0     10
-PASS    oneapi                       10      0      0     10
-PASS    openmpi_gcc                  10      0      0     10
-FAIL    openmpi_intel                 0     10      0     10
-FAIL    mvapich2_gcc                  0      9      1     10
-FAIL    mvapich2_intel                0     10      0     10
-FAIL    oneapi_mpi                    0     10      0     10
-PASS    openmp_gcc                   10      0      0     10
-FAIL    openmp_intel                  0     10      0     10
-FAIL    openmp_oneapi                 0     10      0     10
 PASS    anaconda                     10      0      0     10
-PASS    blast_short                   9      1      0     10
-FAIL    boost                         0     10      0     10
-FAIL    gromacs                       0      4      6     10
-PASS    matlab                       10      0      0     10
-FAIL    netcdf_c                      0     10      0     10
-FAIL    netcdf_fortran                0     10      0     10
-PASS    r                            10      0      0     10
-FAIL    parallel_netcdf               0     10      0     10
-PASS    tensorflow                   10      0      0     10
+PASS    curl                         10      0      0     10
+PASS    proj                         10      0      0     10
+PASS    rclone                       10      0      0     10
+PASS    sqlite                       10      0      0     10
+
+Status  Test                       Pass   Fail    Run  Total
+PASS    java                         10      0      0     10
+PASS    python                       10      0      0     10
+PASS    fftw                         10      0      0     10
+PASS    singularity                  10      0      0     10
+PASS    fontconfig                   10      0      0     10
+PASS    freetype                     10      0      0     10
+PASS    fribidi                      10      0      0     10
+PASS    graphviz                     10      0      0     10
+PASS    harfbuzz                     10      0      0     10
+PASS    texlive                      10      0      0     10
+PASS    gcc                          10      0      0     10
+PASS    anaconda                     10      0      0     10
+PASS    curl                         10      0      0     10
+PASS    proj                         10      0      0     10
+PASS    rclone                       10      0      0     10
+PASS    sqlite                       10      0      0     10
 ```
 
 ### Submit jobs with other options
