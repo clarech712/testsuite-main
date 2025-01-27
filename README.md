@@ -192,10 +192,6 @@ Options:
 
 ### Available profiles
 
-**TODO**: Fix the hyphen problem
-
-**TODO**: Fix `-l` to only display profiles
-
 All profiles are stored in `testsuite-main/profiles/`.
 ```
 $ ./testsuite -l
@@ -335,11 +331,16 @@ $ ./testsuite -o -p preempt
 
 ## `testsuite_forall`
 
-This program is an equivalent of `testsuite` except that it tests each version of each module in a given profile.
-`options`, `test profiles`, and `-o SLURM options` are currently unavailable for `testsuite_forall`.
+This program runs a test of all versions of each module in a given profile.
+`options` and `-o SLURM options` are currently unavailable for `testsuite_forall`.
+
+Given that some modules on the HPC cluster have many versions, it may not be advisable
+to run the below with the `all` profile.
 ```
-$ ./testsuite_forall 
+Usage:  testsuite_forall [profile] [redhat_version]
 ```
+
+This is available for each package that has a test written. Red Hat versions this has been tested on are 7 and 8.
 
 ## Acknowledgement
 `testsuite` and `testapp` are modified from `testsuite` and `testpbs` developed by Rose Center for Advanced Computing ([RCAC](https://www.rcac.purdue.edu/)) at Purdue University. Many thanks to RCAC for developing such useful tools and sharing with us.
