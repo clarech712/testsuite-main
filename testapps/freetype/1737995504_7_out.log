@@ -1,0 +1,14 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'freetype' with SLURM options '--constraint=rhel7'.
+Started job 11339767 on Submitted batch job 11339767.
+Waiting for job to complete...done.
+PASS freetype - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'freetype' with SLURM options '--constraint=rhel7'.
+Started job 11339768 on Submitted batch job 11339768.
+Waiting for job to complete..done.
+PASS freetype - p1cmp029 
+Cleaning up working directory.done.

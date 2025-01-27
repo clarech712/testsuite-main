@@ -1,0 +1,35 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'singularity' with SLURM options '--constraint=rhel7'.
+Started job 11339759 on Submitted batch job 11339759.
+Waiting for job to complete..done.
+PASS singularity - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'singularity' with SLURM options '--constraint=rhel7'.
+Started job 11339760 on Submitted batch job 11339760.
+Waiting for job to complete..done.
+PASS singularity - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'singularity' with SLURM options '--constraint=rhel7'.
+Started job 11339761 on Submitted batch job 11339761.
+Waiting for job to complete..done.
+PASS singularity - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'singularity' with SLURM options '--constraint=rhel7'.
+Started job 11339762 on Submitted batch job 11339762.
+Waiting for job to complete..done.
+PASS singularity - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'singularity' with SLURM options '--constraint=rhel7'.
+Started job 11339763 on Submitted batch job 11339763.
+Waiting for job to complete..done.
+PASS singularity - p1cmp029 
+Cleaning up working directory.done.

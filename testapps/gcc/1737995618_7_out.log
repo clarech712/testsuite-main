@@ -1,0 +1,64 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339777 on Submitted batch job 11339777.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339778 on Submitted batch job 11339778.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339779 on Submitted batch job 11339779.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339780 on Submitted batch job 11339780.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339781 on Submitted batch job 11339781.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339782 on Submitted batch job 11339782.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339783 on Submitted batch job 11339783.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'gcc'.
+Starting job test 'gcc' with SLURM options '--constraint=rhel7'.
+Started job 11339784 on Submitted batch job 11339784.
+Waiting for job to complete..done.
+PASS gcc - p1cmp029 
+Cleaning up working directory.done.

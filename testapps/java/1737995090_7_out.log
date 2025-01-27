@@ -1,0 +1,91 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339726 on Submitted batch job 11339726.
+Waiting for job to complete...done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339728 on Submitted batch job 11339728.
+Waiting for job to complete...done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339730 on Submitted batch job 11339730.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339731 on Submitted batch job 11339731.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339732 on Submitted batch job 11339732.
+Waiting for job to complete...done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339734 on Submitted batch job 11339734.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339735 on Submitted batch job 11339735.
+Waiting for job to complete...done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339737 on Submitted batch job 11339737.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339738 on Submitted batch job 11339738.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339739 on Submitted batch job 11339739.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339740 on Submitted batch job 11339740.
+Waiting for job to complete...done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339741 on Submitted batch job 11339741.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'java' with SLURM options '--constraint=rhel7'.
+Started job 11339742 on Submitted batch job 11339742.
+Waiting for job to complete..done.
+PASS java - p1cmp029 
+Cleaning up working directory.done.

@@ -1,0 +1,7 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'fribidi' with SLURM options '--constraint=rhel7'.
+Started job 11339769 on Submitted batch job 11339769.
+Waiting for job to complete..done.
+PASS fribidi - p1cmp029 
+Cleaning up working directory.done.

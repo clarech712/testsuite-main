@@ -1,0 +1,14 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'fontconfig' with SLURM options '--constraint=rhel7'.
+Started job 11339764 on Submitted batch job 11339764.
+Waiting for job to complete..done.
+PASS fontconfig - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'fontconfig' with SLURM options '--constraint=rhel7'.
+Started job 11339765 on Submitted batch job 11339765.
+Waiting for job to complete..done.
+PASS fontconfig - p1cmp029 
+Cleaning up working directory.done.

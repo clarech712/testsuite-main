@@ -542,7 +542,7 @@ if [ ${LISTPROFILES} -eq 1 ]; then
 	done
 	for PROFILE in ${PROFILEROOT}/*; do
 		PROFILENAME="$(basename ${PROFILE})"
-		if [ "x${PROFILENAME}" != "x*" ]; then
+		if [ "x${PROFILENAME}" != "x*" ] && [ "${PROFILENAME}" != "Archive" ] && [ "${PROFILENAME}" != "split.py" ]; then
 			if [ -e "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILENAME}" ]; then
 				echo "${PROFILENAME}  (Overridden)"
 			else
@@ -593,8 +593,8 @@ cd ${TMP}
 for PROFILE in ${PROFILES}; do
 	if [ -e "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" ]; then
 		INVALIDLINES=$(cat "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" \
-			| grep -v '^\(S\|C\) [a-zA-Z_0-9]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' \
-			| grep -v '^#')
+			| grep -v '^\(S\|C\) [a-zA-Z_0-9-]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' \
+                        | grep -v '^#')
 		if [ -n "${INVALIDLINES}" ]; then
 			echo "testsuite:  Error!  Invalid lines in profile '${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}':"
 			echo "------------------------------------------------------------------------------"
@@ -605,7 +605,7 @@ for PROFILE in ${PROFILES}; do
 		fi
 	elif [ -e "${PROFILEROOT}/${PROFILE}" ]; then
 		INVALIDLINES=$(cat "${PROFILEROOT}/${PROFILE}" \
-			| grep -v '^\(S\|C\) [a-zA-Z_0-9]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' \
+			| grep -v '^\(S\|C\) [a-zA-Z_0-9-]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' \
 			| grep -v '^#')
 		if [ -n "${INVALIDLINES}" ]; then
 			echo "testsuite:  Error!  Invalid lines in profile '${PROFILEROOT}/${PROFILE}':"
@@ -626,16 +626,16 @@ done
 touch "${TESTFILE}"
 for PROFILE in ${PROFILES}; do
 	if [ -e "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" ]; then
-		cat "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" | grep '^S [a-zA-Z_0-9]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
+		cat "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" | grep '^S [a-zA-Z_0-9-]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
 	elif [ -e "${PROFILEROOT}/${PROFILE}" ]; then
-		cat "${PROFILEROOT}/${PROFILE}" | grep '^S [a-zA-Z_0-9]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
+		cat "${PROFILEROOT}/${PROFILE}" | grep '^S [a-zA-Z_0-9-]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
 	fi
 done
 for PROFILE in ${PROFILES}; do
 	if [ -e "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" ]; then
-		cat "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" | grep '^C [a-zA-Z_0-9]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
+		cat "${HOME_LOCAL}/${PROFILEHOMEDIR}/${PROFILE}" | grep '^C [a-zA-Z_0-9-]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
 	elif [ -e "${PROFILEROOT}/${PROFILE}" ]; then
-		cat "${PROFILEROOT}/${PROFILE}" | grep '^C [a-zA-Z_0-9]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
+		cat "${PROFILEROOT}/${PROFILE}" | grep '^C [a-zA-Z_0-9-]\+ [1-9]\+[0-9]* [1-9]\+[0-9]*.*$' >> "${TESTFILE}"
 	fi
 done
 

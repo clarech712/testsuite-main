@@ -1,0 +1,63 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339785 on Submitted batch job 11339785.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339786 on Submitted batch job 11339786.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339787 on Submitted batch job 11339787.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339788 on Submitted batch job 11339788.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339789 on Submitted batch job 11339789.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339790 on Submitted batch job 11339790.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339791 on Submitted batch job 11339791.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339792 on Submitted batch job 11339792.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'anaconda' with SLURM options '--constraint=rhel7'.
+Started job 11339793 on Submitted batch job 11339793.
+Waiting for job to complete..done.
+PASS anaconda - p1cmp029 
+Cleaning up working directory.done.

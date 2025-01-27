@@ -1,0 +1,7 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Starting job test 'texlive' with SLURM options '--constraint=rhel7'.
+Started job 11339776 on Submitted batch job 11339776.
+Waiting for job to complete..done.
+PASS texlive - p1cmp029 
+Cleaning up working directory.done.

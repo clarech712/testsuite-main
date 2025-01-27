@@ -1,0 +1,48 @@
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel7'.
+Started job 11339753 on Submitted batch job 11339753.
+Waiting for job to complete..done.
+PASS fftw - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel7'.
+Started job 11339754 on Submitted batch job 11339754.
+Waiting for job to complete...done.
+PASS fftw - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel7'.
+Started job 11339755 on Submitted batch job 11339755.
+Waiting for job to complete...done.
+PASS fftw - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel7'.
+Started job 11339756 on Submitted batch job 11339756.
+Waiting for job to complete...done.
+PASS fftw - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel7'.
+Started job 11339757 on Submitted batch job 11339757.
+Waiting for job to complete...done.
+PASS fftw - p1cmp029 
+Cleaning up working directory.done.
+CLUSTER_SCRATCH is not available, running tests from /cluster/tufts/hpc/swtests directory
+
+Executing pre-submission commands for job test 'fftw'.
+Starting job test 'fftw' with SLURM options '--constraint=rhel7'.
+Started job 11339758 on Submitted batch job 11339758.
+Waiting for job to complete...done.
+PASS fftw - p1cmp029 
+Cleaning up working directory.done.
