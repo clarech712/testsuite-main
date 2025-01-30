@@ -9,7 +9,7 @@ fi
 
 MODULE_NAME=$1
 NUMBER=$2
-TIMESTAMP=$(date +%s)
+TIMESTAMP=$(date +%Y%m%d-%H%M)
 IN_PATH="../testapps/$MODULE_NAME/test.module"
 ERR_PATH="../testapps/$MODULE_NAME/${TIMESTAMP}_${NUMBER}_err.log"
 OUT_PATH="../testapps/$MODULE_NAME/${TIMESTAMP}_${NUMBER}_out.log"
